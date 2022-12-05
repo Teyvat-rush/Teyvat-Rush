@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3BC4B23E-2DF3-36C3-832E-3AADCD5D6493}</ProjectGuid>
+    <ProjectGuid>{F8E77A07-D7CC-831A-BB26-843201048F62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,7 +56,10 @@
     <Analyzer Include="D:\Program Files\Visual Studio\main\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Blur.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Materials\Shader_Blur.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
