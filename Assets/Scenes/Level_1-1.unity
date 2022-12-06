@@ -620,8 +620,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1818077702}
-  - component: {fileID: 1818077704}
   - component: {fileID: 1818077703}
+  - component: {fileID: 1818077704}
   m_Layer: 6
   m_Name: note
   m_TagString: Untagged
@@ -665,7 +665,6 @@ Animator:
 --- !u!212 &1818077704
 SpriteRenderer:
   m_ObjectHideFlags: 0
-
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -702,7 +701,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 14637971
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 12c403e957f99f94db66d08085005bed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -715,7 +714,6 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1896970209
-
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
