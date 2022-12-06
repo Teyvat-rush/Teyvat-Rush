@@ -665,79 +665,7 @@ Animator:
 --- !u!212 &1818077704
 SpriteRenderer:
   m_ObjectHideFlags: 0
-<<<<<<< HEAD
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1067649516}
-    m_Modifications:
-    - target: {fileID: 5965851168180020554, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020554, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020554, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020554, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020554, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020554, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020554, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020554, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020554, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020554, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020554, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020555, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_Name
-      value: TestPlant
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020597, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965851168180020597, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8673416832443624406, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: Speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8673416832443624406, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
-      propertyPath: Direction.x
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f50f2911fa65bb444acbf7ce665ab968, type: 3}
---- !u!1 &5965851166574821462 stripped
-=======
+
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -787,7 +715,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1896970209
->>>>>>> 4b3661f68e4ccbbc0dfc2c584679257162ec1a48
+
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
