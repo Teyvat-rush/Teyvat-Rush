@@ -20,7 +20,9 @@ public class Card : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    timer += Time.deltaTime;
+        timer += Time.deltaTime;
+        UpdateProgress();
+        UpdateDarkBG();
     }
   void UpdateProgress()
   {//更新进度条
