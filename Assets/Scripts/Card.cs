@@ -24,8 +24,9 @@ public class Card : MonoBehaviour
     {
     timer += Time.deltaTime;
     UpdateProgress();
-
-    }
+    UpdateDarkBG();
+    
+  }
   void UpdateProgress()
   {//更新进度条
     float per = Mathf.Clamp(timer/WaitTime,0,1);
@@ -33,7 +34,7 @@ public class Card : MonoBehaviour
   }
   void UpdateDarkBG()
   {
-    if(Progress.GetComponent<Image>().fillAmount==0)
+    if(Progress.GetComponent<Image>().fillAmount==0&&GameManager.instance.starNum>=UseStar)
     {
       darkBG.SetActive(false);
     }
@@ -43,8 +44,12 @@ public class Card : MonoBehaviour
     }
   }
   //拖拽开始（鼠标点下的一瞬间）
-  public void onBeginDrag(BaseEventData data)
+  public void OnBeginDrag(BaseEventData data)
   {
+    if(darkBG.activeSelf)
+    {
+      return;
+    }
     PointerEventData pointerEventData = data as PointerEventData;
     curGameObject = Instantiate(objectPrefab);
     curGameObject.transform.position = TranslateScreenToWorld(pointerEventData.position);
@@ -78,6 +83,8 @@ public class Card : MonoBehaviour
         curGameObject.transform.localPosition = Vector3.zero;
         //重置
         curGameObject = null;
+        GameManager.instance.ChangeStarNum(-UseStar);
+        
         break;
       }
     }
