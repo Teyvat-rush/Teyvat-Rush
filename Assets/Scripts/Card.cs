@@ -53,6 +53,7 @@ public class Card : MonoBehaviour
     PointerEventData pointerEventData = data as PointerEventData;
     curGameObject = Instantiate(objectPrefab);
     curGameObject.transform.position = TranslateScreenToWorld(pointerEventData.position);
+    print("onBeginDrag" + curGameObject.transform.position);
   }
   //拖拽过程（鼠标按着没放开）
   public void OnDrag(BaseEventData data)
@@ -64,6 +65,8 @@ public class Card : MonoBehaviour
     PointerEventData pointerEventData = data as PointerEventData;
     //根据鼠标移动的位置移动物体
     curGameObject.transform.position = TranslateScreenToWorld(pointerEventData.position);
+    print("onDrag" + curGameObject.transform.position);
+    print(Input.mousePosition);
   }
   //拖拽结束（鼠标放开的一瞬间）
   public void OnEndDrag(BaseEventData data)
