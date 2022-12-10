@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -408,7 +409,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 08bfc985072a14a79d440be5efd5aeaf
+      Hash: 95718415b7a86ddcd001b679c1857745
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Arrow
@@ -564,7 +565,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: a087cda9e2dcfaf43344ffeb3bb852d6
+      Hash: fd3ec4bc214a68a881e9d312d5e66e64
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -576,7 +577,7 @@ ScriptsOnlyBuild:
     className: UIManager
   - hash:
       serializedVersion: 2
-      Hash: 56c7b721bdb8d1dc6314625e8a92b953
+      Hash: 4fa9663fa0b53622403e4e4c5e4bc3fc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager

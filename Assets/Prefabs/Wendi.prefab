@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interval: 2
-  timer: 0
-  Bullet: {fileID: 0}
+  timer: 1
+  Bullet: {fileID: 7770084476574159167, guid: 7220c67d554c8cd4ea93fe0e4e3b1011, type: 3}
   BulletPos: {fileID: 8825246315803308505}
-  health: 0
+  health: 100

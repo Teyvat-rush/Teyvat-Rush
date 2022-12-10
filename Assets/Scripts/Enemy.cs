@@ -9,18 +9,25 @@ public class Enemy : MonoBehaviour
   public float damage;//伤害值
   public float damageInterval;//攻击间隔
   private float damageTimer;//计时器
+  public float health=100;
+  private float currentHealth;
+  private bool isDead;
     // Start is called before the first frame update
     void Start()
     {
     rb = GetComponent<Rigidbody2D>();
     coll = GetComponent<BoxCollider2D>();
+    isDead = false;
+    currentHealth = health;
     }
 
     // Update is called once per frame
     void Update()
     {
-    Movement();
-    
+    if(!isDead)
+    {
+      Movement();
+    }
     }
   void Movement()
   {
@@ -60,6 +67,14 @@ public class Enemy : MonoBehaviour
         /*切换动画*/
       }
     }
+  public void ChangeHealth(float num)
+  {
+    currentHealth = Mathf.Clamp(currentHealth + num, 0, health);
+    if(currentHealth<=0)
+    {
+      GameObject.Destroy(gameObject);
+    }
+  }
 }
   
 

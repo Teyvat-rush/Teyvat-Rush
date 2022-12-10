@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3786385676328421590}
   - component: {fileID: 3786385676328421576}
   - component: {fileID: 3786385676328421577}
-  - component: {fileID: 3786385676328421591}
+  - component: {fileID: 8478119575798901158}
   m_Layer: 0
   m_Name: qqRen
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3786385676328421591
+--- !u!114 &8478119575798901158
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,5 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  damage: 100
+  damage: 20
   damageInterval: 0.5
+  health: 100
