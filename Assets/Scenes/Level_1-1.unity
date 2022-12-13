@@ -4499,7 +4499,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1071346892}
           m_TargetAssemblyTypeName: Card, Assembly-CSharp
-          m_MethodName: onBeginDrag
+          m_MethodName: OnBeginDrag
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -8200,7 +8200,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1949353292}
           m_TargetAssemblyTypeName: Card, Assembly-CSharp
-          m_MethodName: onBeginDrag
+          m_MethodName: OnBeginDrag
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
