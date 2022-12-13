@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     //生成
     GameObject enemy = Instantiate(EnemyPrefab);
     int index = Random.Range(0, 5);//生成随机数
-    Transform enemyLine = bornParent.transform.Find("born" + index.ToString());
+    Transform enemyLine = bornParent.transform.Find("Born" + index.ToString());
     enemy.transform.parent = enemyLine;
     enemy.transform.localPosition = Vector3.zero;
 
