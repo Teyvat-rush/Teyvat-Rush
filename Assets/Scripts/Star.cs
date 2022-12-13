@@ -36,7 +36,7 @@ public class Star : MonoBehaviour
   {
     GameObject.Destroy(gameObject);
   }
-  private void OnMouseDown()
+  public void OnMouseDown()
   {
     anim.SetBool("Disappear", true);
     GameManager.instance.ChangeStarNum(25);
