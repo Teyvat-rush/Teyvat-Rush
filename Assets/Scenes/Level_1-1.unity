@@ -4972,6 +4972,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143458762}
   m_CullTransparentMesh: 1
+--- !u!1 &1144881457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3786385676328421589, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
+  m_PrefabInstance: {fileID: 1437664409}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1144881458
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144881457}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1591f797f7905774aaab5d19712fe2e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1158930675
 GameObject:
   m_ObjectHideFlags: 0
@@ -6029,9 +6053,25 @@ PrefabInstance:
       value: qqRen
       objectReference: {fileID: 0}
     - target: {fileID: 3786385676328421590, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786385676328421590, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0133333
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786385676328421590, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 134b17e6e94770c45b65199354c32a5b, type: 3}
+      objectReference: {fileID: 21300000, guid: 8b198a1b833917446ad653f6fd2033fd, type: 3}
+    - target: {fileID: 3786385676328421590, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478119575798901158, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
+      propertyPath: Speed
+      value: 0.28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
 --- !u!1 &1463212094
