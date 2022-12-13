@@ -87,7 +87,7 @@ public class Card : MonoBehaviour
         //重置
         curGameObject = null;
         GameManager.instance.ChangeStarNum(-UseStar);
-        
+        timer = 0;
         break;
       }
     }

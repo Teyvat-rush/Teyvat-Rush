@@ -51,3 +51,6 @@ TagManager:
   - name: Plants
     uniqueID: 14637971
     locked: 0
+  - name: Sun
+    uniqueID: 2217460905
+    locked: 0
