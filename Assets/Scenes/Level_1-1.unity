@@ -9257,7 +9257,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.68392235, y: 0.48011652}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &2123244947
 BoxCollider2D:
   m_ObjectHideFlags: 0
