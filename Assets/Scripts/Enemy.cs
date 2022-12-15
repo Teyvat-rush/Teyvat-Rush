@@ -34,17 +34,13 @@ public class Enemy : MonoBehaviour
       rb.velocity = new Vector2(-Speed, 0);
   }
 
-  private void OnCollisionEnter2D(Collision2D collision)
+  private void OnTriggerEnter2D(Collider2D collision)
   {
     if (collision.gameObject.tag == "Plant")
     {
       /*切换动画*/
-      rb.velocity = new Vector2(0, 0);
+      Speed = 0;
     }
-  }
-  private void OnCollisionEnter2D(Collider2D collision)
-  {
-    
   }
     private void OnTriggerStay2D(Collider2D collision)
   {
