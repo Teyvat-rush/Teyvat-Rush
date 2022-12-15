@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
     instance = this;
-    UIManager.instance.InitUI();
+    
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     }
   public void InitUI()//初始化UI
   {
-    starNumText.text = GameManager.instance.starNum.ToString();
+   
   }
   public void UpdateUI()//更新UI
   {
