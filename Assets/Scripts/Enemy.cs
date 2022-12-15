@@ -33,14 +33,14 @@ public class Enemy : MonoBehaviour
   {
       rb.velocity = new Vector2(-Speed, 0);
   }
-  
-    private void OnTriggerEnter2D(Collider2D collision)
+
+  private void OnTriggerEnter2D(Collider2D collision)
   {
-    if(collision.tag=="Plant")
-      {
+    if (collision.gameObject.tag == "Plant")
+    {
       /*切换动画*/
-      rb.velocity = new Vector2(0, 0);
-      }
+      Speed = 0;
+    }
   }
     private void OnTriggerStay2D(Collider2D collision)
   {
@@ -51,8 +51,8 @@ public class Enemy : MonoBehaviour
         if(damageTimer>=damageInterval)
         {
           damageTimer = 0;
-          TestPlant Wendi = collision.GetComponent<TestPlant>();
-          float newHealth = Wendi.ChangeHealth(-damage);
+          Plant plant = collision.GetComponent<Plant>();
+          float newHealth = plant.ChangeHealth(-damage);
           if(newHealth<=0)
           {
             /*切换动画*/
