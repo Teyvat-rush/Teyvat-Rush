@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestPlant : MonoBehaviour
+public class Wendi : Plant
 {
   private Rigidbody2D rb;
   private CapsuleCollider2D coll;
@@ -10,8 +10,6 @@ public class TestPlant : MonoBehaviour
   public float timer;//计时器
   public GameObject Bullet;//子弹的源
   public Transform BulletPos;//子弹生成的位置
-  public float health;
-  private float currentHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,13 +27,5 @@ public class TestPlant : MonoBehaviour
       Instantiate(Bullet, BulletPos.position, Quaternion.identity);
     }
     }
-  public float ChangeHealth(float num)
-  {
-    currentHealth = Mathf.Clamp(currentHealth + num, 0, health);
-    if(currentHealth<=0)
-    {
-      GameObject.Destroy(gameObject);
-    }
-    return currentHealth;
-  }
+  
 }
