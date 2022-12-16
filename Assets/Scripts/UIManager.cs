@@ -26,4 +26,8 @@ public class UIManager : MonoBehaviour
   {
     starNumText.text = GameManager.instance.starNum.ToString();
   }
+  public Vector3 GetSunNumTextPos()
+  {
+    return starNumText.transform.position;//得到阳光的屏幕坐标
+  }
 }
