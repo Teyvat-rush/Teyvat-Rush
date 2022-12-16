@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Mona : MonoBehaviour
 {
-    // Start is called before the first frame update
+  public GameObject SunPrefab;
+    public float ReadyTime;
+  private float timer;
     void Start()
     {
-        
+    timer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+    timer += Time.deltaTime;
+    BornSun();
     }
+  void BornSun()
+  {
+    if(timer>=ReadyTime)
+    {
+      timer =0;
+      GameObject ProducedSun =  Instantiate(SunPrefab);
+      ProducedSun.transform.parent = this.transform;
+    }
+  }
+
 }
