@@ -4816,7 +4816,7 @@ MonoBehaviour:
   darkBG: {fileID: 1081123579}
   Progress: {fileID: 1863211977}
   WaitTime: 4
-  UseStar: 100
+  UseStar: 50
 --- !u!114 &1071346893
 MonoBehaviour:
   m_ObjectHideFlags: 0
