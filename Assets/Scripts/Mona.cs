@@ -24,7 +24,8 @@ public class Mona : MonoBehaviour
     {
       timer =0;
       GameObject ProducedSun =  Instantiate(SunPrefab);
-      ProducedSun.transform.parent = this.transform;
+      ProducedSun.transform.parent = this.transform.Find("BulletPos").transform;
+      ProducedSun.transform.localPosition = Vector3.zero;
     }
   }
 
