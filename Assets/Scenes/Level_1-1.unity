@@ -5932,7 +5932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3786385676328421588, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16
+      value: 14.853
       objectReference: {fileID: 0}
     - target: {fileID: 3786385676328421588, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5940,7 +5940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3786385676328421588, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3786385676328421588, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9025,6 +9025,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1281310187}
     m_Modifications:
+    - target: {fileID: 1001220303305346936, guid: 91144f423ec69a9438e65491f33b48cb, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1001220303305346936, guid: 91144f423ec69a9438e65491f33b48cb, type: 3}
       propertyPath: m_Name
       value: Point_ProducedSun
