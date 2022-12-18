@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
   private Rigidbody2D rb;
   private Collider2D coll;
+  private Animator anim;
   public float Speed;
   public float damage;//伤害值
   public float damageInterval;//攻击间隔
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour
     {
     rb = GetComponent<Rigidbody2D>();
     coll = GetComponent<BoxCollider2D>();
+    anim = GetComponent<Animator>();
     isDead = false;
     currentHealth = health;
     }
@@ -38,7 +40,7 @@ public class Enemy : MonoBehaviour
   {
     if (collision.gameObject.tag == "Plant")
     {
-      /*切换动画*/
+      anim.SetBool("Attack", true);
       Speed = 0;
     }
   }
@@ -46,7 +48,6 @@ public class Enemy : MonoBehaviour
   {
       if (collision.tag == "Plant")
       {
-        /*切换动画*/
         damageTimer += Time.deltaTime;
         if(damageTimer>=damageInterval)
         {
@@ -55,7 +56,8 @@ public class Enemy : MonoBehaviour
           float newHealth = plant.ChangeHealth(-damage);
           if(newHealth<=0)
           {
-            /*切换动画*/
+          anim.SetBool("Attack", false);
+          Speed = 0.28f;
           }
         }
       }
@@ -64,8 +66,7 @@ public class Enemy : MonoBehaviour
   {
       if (collision.tag == "Plant")
       {
-        /*切换动画*/
-      }
+    }
     }
   public void ChangeHealth(float num)
   {

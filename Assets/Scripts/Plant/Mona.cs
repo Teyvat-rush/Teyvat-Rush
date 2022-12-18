@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mona : MonoBehaviour
+public class Mona : Plant
 {
   public GameObject SunPrefab;
     public float ReadyTime;
