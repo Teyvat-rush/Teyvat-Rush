@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 0.28
   damage: 20
-  damageInterval: 0.5
+  damageInterval: 1
   damageTimer: 0
   lastDamageTime: 0
   health: 100

@@ -43,6 +43,9 @@ public class Enemy : MonoBehaviour
         {
             /*切换动画*/
             anim.SetBool("Attack", true);
+            anim.SetBool("enter", true);
+            anim.SetBool("stay", false);
+            anim.SetBool("exit", false);
             Speed = 0;
         }
     }
@@ -50,8 +53,11 @@ public class Enemy : MonoBehaviour
     {
         if (collision.tag == "Plant")
         {
+            anim.SetBool("enter", false);
+            anim.SetBool("stay",true);
+            anim.SetBool("exit", false);
             /*切换动画*/
-            if(lastDamageTime==0)
+            if (lastDamageTime==0)
             {
                 lastDamageTime= Time.time;
             }
@@ -75,6 +81,9 @@ public class Enemy : MonoBehaviour
     {
         lastDamageTime = 0;
         anim.SetBool("Attack", false);
+        anim.SetBool("enter", false);
+        anim.SetBool("stay", false);
+        anim.SetBool("exit", true);
         if (collision.tag == "Plant")
         {
             /*切换动画*/
