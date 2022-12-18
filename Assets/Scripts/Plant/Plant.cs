@@ -5,7 +5,7 @@ using UnityEngine;
 public class Plant : MonoBehaviour
 {
   public float health = 100;
-  protected float currentHealth;
+  public float currentHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class Plant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     public float ChangeHealth(float num)
     {

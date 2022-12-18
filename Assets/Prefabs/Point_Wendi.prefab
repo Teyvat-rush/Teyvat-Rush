@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f81241cd8fd1074c9d2f9b77dbf1dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  currentHealth: 100
+  health: 1000
+  currentHealth: 1000
   interval: 3
   timer: 0
   Bullet: {fileID: 7770084476574159167, guid: 7220c67d554c8cd4ea93fe0e4e3b1011, type: 3}
