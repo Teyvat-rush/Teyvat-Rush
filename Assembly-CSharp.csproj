@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Card.cs" />
     <Compile Include="Assets\Scripts\ProducedSun.cs" />
     <Compile Include="Assets\Scripts\DroppingSun.cs" />
+    <Compile Include="Assets\Scripts\ChooseLevel.cs" />
     <Compile Include="Assets\Scripts\Mona.cs" />
     <Compile Include="Assets\Scripts\Arrow.cs" />
     <Compile Include="Assets\Scripts\Wendi.cs" />
@@ -68,7 +69,7 @@
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\ChooseLevel.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\images\Enemies\qqRen\Die\Dissipate.shader" />
