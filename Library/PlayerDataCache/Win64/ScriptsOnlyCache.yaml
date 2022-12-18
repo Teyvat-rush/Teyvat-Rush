@@ -3,10 +3,15 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Arrow
     - Card
+    - ChooseLevel
+    - DroppingSun
     - Enemy
     - GameManager
-    - TestPlant
+    - MainMenu
+    - Mona
+    - ProducedSun
     - UIManager
+    - Wendi
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -25,10 +30,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -43,6 +46,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Level_1-1.unity:
@@ -77,35 +82,41 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1522}
+      Script: {instanceID: 1460}
     - Class: 114
-      Script: {instanceID: 2256}
+      Script: {instanceID: 2260}
     - Class: 114
-      Script: {instanceID: 2376}
+      Script: {instanceID: 2380}
     - Class: 114
-      Script: {instanceID: 2688}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2860}
+      Script: {instanceID: 2864}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 3346}
+      Script: {instanceID: 3102}
     - Class: 114
-      Script: {instanceID: 3466}
+      Script: {instanceID: 3176}
     - Class: 114
-      Script: {instanceID: 3790}
+      Script: {instanceID: 3352}
     - Class: 114
-      Script: {instanceID: 3930}
+      Script: {instanceID: 3472}
     - Class: 114
-      Script: {instanceID: 4238}
+      Script: {instanceID: 3512}
     - Class: 114
-      Script: {instanceID: 4748}
+      Script: {instanceID: 3798}
     - Class: 114
-      Script: {instanceID: 4766}
+      Script: {instanceID: 3938}
     - Class: 114
-      Script: {instanceID: 4782}
+      Script: {instanceID: 4246}
     - Class: 114
-      Script: {instanceID: 5752}
+      Script: {instanceID: 4758}
+    - Class: 114
+      Script: {instanceID: 4776}
+    - Class: 114
+      Script: {instanceID: 4792}
+    - Class: 114
+      Script: {instanceID: 5762}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -124,13 +135,62 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    Assets/Scenes/SampleScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1460}
+    - Class: 114
+      Script: {instanceID: 2260}
+    - Class: 114
+      Script: {instanceID: 2692}
+    - Class: 114
+      Script: {instanceID: 2864}
+    - Class: 114
+      Script: {instanceID: 3102}
+    - Class: 114
+      Script: {instanceID: 3352}
+    - Class: 114
+      Script: {instanceID: 3472}
+    - Class: 114
+      Script: {instanceID: 4742}
+    - Class: 114
+      Script: {instanceID: 4858}
+    - Class: 114
+      Script: {instanceID: 18420}
+    - Class: 114
+      Script: {instanceID: 24354}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: 5ab533713adae59372fb3e10a585c186
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
       Hash: a6e561615949734e9f12f9b61661f43e
@@ -139,10 +199,22 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
+      Hash: 5ab533713adae59372fb3e10a585c186
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
       Hash: 77aaaaa51f7a8d8ff333a879741e47d2
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: c4e17c1f6352497cc7f8ce6fe59ea046
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Plant
   - hash:
       serializedVersion: 2
       Hash: 71b711096c6c32621c1d4c02310898b7
@@ -289,6 +361,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: ad93ef894d4efadb63f8f634660722e5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ProducedSun
+  - hash:
+      serializedVersion: 2
       Hash: 760787567e1b60d64a3e421ab83ee14a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -325,10 +403,10 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: cf921216c1acf97bf81095d1f26f78e8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Star
+    className: DroppingSun
   - hash:
       serializedVersion: 2
       Hash: 9b2d72155209a515197b0788f9f11a91
@@ -391,6 +469,12 @@ ScriptsOnlyBuild:
     className: SpriteShapeController
   - hash:
       serializedVersion: 2
+      Hash: 6c7f0a38a4e9abf2e63058a0e64cd8c9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Mona
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -433,10 +517,10 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 078e1a075f5f00c734997e42dbab04ae
+      Hash: 314e48a28b4555550d8f0cd7f693af25
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: TestPlant
+    className: Wendi
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -523,6 +607,12 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: 078e1a075f5f00c734997e42dbab04ae
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TestPlant
+  - hash:
+      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -577,7 +667,7 @@ ScriptsOnlyBuild:
     className: UIManager
   - hash:
       serializedVersion: 2
-      Hash: 4fa9663fa0b53622403e4e4c5e4bc3fc
+      Hash: 6148aa674a4d28cec82af5416e83d627
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -677,7 +767,20 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ChooseLevel
   platform: 19
   scenePathNames:
+  - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/Level_1-1.unity
   playerPath: "D:/\u63D0\u74E6\u7279\u4FDD\u536B\u6218\u6D4B\u8BD5\u7248/Teyvat Rush.exe"
