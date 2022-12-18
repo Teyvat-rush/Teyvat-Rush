@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
           damageTimer = 0;
           Plant plant = collision.GetComponent<Plant>();
           float newHealth = plant.ChangeHealth(-damage);
-          am.SetFloat("PlantHP", 1);
+          am.SetFloat("PlantHP", newHealth);
           if(newHealth<=0)
           {
             /*切换动画*/

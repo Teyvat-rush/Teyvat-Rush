@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
-    public float health = 100;
-    public float currentHealth;
+  public float health = 100;
+  protected float currentHealth;
     // Start is called before the first frame update
     void Start()
     {
