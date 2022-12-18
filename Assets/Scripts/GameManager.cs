@@ -7,21 +7,26 @@ public class GameManager : MonoBehaviour
   // Start is called before the first frame update
   public GameObject bornParent;//敌人生成的父级
   public GameObject EnemyPrefab;//敌人的预制件
+  public GameObject SunPrefab;//飘落阳光的预制件
   public float creatEnemyInterval;//生成敌人的间隔时间
+  
   public static GameManager instance;
   public int starNum;
+  private float BornSuntimer;
+  public float BornSunInterval;
     void Start()
     {
     instance = this;
-    
-
+    InvokeRepeating("CreateSunDown", 10, 10);
+    BornSuntimer = 0;
     CreateEnemy();
     }
 
     // Update is called once per frame
     void Update()
     {
-    
+    BornSuntimer += Time.deltaTime;
+    CreatSun();
     }
     public void ChangeStarNum(int ChangeNum)
     {
@@ -49,5 +54,14 @@ public class GameManager : MonoBehaviour
 
     //再次启动计时器
     StartCoroutine(DalayCreateEnemy());
+  }
+  public void CreatSun()
+  {
+    if(BornSuntimer>=BornSunInterval)
+    {
+      BornSuntimer = 0;
+      Instantiate(SunPrefab);
+      
+    }
   }
 }
