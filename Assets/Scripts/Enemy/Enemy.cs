@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
   private Rigidbody2D rb;
   private Collider2D coll;
+  private Animator am;
   public float Speed;
   public float damage;//伤害值
   public float damageInterval;//攻击间隔
@@ -15,6 +16,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    am = GetComponent<Animator>();
     rb = GetComponent<Rigidbody2D>();
     coll = GetComponent<BoxCollider2D>();
     isDead = false;
@@ -53,6 +55,7 @@ public class Enemy : MonoBehaviour
           damageTimer = 0;
           Plant plant = collision.GetComponent<Plant>();
           float newHealth = plant.ChangeHealth(-damage);
+          am.SetFloat("PlantHP", 1);
           if(newHealth<=0)
           {
             /*切换动画*/
