@@ -32,7 +32,7 @@ public class DroppingSun : MonoBehaviour
     {
     if (Mathf.Abs(transform.position.y - TargetPos.y) <= 0.5f)
     {
-      Destroy(rb);
+      rb.velocity = new Vector2(0, 0);
     }
     SwitchAnim();
     }
@@ -56,6 +56,7 @@ public class DroppingSun : MonoBehaviour
   private void OnMouseDown()
   {
     GameManager.instance.starNum += 25;
+    rb.velocity = new Vector2(0, 0);
     // 将屏幕坐标转化为世界坐标
     Vector3 sunNumPos = Camera.main.ScreenToWorldPoint(UIManager.instance.GetSunNumTextPos());
     sunNumPos = new Vector3(sunNumPos.x, sunNumPos.y, 0);
