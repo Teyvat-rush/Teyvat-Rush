@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Sprites;
-public class NewBehaviourScript : Plant
+public class Nuoaier : Plant
 {
   private SpriteRenderer sr;
-  public Sprite target;
+  public Sprite[] pic;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +15,14 @@ public class NewBehaviourScript : Plant
     // Update is called once per frame
     void Update()
     {
-    ChangetheImage();
-    }
-  private void ChangetheImage()
-  {
-    if(currentHealth<=health/2)
+    if (currentHealth <= health/2)
     {
-      sr.sprite = target;
+      sr.sprite = pic[0];
     }
-  }
+    if(currentHealth<=health/5)
+    {
+      sr.sprite = pic[1];
+    }
+    }
+  
 }

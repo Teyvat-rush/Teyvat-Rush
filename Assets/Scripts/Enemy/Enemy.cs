@@ -80,14 +80,14 @@ public class Enemy : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         lastDamageTime = 0;
-        anim.SetBool("Attack", false);
         anim.SetBool("enter", false);
         anim.SetBool("stay", false);
         anim.SetBool("exit", true);
         if (collision.tag == "Plant")
         {
-            /*切换动画*/
-        }
+      /*切换动画*/
+      anim.SetBool("Attack", false);
+         }
     }
     public void ChangeHealth(float num)
     {
