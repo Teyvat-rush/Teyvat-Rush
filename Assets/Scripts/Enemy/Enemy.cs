@@ -6,13 +6,15 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D coll;
     private Animator anim;
+    public GameObject EnemyDieParticle;
     public float Speed;
     public float damage;//伤害值
     public float damageInterval;//攻击间隔
     public float damageTimer;//计时器
+    public float dyingTimer;//死亡动画计时器
     public float lastDamageTime = 0;
     public float health = 100;
-    private float currentHealth;
+    public float currentHealth;
     private bool isDead;
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,10 @@ public class Enemy : MonoBehaviour
         if (!isDead)
         {
             Movement();
+        }else
+        {
+            Instantiate(EnemyDieParticle, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
     void Movement()
@@ -94,7 +100,7 @@ public class Enemy : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + num, 0, health);
         if (currentHealth <= 0)
         {
-            GameObject.Destroy(gameObject);
+            isDead= true;
         }
     }
 }

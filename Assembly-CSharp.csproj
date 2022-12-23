@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\UI\Draft\Level_20.txt" />
     <None Include="Assets\Resources\images\Enemies\qqRen\Die\Dissipate.shader" />
     <None Include="Assets\Materials\Shader_Blur.shader" />
   </ItemGroup>

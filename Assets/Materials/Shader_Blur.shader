@@ -1,346 +1,93 @@
-Shader "Custom/FrontBlur" {
+Shader "Custom/dissolvePro" {
 	Properties
 	{
-		[PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
-		_Color("Tint", Color) = (1,1,1,1)
+		_Color("Color", Color) = (1,1,1,1)
+		_MainTex("Albedo (RGB)", 2D) = "white" {}
+		_Glossiness("Smoothness", Range(0,1)) = 0.5
+		_Metallic("Metallic", Range(0,1)) = 0.0
 
-		[HideInInspector]_StencilComp("Stencil Comparison", Float) = 8
-		[HideInInspector]_Stencil("Stencil ID", Float) = 0
-		[HideInInspector]_StencilOp("Stencil Operation", Float) = 0
-		[HideInInspector]_StencilWriteMask("Stencil Write Mask", Float) = 255
-		[HideInInspector]_StencilReadMask("Stencil Read Mask", Float) = 255
-
-		[HideInInspector]_ColorMask("Color Mask", Float) = 15
-
-		[Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip("Use Alpha Clip", Float) = 0
-
-		_Size("Size", Range(0, 50)) = 5
+		_DissolveTex("dissolve tex",2D) = ""{}
+		//溶解纹理,根据这张图的R值（因为是黑白图所以用rgb其中一个通道都可以）来做溶解判断，如果是彩色图自己去判断用哪个通道
+		//其实就是用这张图的特征来实现溶解样式
+		_DissolveColor("dissolve color",Color) = (0,0,0,1)//溶解颜色
+		_EdgeColor("edge olor",Color) = (0,0,0,1)//边颜色，因为看起来是边在溶解，其实是溶解到某个程度换个颜色
+		_DissolveProgress("dissolve Progress",Range(0,10)) = 0//溶解进度
+		_DissolveStartParma("dissolve Start Parma",range(0,1)) = 0.7//开始溶解参数
+		_DissolveEdgeParma("dissolve Edge Parma",range(0,1)) = 0.9//开始溶解边参数
 	}
+		SubShader{
+		Tags{ "RenderType" = "Opaque" }
+		LOD 200
 
-		SubShader
-		{
-			Tags
+		CGPROGRAM
+			// Physically based Standard lighting model, and enable shadows on all light types
+	#pragma surface surf Standard fullforwardshadows
+
+			// Use shader model 3.0 target, to get nicer looking lighting
+	#pragma target 3.0
+
+			sampler2D _MainTex;
+
+		sampler2D _DissolveTex;
+		float4 _DissolveColor;
+		float4 _EdgeColor;
+		float _DissolveProgress;
+		float _DissolveStartParma;
+		float _DissolveEdgeParma;
+
+		struct Input {
+			float2 uv_MainTex;
+		};
+
+		half _Glossiness;
+		half _Metallic;
+		fixed4 _Color;
+
+		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
+		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
+		// #pragma instancing_options assumeuniformscaling
+		UNITY_INSTANCING_BUFFER_START(Props)
+			// put more per-instance properties here
+			UNITY_INSTANCING_BUFFER_END(Props)
+
+			void surf(Input IN, inout SurfaceOutputStandard o) {
+			// Albedo comes from a texture tinted by color
+			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
+
+			//获取uv坐标上的像素颜色
+			float dissolve_c_r = tex2D(_DissolveTex, IN.uv_MainTex).r;
+
+			//计算进度（0,1）范围内
+			float Progress = saturate(_DissolveProgress / 10);
+
+			//如果进度大于像素颜色则抛弃这个像素
+			if (Progress > dissolve_c_r)
 			{
-				"Queue" = "Transparent"
-				"IgnoreProjector" = "True"
-				"RenderType" = "Transparent"
-				"PreviewType" = "Plane"
-				"CanUseSpriteAtlas" = "True"
+				//抛弃像素
+				discard;
 			}
 
-			Stencil
+			//计算单个像素颜色插值速度
+			float rate = Progress / dissolve_c_r;
+
+			//开始溶解
+			if (rate > _DissolveStartParma)
 			{
-				Ref[_Stencil]
-				Comp[_StencilComp]
-				Pass[_StencilOp]
-				ReadMask[_StencilReadMask]
-				WriteMask[_StencilWriteMask]
-			}
-
-			Cull Off
-			Lighting Off
-			ZWrite Off
-			ZTest[unity_GUIZTestMode]
-			Blend SrcAlpha OneMinusSrcAlpha
-			ColorMask[_ColorMask]
-
-			Pass
-			{
-				Name "FrontBlurHor"
-			CGPROGRAM
-				#pragma vertex vert
-				#pragma fragment frag
-				#pragma target 2.0
-
-				#include "UnityCG.cginc"
-				#include "UnityUI.cginc"
-
-				#pragma multi_compile __ UNITY_UI_ALPHACLIP
-
-				struct appdata_t
+				c.rgb = lerp(c.rgb, _DissolveColor.rgb, rate);
+				//开始显示溶解边颜色（看起来是便溶解），其实就是溶解到某个程度换一种颜色
+				if (rate > _DissolveEdgeParma)
 				{
-					float4 vertex   : POSITION;
-					float4 color    : COLOR;
-					float2 texcoord : TEXCOORD0;
-					UNITY_VERTEX_INPUT_INSTANCE_ID
-				};
-
-				struct v2f
-				{
-					float4 vertex   : SV_POSITION;
-					fixed4 color : COLOR;
-					float2 texcoord  : TEXCOORD0;
-					float4 worldPosition : TEXCOORD1;
-					UNITY_VERTEX_OUTPUT_STEREO
-				};
-
-				fixed4 _Color;
-				fixed4 _TextureSampleAdd;
-				float4 _ClipRect;
-
-				v2f vert(appdata_t IN)
-				{
-					v2f OUT;
-					UNITY_SETUP_INSTANCE_ID(IN);
-					UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);
-					OUT.worldPosition = IN.vertex;
-					OUT.vertex = UnityObjectToClipPos(OUT.worldPosition);
-
-					OUT.texcoord = IN.texcoord;
-
-					OUT.color = IN.color * _Color;
-					return OUT;
+					c.rgb = lerp(c.rgb, _EdgeColor.rgb, rate);
 				}
+			}
 
-				sampler2D _MainTex;
-				float4 _MainTex_TexelSize;
-				float _Size;
-
-				half4 GrabPixel(v2f i, float weight, float kernelx) {
-					if (_Size <= 1 || weight == 0) {
-						return tex2D(_MainTex, half2(i.texcoord.x + _MainTex_TexelSize.x * kernelx * _Size, i.texcoord.y)) * weight;
-					}
-	else {
-	   half4 sum = half4(0,0,0,0);
-	   sum += tex2D(_MainTex, half2(i.texcoord.x + _MainTex_TexelSize.x * kernelx * _Size * 0.2, i.texcoord.y)) * 0.2;
-	   sum += tex2D(_MainTex, half2(i.texcoord.x + _MainTex_TexelSize.x * kernelx * _Size * 0.4, i.texcoord.y)) * 0.2;
-	   sum += tex2D(_MainTex, half2(i.texcoord.x + _MainTex_TexelSize.x * kernelx * _Size * 0.6, i.texcoord.y)) * 0.2;
-	   sum += tex2D(_MainTex, half2(i.texcoord.x + _MainTex_TexelSize.x * kernelx * _Size * 0.8, i.texcoord.y)) * 0.2;
-	   sum += tex2D(_MainTex, half2(i.texcoord.x + _MainTex_TexelSize.x * kernelx * _Size * 1.0, i.texcoord.y)) * 0.2;
-	   return (sum + _TextureSampleAdd) * weight;
-   }
-}
-
-half4 GrabPixely(v2f i, float weight, float kernely) {
-	if (_Size <= 1 || weight == 0) {
-		return tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size)) * weight;
-	}
-else {
-   half4 sum = half4(0,0,0,0);
-   sum += tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size * 0.2)) * 0.2;
-   sum += tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size * 0.4)) * 0.2;
-   sum += tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size * 0.6)) * 0.2;
-   sum += tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size * 0.8)) * 0.2;
-   sum += tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size * 1.0)) * 0.2;
-   return (sum + _TextureSampleAdd) * weight;
-}
-}
-
-fixed4 frag(v2f IN) : SV_Target
-{
-	half4 sum = half4(0,0,0,0);
-	// #define GRABPIXEL(weight, kernelx) (tex2D(_MainTex, half2(IN.texcoord.x + _MainTex_TexelSize.x * kernelx*_Size, IN.texcoord.y)) + _TextureSampleAdd) * weight
-
-	// sum += GrabPixel(IN, 0.05, -4.0);
-	// sum += GrabPixel(IN, 0.09, -3.0);
-	// sum += GrabPixel(IN, 0.12, -2.0);
-	// sum += GrabPixel(IN, 0.15, -1.0);
-	// sum += GrabPixel(IN, 0.18,  0.0);
-	// sum += GrabPixel(IN, 0.15, +1.0);
-	// sum += GrabPixel(IN, 0.12, +2.0);
-	// sum += GrabPixel(IN, 0.09, +3.0);
-	// sum += GrabPixel(IN, 0.05, +4.0);
-
-	for (int i = 0; i < 9; i++) {
-		sum += GrabPixel(IN, 1.0 / 9, i - 4.0);
-	}
-
-	// half4 sumy = half4(0,0,0,0);
-	// for(int i=0;i<15;i++){
-	// 	sumy += GrabPixely(IN, 1.0/15, i-7.0);
-	// }
-	// half4 sum = (sumx + sumy) * 0.5;
-
-	// sum += GrabPixel(IN, 0.01, -9.0);
-	// sum += GrabPixel(IN, 0.02, -8.0);
-	// sum += GrabPixel(IN, 0.03, -7.0);
-	// sum += GrabPixel(IN, 0.04, -6.0);
-	// sum += GrabPixel(IN, 0.05, -5.0);
-	// sum += GrabPixel(IN, 0.06, -4.0);
-	// sum += GrabPixel(IN, 0.07, -3.0);
-	// sum += GrabPixel(IN, 0.08, -2.0);
-	// sum += GrabPixel(IN, 0.09, -1.0);
-	// sum += GrabPixel(IN, 0.10,  0.0);
-	// sum += GrabPixel(IN, 0.09, +1.0);
-	// sum += GrabPixel(IN, 0.08, +2.0);
-	// sum += GrabPixel(IN, 0.07, +3.0);
-	// sum += GrabPixel(IN, 0.06, +4.0);
-	// sum += GrabPixel(IN, 0.05, +5.0);
-	// sum += GrabPixel(IN, 0.04, +6.0);
-	// sum += GrabPixel(IN, 0.03, +7.0);
-	// sum += GrabPixel(IN, 0.02, +8.0);
-	// sum += GrabPixel(IN, 0.01, +9.0);
-
-	sum = sum * IN.color;
-	sum.a *= UnityGet2DClipping(IN.worldPosition.xy, _ClipRect);
-	#ifdef UNITY_UI_ALPHACLIP
-	clip(sum.a - 0.001);
-	#endif
-	return sum;
-
-	// float distance = _Distance;
-
-	// fixed4 color = (tex2D(_MainTex, IN.texcoord) + _TextureSampleAdd) * IN.color;
-
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x + distance, IN.texcoord.y + distance)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x + distance, IN.texcoord.y)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x + distance, IN.texcoord.y - distance)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x, IN.texcoord.y - distance)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x - distance, IN.texcoord.y - distance)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x - distance, IN.texcoord.y)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x - distance, IN.texcoord.y + distance)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x, IN.texcoord.y + distance)) + _TextureSampleAdd) * IN.color;
-	// color /= 9;
-
-	// color.a *= UnityGet2DClipping(IN.worldPosition.xy, _ClipRect);
-
-	// #ifdef UNITY_UI_ALPHACLIP
-	// clip (color.a - 0.001);
-	// #endif
-
-	// return color;
-}
-ENDCG
-}
-Pass
-{
-	Name "FrontBlurVer"
-CGPROGRAM
-	#pragma vertex vert
-	#pragma fragment frag
-	#pragma target 2.0
-
-	#include "UnityCG.cginc"
-	#include "UnityUI.cginc"
-
-	#pragma multi_compile __ UNITY_UI_ALPHACLIP
-
-	struct appdata_t
-	{
-		float4 vertex   : POSITION;
-		float4 color    : COLOR;
-		float2 texcoord : TEXCOORD0;
-		UNITY_VERTEX_INPUT_INSTANCE_ID
-	};
-
-	struct v2f
-	{
-		float4 vertex   : SV_POSITION;
-		fixed4 color : COLOR;
-		float2 texcoord  : TEXCOORD0;
-		float4 worldPosition : TEXCOORD1;
-		UNITY_VERTEX_OUTPUT_STEREO
-	};
-
-	fixed4 _Color;
-	fixed4 _TextureSampleAdd;
-	float4 _ClipRect;
-
-	v2f vert(appdata_t IN)
-	{
-		v2f OUT;
-		UNITY_SETUP_INSTANCE_ID(IN);
-		UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);
-		OUT.worldPosition = IN.vertex;
-		OUT.vertex = UnityObjectToClipPos(OUT.worldPosition);
-
-		OUT.texcoord = IN.texcoord;
-
-		OUT.color = IN.color * _Color;
-		return OUT;
-	}
-
-	sampler2D _MainTex;
-	float4 _MainTex_TexelSize;
-	float _Size;
-
-	half4 GrabPixel(v2f i, float weight, float kernely) {
-		if (_Size <= 1 || weight == 0) {
-			return tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size)) * weight;
+			o.Albedo = c.rgb;
+			// Metallic and smoothness come from slider variables
+			o.Metallic = _Metallic;
+			o.Smoothness = _Glossiness;
+			o.Alpha = c.a;
 		}
-else {
-   half4 sum = half4(0,0,0,0);
-   sum += tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size * 0.2)) * 0.2;
-   sum += tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size * 0.4)) * 0.2;
-   sum += tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size * 0.6)) * 0.2;
-   sum += tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size * 0.8)) * 0.2;
-   sum += tex2D(_MainTex, half2(i.texcoord.x, i.texcoord.y + _MainTex_TexelSize.y * kernely * _Size * 1.0)) * 0.2;
-   return (sum + _TextureSampleAdd) * weight;
-}
-}
-
-fixed4 frag(v2f IN) : SV_Target
-{
-	half4 sum = half4(0,0,0,0);
-	// #define GRABPIXEL(weight, kernely) (tex2D(_MainTex, half2(IN.texcoord.x, IN.texcoord.y + _MainTex_TexelSize.y * kernely*_Size)) + _TextureSampleAdd) * weight
-
-	// sum += GrabPixel(IN, 0.05, -4.0);
-	// sum += GrabPixel(IN, 0.09, -3.0);
-	// sum += GrabPixel(IN, 0.12, -2.0);
-	// sum += GrabPixel(IN, 0.15, -1.0);
-	// sum += GrabPixel(IN, 0.18,  0.0);
-	// sum += GrabPixel(IN, 0.15, +1.0);
-	// sum += GrabPixel(IN, 0.12, +2.0);
-	// sum += GrabPixel(IN, 0.09, +3.0);
-	// sum += GrabPixel(IN, 0.05, +4.0);
-
-	for (int i = 0; i < 9; i++) {
-		sum += GrabPixel(IN, 1.0 / 9, i - 4.0);
-	}
-
-	// sum += GrabPixel(IN, 0.01, -9.0);
-	// sum += GrabPixel(IN, 0.02, -8.0);
-	// sum += GrabPixel(IN, 0.03, -7.0);
-	// sum += GrabPixel(IN, 0.04, -6.0);
-	// sum += GrabPixel(IN, 0.05, -5.0);
-	// sum += GrabPixel(IN, 0.06, -4.0);
-	// sum += GrabPixel(IN, 0.07, -3.0);
-	// sum += GrabPixel(IN, 0.08, -2.0);
-	// sum += GrabPixel(IN, 0.09, -1.0);
-	// sum += GrabPixel(IN, 0.10,  0.0);
-	// sum += GrabPixel(IN, 0.09, +1.0);
-	// sum += GrabPixel(IN, 0.08, +2.0);
-	// sum += GrabPixel(IN, 0.07, +3.0);
-	// sum += GrabPixel(IN, 0.06, +4.0);
-	// sum += GrabPixel(IN, 0.05, +5.0);
-	// sum += GrabPixel(IN, 0.04, +6.0);
-	// sum += GrabPixel(IN, 0.03, +7.0);
-	// sum += GrabPixel(IN, 0.02, +8.0);
-	// sum += GrabPixel(IN, 0.01, +9.0);
-
-	sum = sum * IN.color;
-	sum.a *= UnityGet2DClipping(IN.worldPosition.xy, _ClipRect);
-	#ifdef UNITY_UI_ALPHACLIP
-	clip(sum.a - 0.001);
-	#endif
-	return sum;
-
-	// float distance = _Distance;
-
-	// fixed4 color = (tex2D(_MainTex, IN.texcoord) + _TextureSampleAdd) * IN.color;
-
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x + distance, IN.texcoord.y + distance)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x + distance, IN.texcoord.y)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x + distance, IN.texcoord.y - distance)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x, IN.texcoord.y - distance)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x - distance, IN.texcoord.y - distance)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x - distance, IN.texcoord.y)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x - distance, IN.texcoord.y + distance)) + _TextureSampleAdd) * IN.color;
-	// color += (tex2D(_MainTex, half2(IN.texcoord.x, IN.texcoord.y + distance)) + _TextureSampleAdd) * IN.color;
-	// color /= 9;
-
-	// color.a *= UnityGet2DClipping(IN.worldPosition.xy, _ClipRect);
-
-	// #ifdef UNITY_UI_ALPHACLIP
-	// clip (color.a - 0.001);
-	// #endif
-
-	// return color;
-}
-ENDCG
-}
+		ENDCG
 		}
+			FallBack "Diffuse"
 }
-————————————————
-版权声明：本文为CSDN博主「苏小败在路上」的原创文章，遵循CC 4.0 BY - SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https ://blog.csdn.net/pz789as/article/details/79050631
