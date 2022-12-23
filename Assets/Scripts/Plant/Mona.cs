@@ -26,7 +26,6 @@ public class Mona : Plant
       GameObject ProducedSun =  Instantiate(SunPrefab);
       ProducedSun.transform.parent = transform.parent;
       ProducedSun.transform.localPosition = new Vector3(-0.7f,-0.4f,0);
-      
     }
   }
 
