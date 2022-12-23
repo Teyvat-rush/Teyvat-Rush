@@ -64,7 +64,6 @@ public class Enemy : MonoBehaviour
             damageTimer = Time.time-lastDamageTime;
             if (damageTimer >= damageInterval)
             {
-                damageTimer = 0;
                 lastDamageTime = 0;
                 Plant plant = collision.GetComponent<Plant>();
                 float newHealth = plant.ChangeHealth(-damage);
@@ -79,15 +78,16 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        lastDamageTime = 0;
-        anim.SetBool("enter", false);
-        anim.SetBool("stay", false);
-        anim.SetBool("exit", true);
         if (collision.tag == "Plant")
         {
-      /*切换动画*/
-      anim.SetBool("Attack", false);
-         }
+            /*切换动画*/
+            anim.SetBool("Attack", false);
+            Speed = 0.28f;
+            lastDamageTime = 0;
+            anim.SetBool("enter", false);
+            anim.SetBool("stay", false);
+            anim.SetBool("exit", true);
+        }
     }
     public void ChangeHealth(float num)
     {
