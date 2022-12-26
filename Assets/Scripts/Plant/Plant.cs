@@ -22,6 +22,11 @@ public class Plant : MonoBehaviour
     currentHealth = Mathf.Clamp(currentHealth + num, 0, health);
     if (currentHealth <= 0)
     {
+      if(this.name== "Point_Wendi")
+      {
+        int i = Random.Range(1, 4);
+        SoundManager.instance.PlaySound(Globals.WendiDie + i.ToString());
+      }
         GameObject.Destroy(gameObject);
     }
     return currentHealth;
