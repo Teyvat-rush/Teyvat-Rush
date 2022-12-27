@@ -101,6 +101,7 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             isDead= true;
+      GameManager.instance.EnemyDied(gameObject);
         }
     }
 }
