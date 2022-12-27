@@ -84,6 +84,21 @@ public class Card : MonoBehaviour
         //把当前物体设置为土地的子物体
         curGameObject.transform.parent = c.transform;
         curGameObject.transform.localPosition = Vector3.zero;
+        if(objectPrefab.name== "Point_Wendi")
+        {
+          int i = Random.Range(1, 4);
+          SoundManager.instance.PlaySound(Globals.WendiPlanted+i.ToString());
+        }
+        if (objectPrefab.name == "Point_Mona")
+        {
+          int i = Random.Range(1, 4);
+          SoundManager.instance.PlaySound(Globals.MonaPlanted + i.ToString());
+        }
+        if (objectPrefab.name == "Point_Nuoaier")
+        {
+          int i = Random.Range(1, 4);
+          SoundManager.instance.PlaySound(Globals.NuoaierPlanted + i.ToString());
+        }
         //重置
         curGameObject = null;
         GameManager.instance.ChangeStarNum(-UseStar);

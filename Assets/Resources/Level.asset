@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d41eca93c04de458d81af0929899f0, type: 3}
+  m_Name: Level
+  m_EditorClassIdentifier: 
+  LevelDataList:
+  - ID: 1
+    LevelID: 1
+    ProgressID: 1
+    CreateTime: 0
+    EnemyType: 1
+    BornPos: 0
+  - ID: 2
+    LevelID: 1
+    ProgressID: 1
+    CreateTime: 2
+    EnemyType: 1
+    BornPos: 1
+  - ID: 3
+    LevelID: 1
+    ProgressID: 1
+    CreateTime: 4
+    EnemyType: 1
+    BornPos: 2
+  - ID: 4
+    LevelID: 1
+    ProgressID: 1
+    CreateTime: 7
+    EnemyType: 1
+    BornPos: 3
+  - ID: 5
+    LevelID: 1
+    ProgressID: 2
+    CreateTime: 3
+    EnemyType: 1
+    BornPos: 4
+  - ID: 6
+    LevelID: 1
+    ProgressID: 2
+    CreateTime: 5
+    EnemyType: 1
+    BornPos: 3
+  - ID: 7
+    LevelID: 1
+    ProgressID: 2
+    CreateTime: 9
+    EnemyType: 1
+    BornPos: 2
+  - ID: 8
+    LevelID: 1
+    ProgressID: 2
+    CreateTime: 9
+    EnemyType: 1
+    BornPos: 2

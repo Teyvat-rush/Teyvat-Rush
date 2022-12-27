@@ -27,7 +27,17 @@ public class Plant : MonoBehaviour
         int i = Random.Range(1, 4);
         SoundManager.instance.PlaySound(Globals.WendiDie + i.ToString());
       }
-        GameObject.Destroy(gameObject);
+      if (this.name == "Point_Mona")
+      {
+        int i = Random.Range(1, 4);
+        SoundManager.instance.PlaySound(Globals.MonaDie + i.ToString());
+      }
+      if (this.name == "Point_Nuoaier")
+      {
+        int i = Random.Range(1, 4);
+        SoundManager.instance.PlaySound(Globals.NuoaierDie + i.ToString());
+      }
+      GameObject.Destroy(gameObject);
     }
     return currentHealth;
     }
