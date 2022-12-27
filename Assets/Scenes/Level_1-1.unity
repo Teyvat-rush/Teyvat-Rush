@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 7752608}
   - component: {fileID: 7752607}
   m_Layer: 5
-  m_Name: Panel_MonaBag
+  m_Name: Panel_MoraBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6191,8 +6191,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9, y: 6.200012}
-  m_SizeDelta: {x: -27.70398, y: -52.99475}
+  m_AnchoredPosition: {x: -7.2003174, y: -1.1886292}
+  m_SizeDelta: {x: 35.979614, y: 9.487061}
   m_Pivot: {x: 0.5000002, y: 0.5}
 --- !u!114 &938046132
 MonoBehaviour:
@@ -10327,8 +10327,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -169.9, y: 439}
-  m_SizeDelta: {x: -1742.9609, y: -914.3457}
+  m_AnchoredPosition: {x: -452, y: 442.47}
+  m_SizeDelta: {x: -1781.9719, y: -951.2411}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &1478859598
 MonoBehaviour:
@@ -10343,14 +10343,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.33333334, g: 0.8666667, b: 0.9647059, a: 0.7529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 877a2119b41e0cd488dc95fb212b65bd, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
