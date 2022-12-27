@@ -22,7 +22,22 @@ public class Plant : MonoBehaviour
     currentHealth = Mathf.Clamp(currentHealth + num, 0, health);
     if (currentHealth <= 0)
     {
-        GameObject.Destroy(gameObject);
+      if(this.name== "Point_Wendi")
+      {
+        int i = Random.Range(1, 4);
+        SoundManager.instance.PlaySound(Globals.WendiDie + i.ToString());
+      }
+      if (this.name == "Point_Mona")
+      {
+        int i = Random.Range(1, 4);
+        SoundManager.instance.PlaySound(Globals.MonaDie + i.ToString());
+      }
+      if (this.name == "Point_Nuoaier")
+      {
+        int i = Random.Range(1, 4);
+        SoundManager.instance.PlaySound(Globals.NuoaierDie + i.ToString());
+      }
+      GameObject.Destroy(gameObject);
     }
     return currentHealth;
     }

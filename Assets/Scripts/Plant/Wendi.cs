@@ -6,6 +6,7 @@ public class Wendi : Plant
 {
   private Rigidbody2D rb;
   private CapsuleCollider2D coll;
+  private AudioSource audioSource;
   public float interval;//子弹生成的间隔时间
   public float timer;//计时器
   public GameObject Bullet;//子弹的源
@@ -26,6 +27,7 @@ public class Wendi : Plant
       timer = 0;
       Instantiate(Bullet, BulletPos.position, Quaternion.identity);
     }
+    
     }
   
 }

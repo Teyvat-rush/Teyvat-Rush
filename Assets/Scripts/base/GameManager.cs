@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     InvokeRepeating("CreateSunDown", 10, 10);
     BornSuntimer = 0;
     CreateEnemy();
+    
     }
 
     // Update is called once per frame
