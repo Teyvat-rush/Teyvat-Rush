@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ChooseLevel : MonoBehaviour
 {
-  public void Level1()
+    public GameObject canvasSelectLevel;
+  public void OpenCanvasSelectLevel()
   {
-    SceneManager.LoadScene(1);
+    canvasSelectLevel.SetActive(true);
+    gameObject.SetActive(false);
   }
 
 }
