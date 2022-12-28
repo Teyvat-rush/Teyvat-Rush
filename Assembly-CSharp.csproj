@@ -73,9 +73,11 @@
     <Compile Include="Assets\Scripts\base\UIManager.cs" />
     <Compile Include="Assets\Scripts\base\GameManager.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\Panel_Failed.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Draft\Level_20.txt" />
+    <None Include="Assets\UI\Level\Level 1-X\Failed\Blur.shader" />
     <None Include="Assets\Resources\images\Enemies\qqRen\Die\Dissipate.shader" />
     <None Include="Assets\Materials\Shader_Blur.shader" />
   </ItemGroup>

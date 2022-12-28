@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638057978309483009
-    m_Hash: 3676928195
+      ticks: 638078064839201055
+    m_Hash: 2910749263
   m_LockFileStatus:
     m_FilePath: D:/SAVE/code/NEW/Teyvat-Rush/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638057978386366680
-    m_Hash: 12459642
+      ticks: 638078064839201055
+    m_Hash: 4251533922
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
