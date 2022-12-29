@@ -21,6 +21,7 @@ public class Mora : MonoBehaviour
   private void OnMouseDown()
   {
     animator.SetBool("Fly", true);
+    GameManager.instance.coin.num += 1;
     // 将屏幕坐标转化为世界坐标
     Vector3 MoraNumPos = Camera.main.ScreenToWorldPoint(UIManager.instance.GetMoraNumTextPos());
     MoraNumPos = new Vector3(MoraNumPos.x, MoraNumPos.y, 0);

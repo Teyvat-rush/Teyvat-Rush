@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\UI\Card.cs" />
     <Compile Include="Assets\Scripts\UI\Panel_Failed.cs" />
     <Compile Include="Assets\Scripts\Plant\Nuoaier.cs" />
+    <Compile Include="Assets\Scripts\UI\Mora.cs" />
     <Compile Include="Assets\Scripts\base\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Plant\ProducedSun.cs" />
     <Compile Include="Assets\Scripts\Plant\DroppingSun.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Assets\Scripts\Plant\Mona.cs" />
     <Compile Include="Assets\Scripts\base\LevelData.cs" />
     <Compile Include="Assets\Scripts\Plant\Arrow.cs" />
+    <Compile Include="Assets\Data.cs" />
     <Compile Include="Assets\Scripts\Plant\Wendi.cs" />
     <Compile Include="Assets\Scripts\Plant\TestPlant.cs" />
     <Compile Include="Assets\Scripts\base\Globals.cs" />
@@ -75,8 +77,6 @@
     <Compile Include="Assets\Scripts\base\UIManager.cs" />
     <Compile Include="Assets\Scripts\base\GameManager.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_MainMenu\MainMenu.cs" />
-    <Compile Include="Assets\Data.cs" />
-    <Compile Include="Assets\Scripts\UI\Mora.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Draft\Level_20.txt" />

@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
   public void UpdateUI()//更新UI
   {
     starNumText.text = GameManager.instance.starNum.ToString();
-
+    MoraText.text = GameManager.instance.coin.num.ToString();
   }
   public Vector3 GetSunNumTextPos()
   {
