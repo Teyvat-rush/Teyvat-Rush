@@ -1406,7 +1406,7 @@ Transform:
   m_LocalPosition: {x: -6, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 332442960}
+  - {fileID: 3786385677627673677}
   - {fileID: 97652775}
   - {fileID: 445023852}
   - {fileID: 3786385676063300535}
@@ -2523,11 +2523,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309391433}
   m_CullTransparentMesh: 1
---- !u!4 &332442960 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3786385676328421588, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
-  m_PrefabInstance: {fileID: 1437664409}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &335513241
 GameObject:
   m_ObjectHideFlags: 0
@@ -12760,6 +12755,7 @@ GameObject:
   - component: {fileID: 1627181681}
   - component: {fileID: 1627181680}
   - component: {fileID: 1627181679}
+  - component: {fileID: 1627181682}
   m_Layer: 5
   m_Name: Button_Card3
   m_TagString: Untagged
@@ -12871,6 +12867,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627181677}
   m_CullTransparentMesh: 1
+--- !u!114 &1627181682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627181677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53a5960452653647898ecdb5ebaf35c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 2599605004690497244, guid: f39992e56e04c04479d9300f26f8e91e, type: 3}
+  darkBG: {fileID: 1774690002}
+  Progress: {fileID: 499996328}
+  WaitTime: 30
+  UseStar: 50
 --- !u!1 &1659009175
 GameObject:
   m_ObjectHideFlags: 0
@@ -14977,7 +14990,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee954631d4bbba644aba7605b7d1ecf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 847022588}
   starNumText: {fileID: 1589553165}
+  MoraText: {fileID: 1413939139}
+  timer: 0
 --- !u!1 &1906264889
 GameObject:
   m_ObjectHideFlags: 0
@@ -17812,6 +17828,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8316547889227940694, guid: 637256055eb8b564787b63328f05e261, type: 3}
   m_PrefabInstance: {fileID: 5179598652252199137}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &3786385677627673677 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3786385676328421588, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
+  m_PrefabInstance: {fileID: 1437664409}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4625321321434379963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17876,10 +17897,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1067649516}
     m_Modifications:
-    - target: {fileID: 4773579218661393545, guid: a1f224f94997008498c34ceb14b96dda, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4773579218661393550, guid: a1f224f94997008498c34ceb14b96dda, type: 3}
       propertyPath: m_Name
       value: Point_Mona
