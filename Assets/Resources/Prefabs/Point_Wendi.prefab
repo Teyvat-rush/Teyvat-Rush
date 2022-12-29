@@ -226,7 +226,7 @@ MonoBehaviour:
   health: 100
   currentHealth: 100
   interval: 3
-  timer: 2.169277
+  timer: 2.5
   Bullet: {fileID: 7770084476574159167, guid: 7220c67d554c8cd4ea93fe0e4e3b1011, type: 3}
   BulletPos: {fileID: 4625321321343342274}
 --- !u!82 &4768447975189856408
