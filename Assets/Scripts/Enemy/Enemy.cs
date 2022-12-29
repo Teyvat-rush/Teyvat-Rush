@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     private Collider2D coll;
     private Animator anim;
     public GameObject EnemyDieParticle;
+    public float T;
     public float Speed;
     public float damage;//伤害值
     public float damageInterval;//攻击间隔
@@ -29,6 +30,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        T = Time.time;
         if (!isDead)
         {
             Movement();
