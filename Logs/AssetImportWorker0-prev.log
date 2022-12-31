@@ -15,11 +15,11 @@ D:/SAVE/code/NEW/Teyvat-Rush
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57045
+53513
 Successfully changed project path to: D:/SAVE/code/NEW/Teyvat-Rush
 D:/SAVE/code/NEW/Teyvat-Rush
 Using Asset Import Pipeline V2.
-AS: AutoStreaming module initializing.Refreshing native plugins compatible for Editor in 40.24 ms, found 3 plugins.
+AS: AutoStreaming module initializing.Refreshing native plugins compatible for Editor in 30.90 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.31f1c1 (f95fbe3d210a)
 [Subsystems] Discovering subsystems at path D:/Program Files/2020.3.31f1c1/Editor/Data/Resources/UnitySubsystems
@@ -35,48 +35,48 @@ Initialize mono
 Mono path[0] = 'D:/Program Files/2020.3.31f1c1/Editor/Data/Managed'
 Mono path[1] = 'D:/Program Files/2020.3.31f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Program Files/2020.3.31f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56128
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56556
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Program Files/2020.3.31f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000607 seconds.
+Registered in 0.000641 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 43.43 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 31.45 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.436 seconds
+- Completed reload, in  0.393 seconds
 Domain Reload Profiling:
-	ReloadAssembly (436ms)
-		BeginReloadAssembly (53ms)
+	ReloadAssembly (393ms)
+		BeginReloadAssembly (52ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (335ms)
-			LoadAssemblies (53ms)
+		EndReloadAssembly (294ms)
+			LoadAssemblies (50ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (99ms)
+			SetupTypeCache (91ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (23ms)
-			SetupLoadedEditorAssemblies (144ms)
+			RebuildScriptCaches (22ms)
+			SetupLoadedEditorAssemblies (121ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (43ms)
-				BeforeProcessingInitializeOnLoad (13ms)
-				ProcessInitializeOnLoadAttributes (62ms)
-				ProcessInitializeOnLoadMethodAttributes (20ms)
+				RefreshPlugins (32ms)
+				BeforeProcessingInitializeOnLoad (12ms)
+				ProcessInitializeOnLoadAttributes (56ms)
+				ProcessInitializeOnLoadMethodAttributes (18ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002185 seconds.
+Registered in 0.001684 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 34.48 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 34.67 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 数据内容:1
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -153,29 +153,29 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
 Mono: successfully reloaded assembly
-- Completed reload, in  0.908 seconds
+- Completed reload, in  0.825 seconds
 Domain Reload Profiling:
-	ReloadAssembly (909ms)
-		BeginReloadAssembly (109ms)
+	ReloadAssembly (826ms)
+		BeginReloadAssembly (102ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (15ms)
-		EndReloadAssembly (760ms)
-			LoadAssemblies (82ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (689ms)
+			LoadAssemblies (77ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (209ms)
+			SetupTypeCache (184ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (43ms)
-			SetupLoadedEditorAssemblies (364ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (330ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (2ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (35ms)
-				BeforeProcessingInitializeOnLoad (62ms)
-				ProcessInitializeOnLoadAttributes (249ms)
-				ProcessInitializeOnLoadMethodAttributes (15ms)
+				BeforeProcessingInitializeOnLoad (54ms)
+				ProcessInitializeOnLoadAttributes (225ms)
+				ProcessInitializeOnLoadMethodAttributes (12ms)
 				AfterProcessingInitializeOnLoad (1ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -183,7 +183,7 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
 Refreshing native plugins compatible for Editor in 0.36 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2226 Unused Serialized files (Serialized files now loaded: 0)
@@ -191,7 +191,7 @@ System memory in use before: 118.1 MB.
 System memory in use after: 118.2 MB.
 
 Unloading 30 unused Assets to reduce memory usage. Loaded Objects now: 2685.
-Total: 2.561800 ms (FindLiveObjects: 0.213700 ms CreateObjectMapping: 0.041000 ms MarkObjects: 2.200800 ms  DeleteObjects: 0.105100 ms)
+Total: 2.362800 ms (FindLiveObjects: 0.135700 ms CreateObjectMapping: 0.041400 ms MarkObjects: 2.091800 ms  DeleteObjects: 0.093200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -208,83 +208,470 @@ AssetImportParameters requested are different than current active one (requested
 Received Import Request.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6be4c0d25e8b94372b5ca0ecda53dae') in 0.151703 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd45f5d1fef28b38e34731e609f97e34d') in 0.144425 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.718475 seconds.
-  path: Assets/Resources/images/Enemies/FengSlime/Slime_Full.png
-  artifactKey: Guid(17cfcadbd7e957f4185afcaba8412a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/FengSlime/Slime_Full.png using Guid(17cfcadbd7e957f4185afcaba8412a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bc6d6f5dc2bf50d6e1c1ff027b8e912') in 0.049162 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 217.598871 seconds.
+  Time since last request: 34.775010 seconds.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '998ce81bdb21bc1d262ec8c6fa28c4c4') in 0.164684 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2923cc1b8534f19b9686ffa871cf0ff') in 0.088113 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.704670 seconds.
+  Time since last request: 13.113439 seconds.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ce573ec229124116b63ee5429d086bc') in 0.059737 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a272a6e597c0dee9b4ee7d973e8f3b46') in 0.083749 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 10.144569 seconds.
+  Time since last request: 4.573413 seconds.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2882cd54ae979b1c5f35baa7bab48ff') in 0.065821 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd7bc203b2e51d20755a21b36f5140e4') in 0.103424 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 814.487395 seconds.
+  Time since last request: 8.906839 seconds.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efcc475ad2f10765030e66f935b6d516') in 0.111027 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4900a0a772678727a513b3bdcdfc25cd') in 0.088564 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 217.338407 seconds.
+  Time since last request: 57.151064 seconds.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2693cb938c1869f3efcd1f5bebb03023') in 0.096696 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23ae025d06c6fa5de6d0098fe79af1af') in 0.091879 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 16.579784 seconds.
+  Time since last request: 19.960090 seconds.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85b36a14b84e604a5a52bccb4547937c') in 0.092618 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b86aecc836b5ffc282d49b47d2371ed1') in 0.107412 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 105.906956 seconds.
+  Time since last request: 9.161231 seconds.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36ba20afec95bfa72ab6d6b6d6a6fe4c') in 0.091281 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46e76847ee8be9c19f469611c485a748') in 0.095995 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 16.119460 seconds.
+  Time since last request: 7.026769 seconds.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa9f320a76c7126810245f61555840ad') in 0.066216 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96c11865b83a0f0e193e622cccdcf28a') in 0.087384 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 93.947994 seconds.
+  Time since last request: 3.563622 seconds.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81ede592fde88fec709d34e99b8611ee') in 0.081327 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28469a00ca6a7fcc8a00177b24c3ea1e') in 0.100677 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 123.528477 seconds.
+  Time since last request: 3.680967 seconds.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bb48c9c45dd9f169398c2fec71b1e3b') in 0.093808 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e944ca5333f63a643547eec5ea967da') in 0.090471 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 23.667317 seconds.
+  Time since last request: 181.074209 seconds.
   path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
   artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af5326e5f7880b374a4c45ac27013c69') in 0.124807 seconds 
+Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c17fe7ba0cae0584b607ef7d95f14112') in 0.054869 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001886 seconds.
+Registered in 0.004167 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:20
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:0
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Startup..cctor () [0x000e2] in D:\SAVE\code\NEW\Teyvat-Rush\Assets\Editor\ReadTable.cs:39 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.209 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1209ms)
+		BeginReloadAssembly (157ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (41ms)
+		EndReloadAssembly (996ms)
+			LoadAssemblies (136ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (279ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (455ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (345ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.38 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2216 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.0 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2729.
+Total: 2.384400 ms (FindLiveObjects: 0.156700 ms CreateObjectMapping: 0.066100 ms MarkObjects: 2.072400 ms  DeleteObjects: 0.088200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001857 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:20
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:0
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Startup..cctor () [0x000e2] in D:\SAVE\code\NEW\Teyvat-Rush\Assets\Editor\ReadTable.cs:39 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.826 seconds
+Domain Reload Profiling:
+	ReloadAssembly (827ms)
+		BeginReloadAssembly (109ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (679ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (196ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (311ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (56ms)
+				ProcessInitializeOnLoadAttributes (241ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.39 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2216 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 121.1 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2733.
+Total: 2.495300 ms (FindLiveObjects: 0.146900 ms CreateObjectMapping: 0.051500 ms MarkObjects: 2.172900 ms  DeleteObjects: 0.122700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001922 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:20
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:0
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Startup..cctor () [0x000e2] in D:\SAVE\code\NEW\Teyvat-Rush\Assets\Editor\ReadTable.cs:39 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.756 seconds
+Domain Reload Profiling:
+	ReloadAssembly (756ms)
+		BeginReloadAssembly (89ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (633ms)
+			LoadAssemblies (74ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (187ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (278ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (2ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (52ms)
+				ProcessInitializeOnLoadAttributes (213ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2216 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.0 MB.
+System memory in use after: 121.1 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2737.
+Total: 2.602900 ms (FindLiveObjects: 0.131500 ms CreateObjectMapping: 0.036400 ms MarkObjects: 2.343000 ms  DeleteObjects: 0.091000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001934 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.42 ms, found 3 plugins.
@@ -364,42 +751,42 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
 Mono: successfully reloaded assembly
-- Completed reload, in  0.845 seconds
+- Completed reload, in  0.882 seconds
 Domain Reload Profiling:
-	ReloadAssembly (847ms)
-		BeginReloadAssembly (172ms)
+	ReloadAssembly (884ms)
+		BeginReloadAssembly (153ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (14ms)
+			DisableScriptedObjects (13ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (74ms)
-		EndReloadAssembly (635ms)
-			LoadAssemblies (89ms)
+			CreateAndSetChildDomain (64ms)
+		EndReloadAssembly (689ms)
+			LoadAssemblies (86ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (180ms)
+			SetupTypeCache (203ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (32ms)
-			SetupLoadedEditorAssemblies (296ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (311ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (52ms)
-				ProcessInitializeOnLoadAttributes (230ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (53ms)
+				ProcessInitializeOnLoadAttributes (244ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
 				AfterProcessingInitializeOnLoad (1ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.35 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.38 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2216 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 120.9 MB.
-System memory in use after: 121.0 MB.
+System memory in use before: 121.0 MB.
+System memory in use after: 121.1 MB.
 
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2717.
-Total: 3.031800 ms (FindLiveObjects: 0.164500 ms CreateObjectMapping: 0.147200 ms MarkObjects: 2.633900 ms  DeleteObjects: 0.085500 ms)
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2741.
+Total: 2.441500 ms (FindLiveObjects: 0.131100 ms CreateObjectMapping: 0.045700 ms MarkObjects: 2.159200 ms  DeleteObjects: 0.104700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -414,56 +801,862 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 336.658917 seconds.
-  path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
-  artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c25ac69bad04da1ffe0bb8f0d3c4372d') in 0.143146 seconds 
+  Time since last request: 3175.339369 seconds.
+  path: Assets/Scripts/Enemy/Enemy.cs
+  artifactKey: Guid(e44055573953a114d9e398122999da13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Enemy.cs using Guid(e44055573953a114d9e398122999da13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0866ecf24e1159a6127205c15d3fea54') in 0.014820 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 386.152031 seconds.
-  path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
-  artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd181e29f018d59d770587fd25cdb10c0') in 0.065826 seconds 
+  Time since last request: 17.453697 seconds.
+  path: Assets/Scripts/UI/SampleScene
+  artifactKey: Guid(bf040eac171a02147834922fabbe65f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UI/SampleScene using Guid(bf040eac171a02147834922fabbe65f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c34095155a07e1b03cce296059d37967') in 0.001351 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1085.340817 seconds.
-  path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
-  artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9a6c01eae20bc506e981aa1645265a4') in 0.104103 seconds 
+  Time since last request: 1.930192 seconds.
+  path: Assets/Scripts/UI/SampleScene/Canvas_MainMenu
+  artifactKey: Guid(9b04b81e2bda75d42b80550415648c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UI/SampleScene/Canvas_MainMenu using Guid(9b04b81e2bda75d42b80550415648c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e23bbf8eda442260fc70c353e49196a') in 0.001352 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 389.514456 seconds.
-  path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
-  artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e427c33b6031e2290bd87b12ba4f5a7') in 0.089186 seconds 
+  Time since last request: 1.781406 seconds.
+  path: Assets/Scripts/UI/SampleScene/Canvas_SelectLevel
+  artifactKey: Guid(4d45051b395098843898d0b50da5fbea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UI/SampleScene/Canvas_SelectLevel using Guid(4d45051b395098843898d0b50da5fbea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64997d3af3324432c8caf86dcbe72488') in 0.001281 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 12.633698 seconds.
-  path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
-  artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58dc25b2cd1263816c1284efe81014f0') in 0.060677 seconds 
+  Time since last request: 1.972286 seconds.
+  path: Assets/Scripts/UI/SampleScene/Canvas_SelectLevel/Mondstadt
+  artifactKey: Guid(092ef731b917edf40b50faa1d7f72e12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UI/SampleScene/Canvas_SelectLevel/Mondstadt using Guid(092ef731b917edf40b50faa1d7f72e12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0508e653d7008504c13198553afb4acd') in 0.001639 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 198.390779 seconds.
-  path: Assets/Resources/images/Enemies/qqRen_Stick
-  artifactKey: Guid(d9bfb584ee5f83b4da86cf1a878e8d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick using Guid(d9bfb584ee5f83b4da86cf1a878e8d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '821594974ca13352954a4a13f8e9a5b7') in 0.002463 seconds 
+  Time since last request: 5.670580 seconds.
+  path: Assets/Scripts/base/GameManager.cs
+  artifactKey: Guid(3ea290b6faabd3a46b70b09edc08f068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/base/GameManager.cs using Guid(3ea290b6faabd3a46b70b09edc08f068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d85967bcd93fa654c8a904a2110ef39') in 0.001313 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002033 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:20
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:0
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Startup..cctor () [0x000e2] in D:\SAVE\code\NEW\Teyvat-Rush\Assets\Editor\ReadTable.cs:39 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.767 seconds
+Domain Reload Profiling:
+	ReloadAssembly (768ms)
+		BeginReloadAssembly (108ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (623ms)
+			LoadAssemblies (81ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (181ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (282ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (2ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (51ms)
+				ProcessInitializeOnLoadAttributes (219ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2216 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.2 MB.
+System memory in use after: 121.3 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2745.
+Total: 2.467400 ms (FindLiveObjects: 0.122000 ms CreateObjectMapping: 0.044300 ms MarkObjects: 2.169400 ms  DeleteObjects: 0.131000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001815 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:20
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:0
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Startup..cctor () [0x000e2] in D:\SAVE\code\NEW\Teyvat-Rush\Assets\Editor\ReadTable.cs:39 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.809 seconds
+Domain Reload Profiling:
+	ReloadAssembly (810ms)
+		BeginReloadAssembly (108ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (664ms)
+			LoadAssemblies (86ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (199ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (296ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (54ms)
+				ProcessInitializeOnLoadAttributes (228ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2216 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.2 MB.
+System memory in use after: 121.3 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2749.
+Total: 2.757600 ms (FindLiveObjects: 0.215700 ms CreateObjectMapping: 0.051100 ms MarkObjects: 2.389300 ms  DeleteObjects: 0.100600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001989 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:20
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:0
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Startup..cctor () [0x000e2] in D:\SAVE\code\NEW\Teyvat-Rush\Assets\Editor\ReadTable.cs:39 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.787 seconds
+Domain Reload Profiling:
+	ReloadAssembly (787ms)
+		BeginReloadAssembly (113ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (40ms)
+		EndReloadAssembly (635ms)
+			LoadAssemblies (79ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (175ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (296ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (58ms)
+				ProcessInitializeOnLoadAttributes (225ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.35 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2216 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.2 MB.
+System memory in use after: 121.3 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2753.
+Total: 2.409800 ms (FindLiveObjects: 0.115600 ms CreateObjectMapping: 0.047300 ms MarkObjects: 2.150600 ms  DeleteObjects: 0.095800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002152 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:20
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+数据内容:0
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Startup:.cctor () (at Assets/Editor/ReadTable.cs:35)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/Editor/ReadTable.cs Line: 35)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Startup..cctor () [0x000e2] in D:\SAVE\code\NEW\Teyvat-Rush\Assets\Editor\ReadTable.cs:39 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.856 seconds
+Domain Reload Profiling:
+	ReloadAssembly (857ms)
+		BeginReloadAssembly (116ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (40ms)
+		EndReloadAssembly (697ms)
+			LoadAssemblies (88ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (200ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (37ms)
+			SetupLoadedEditorAssemblies (321ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (62ms)
+				ProcessInitializeOnLoadAttributes (246ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2216 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 121.2 MB.
+System memory in use after: 121.3 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2757.
+Total: 2.412400 ms (FindLiveObjects: 0.136200 ms CreateObjectMapping: 0.053800 ms MarkObjects: 2.113100 ms  DeleteObjects: 0.108300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 16.694623 seconds.
-  path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.controller
-  artifactKey: Guid(fd0c2a90a6e8ab34ca41ab89da403cbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.controller using Guid(fd0c2a90a6e8ab34ca41ab89da403cbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '074936553f3eae1310dc48a4977aca2b') in 0.011625 seconds 
+  Time since last request: 997.962374 seconds.
+  path: Assets/Resources/Prefabs/qqRen_Stick Variant.prefab
+  artifactKey: Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/qqRen_Stick Variant.prefab using Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fb989794945d964e67379534c79326c') in 0.138733 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 246.794930 seconds.
-  path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
-  artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'accaa6860bf6b61ee83b49eccfe23065') in 0.094976 seconds 
+  Time since last request: 5.624196 seconds.
+  path: Assets/Resources/Prefabs/qqRen_Stick.prefab
+  artifactKey: Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/qqRen_Stick.prefab using Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a794f43ca5e03b9a54009614975797f') in 0.029485 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 156.340916 seconds.
-  path: Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb
-  artifactKey: Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen_Stick/qqRen_Stick.psb using Guid(3f64abd8ea7a7a24bbce2ad258792775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8210e0ad39f76c215ce4d18a735135c6') in 0.064065 seconds 
+  Time since last request: 5.137929 seconds.
+  path: Assets/Resources/Prefabs/FengSlime.prefab
+  artifactKey: Guid(7ca295046470fae4382bff44b46b0721) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/FengSlime.prefab using Guid(7ca295046470fae4382bff44b46b0721) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62ce4a3df0503e3622f38d87a6b11c9f') in 0.020426 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 65.410843 seconds.
+  path: Assets/Resources/Prefabs/qqRen_Stick.prefab
+  artifactKey: Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/qqRen_Stick.prefab using Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7eed43c410b4593e01d9e5c8a20d9362') in 0.026706 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 388.606342 seconds.
+  path: Assets/Resources/Prefabs/qqRen.prefab
+  artifactKey: Guid(715d73836dd1dd34e8fd2937fac4319f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/qqRen.prefab using Guid(715d73836dd1dd34e8fd2937fac4319f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '832bbedda7b3aadf4e8c889c0d7e0e16') in 0.029033 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 478.053292 seconds.
+  path: Assets/Resources/Prefabs/qqRen.prefab
+  artifactKey: Guid(715d73836dd1dd34e8fd2937fac4319f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/qqRen.prefab using Guid(715d73836dd1dd34e8fd2937fac4319f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '535184ded375f2efa27893ce42952f8c') in 0.038163 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.828526 seconds.
+  path: Assets/Resources/Prefabs/qqRen_Stick.prefab
+  artifactKey: Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/qqRen_Stick.prefab using Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d1a2e12047887a5d55169f29273d19c') in 0.023489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 337.229260 seconds.
+  path: Assets/Resources/Prefabs/qqRen.prefab
+  artifactKey: Guid(715d73836dd1dd34e8fd2937fac4319f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/qqRen.prefab using Guid(715d73836dd1dd34e8fd2937fac4319f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1ef21c7ce1ee5e858c5a5a25b6a0131') in 0.022959 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 122.833724 seconds.
+  path: Assets/Resources/Prefabs/qqRen_Stick.prefab
+  artifactKey: Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/qqRen_Stick.prefab using Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8218503aa6425f4c5858064c86dd27c9') in 0.030892 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 208.210100 seconds.
+  path: Assets/Resources/Prefabs/qqRen_Stick.prefab
+  artifactKey: Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/qqRen_Stick.prefab using Guid(ca45300757a5d2241a26bf12f55f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0e2b1a8775f690c576709e0ef20cd3c') in 0.018271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 523.090252 seconds.
+  path: Assets/Resources/Prefabs/qqRen.prefab
+  artifactKey: Guid(715d73836dd1dd34e8fd2937fac4319f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/qqRen.prefab using Guid(715d73836dd1dd34e8fd2937fac4319f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd79ea9e8ae083988e5755eabb28c47d2') in 0.032377 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.140381 seconds.
+  path: Assets/Resources/Prefabs/Point_Mona.prefab
+  artifactKey: Guid(a1f224f94997008498c34ceb14b96dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_Mona.prefab using Guid(a1f224f94997008498c34ceb14b96dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeda3ed0c7b55ee955c80fc416693434') in 0.026043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 75.799376 seconds.
+  path: Assets/Resources/Prefabs/qqRen.prefab
+  artifactKey: Guid(715d73836dd1dd34e8fd2937fac4319f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/qqRen.prefab using Guid(715d73836dd1dd34e8fd2937fac4319f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4871b3e7f16c599abc94d04238435277') in 0.027206 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 119.049356 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a75e085bae9bbd4906db2bb7425be81') in 0.014345 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 61.586873 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '098722de84b4bcb9e58c58b8a18af124') in 0.019721 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 52.898356 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a7de78991e5994cdcb24d262d39d612') in 0.019945 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 291.259134 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd306528edbf6bdd7dda96142d7cc3c2') in 0.017142 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.169175 seconds.
+  path: Assets/Resources/Prefabs/Point_Mona.prefab
+  artifactKey: Guid(a1f224f94997008498c34ceb14b96dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_Mona.prefab using Guid(a1f224f94997008498c34ceb14b96dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b3d47f572b6b8d5034cbf26e56b170c') in 0.017472 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.554763 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a68979b090c96d96f63035a608704a6') in 0.021270 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 91.701908 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32f587ad494884b984c48850f48cc48f') in 0.019891 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 59.395516 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03591a4c4c127bf61b21f260f402c202') in 0.012863 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 125.749947 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8831d5b454ad60a82096e1440fbc64f') in 0.014240 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 52.093952 seconds.
+  path: Assets/Resources/images/Enemies/FengSlime
+  artifactKey: Guid(e339e6d956aed034f8f30443439f7e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/images/Enemies/FengSlime using Guid(e339e6d956aed034f8f30443439f7e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1f4e48761ca812753714c5a1f549bac') in 0.001518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 70.744934 seconds.
+  path: Assets/Resources/Prefabs/Enemies
+  artifactKey: Guid(5d0d304117f510043befe30da7c57853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Enemies using Guid(5d0d304117f510043befe30da7c57853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f634bb4f315c9073ace185a8315ea478') in 0.001376 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.626869 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a42f9a603467920a1384b8ab5504c45b') in 0.018283 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.672466 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13738b4bdb7b55e2682a7ce06f5db6c5') in 0.011223 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.241153 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3a90424f3180346cba4d12d84e78ace') in 0.014214 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.014928 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a060676f2861f73657fd3502443c5f9') in 0.012161 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.457436 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37b8f466be4164267cded9b760414cb5') in 0.012794 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.008110 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ad02dfe2aa792c7872391a5af56951c') in 0.014969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 34.995204 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a51b93e11bd779be3cebb38b5334bd1') in 0.012479 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.206857 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4af2bf94b8e26a0bf7ba25d85d45a6be') in 0.014914 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.027051 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e25e1856d7f0a4dc8625d475f3552cd') in 0.012352 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.425311 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35b7ef28045b01338a1ca53bcd10f0c9') in 0.014439 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.861830 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bda3f5874a7b6565ab2a51e6a72aa929') in 0.012696 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.846888 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '897ce5fe79569099c69bea76eac5aedf') in 0.018903 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.510680 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b131b9f9996a01bf741710a169da775e') in 0.015515 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.454619 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '321e78fdfe61f98600b585ac0b02acd7') in 0.019225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.682857 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15d73c4d4a3d363dd94554782e54d704') in 0.012217 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 91.231408 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c7c566658fbc4828e35d9555d9ceaa9') in 0.013138 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 67.025567 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c2b9bd26da658ca1afc7c663dfd991c') in 0.019255 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.869077 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e191040427700edd1e0c2b8bcbb34692') in 0.015141 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.521113 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80c8ad4852aab2d21b78358b3bce78d1') in 0.012826 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.356378 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a5c29cf05d19ea91e880edd3b7cdea5') in 0.017727 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 37.161700 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c6394251239e564d72cd6b39b96b385') in 0.017468 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 47.075686 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13dd40e76bbe0146a5cbddee7b5c5802') in 0.022147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 414.601054 seconds.
+  path: Assets/Resources/images/Enemies/qqRen/Armor/WoodenShield/qqRen_WoodenShield_100%.psd
+  artifactKey: Guid(54313949074bb82498e51ee60d3c39c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/images/Enemies/qqRen/Armor/WoodenShield/qqRen_WoodenShield_100%.psd using Guid(54313949074bb82498e51ee60d3c39c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e1787c3f2df3bdf1651729e058bdb1d') in 0.069300 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.432370 seconds.
+  path: Assets/Resources/images/Enemies/qqRen/Attack/qqRen_Attack_wave.psd
+  artifactKey: Guid(1125427c9116f814faca022e82b58dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/images/Enemies/qqRen/Attack/qqRen_Attack_wave.psd using Guid(1125427c9116f814faca022e82b58dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdc63c3d73d4c691435a6db888819a01') in 0.009383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.803632 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd14316e1b687781d6944417aad4c3718') in 0.015595 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 238.733831 seconds.
+  path: Assets/Resources/Prefabs/Point_FengSlime.prefab
+  artifactKey: Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Point_FengSlime.prefab using Guid(f5ba5f5d39cf5f24bb27aabf79a0006b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83655de94170be220e2ed11ee00d4711') in 0.028200 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
