@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.IO;
 public class Mora : MonoBehaviour
 {
   private CircleCollider2D collider2D;
@@ -22,6 +22,7 @@ public class Mora : MonoBehaviour
   {
     animator.SetBool("Fly", true);
     GameManager.instance.coin.num += 1;
+    SaveData();
     // 将屏幕坐标转化为世界坐标
     Vector3 MoraNumPos = Camera.main.ScreenToWorldPoint(UIManager.instance.GetMoraNumTextPos());
     MoraNumPos = new Vector3(MoraNumPos.x, MoraNumPos.y, 0);
@@ -45,4 +46,16 @@ public class Mora : MonoBehaviour
     GameObject.Destroy(gameObject);
 
   }
+  void SaveData()
+  {
+    string json = JsonUtility.ToJson(GameManager.instance.coin);
+    string filepath = Application.streamingAssetsPath + "/Moranum.json";
+    using(StreamWriter streamWriter = new StreamWriter(filepath))
+    {
+      streamWriter.WriteLine(json);
+      streamWriter.Close();
+      streamWriter.Dispose();
+    }
+  }
+  
 }
