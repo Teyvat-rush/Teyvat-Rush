@@ -15,11 +15,11 @@ D:/SAVE/code/NEW/Teyvat-Rush
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53340
+54025
 Successfully changed project path to: D:/SAVE/code/NEW/Teyvat-Rush
 D:/SAVE/code/NEW/Teyvat-Rush
 Using Asset Import Pipeline V2.
-AS: AutoStreaming module initializing.Refreshing native plugins compatible for Editor in 31.96 ms, found 3 plugins.
+AS: AutoStreaming module initializing.Refreshing native plugins compatible for Editor in 31.87 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.31f1c1 (f95fbe3d210a)
 [Subsystems] Discovering subsystems at path D:/Program Files/2020.3.31f1c1/Editor/Data/Resources/UnitySubsystems
@@ -35,48 +35,48 @@ Initialize mono
 Mono path[0] = 'D:/Program Files/2020.3.31f1c1/Editor/Data/Managed'
 Mono path[1] = 'D:/Program Files/2020.3.31f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Program Files/2020.3.31f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56884
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56172
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Program Files/2020.3.31f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000570 seconds.
+Registered in 0.000612 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 31.44 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 32.12 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.385 seconds
+- Completed reload, in  0.390 seconds
 Domain Reload Profiling:
-	ReloadAssembly (385ms)
-		BeginReloadAssembly (49ms)
+	ReloadAssembly (391ms)
+		BeginReloadAssembly (50ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (295ms)
-			LoadAssemblies (48ms)
+		EndReloadAssembly (297ms)
+			LoadAssemblies (50ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (90ms)
+			SetupTypeCache (89ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (21ms)
-			SetupLoadedEditorAssemblies (122ms)
+			RebuildScriptCaches (23ms)
+			SetupLoadedEditorAssemblies (123ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (32ms)
-				BeforeProcessingInitializeOnLoad (11ms)
-				ProcessInitializeOnLoadAttributes (53ms)
-				ProcessInitializeOnLoadMethodAttributes (22ms)
+				BeforeProcessingInitializeOnLoad (12ms)
+				ProcessInitializeOnLoadAttributes (57ms)
+				ProcessInitializeOnLoadMethodAttributes (18ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001729 seconds.
+Registered in 0.001752 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 32.96 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 33.89 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 数据内容:1
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -153,28 +153,28 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
 Mono: successfully reloaded assembly
-- Completed reload, in  0.800 seconds
+- Completed reload, in  0.823 seconds
 Domain Reload Profiling:
-	ReloadAssembly (801ms)
-		BeginReloadAssembly (99ms)
+	ReloadAssembly (824ms)
+		BeginReloadAssembly (105ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (3ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (13ms)
-		EndReloadAssembly (667ms)
-			LoadAssemblies (76ms)
+		EndReloadAssembly (683ms)
+			LoadAssemblies (79ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (184ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (36ms)
-			SetupLoadedEditorAssemblies (317ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (333ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
+				InitializePlatformSupportModulesInManaged (2ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (33ms)
-				BeforeProcessingInitializeOnLoad (52ms)
-				ProcessInitializeOnLoadAttributes (215ms)
+				RefreshPlugins (34ms)
+				BeforeProcessingInitializeOnLoad (57ms)
+				ProcessInitializeOnLoadAttributes (226ms)
 				ProcessInitializeOnLoadMethodAttributes (12ms)
 				AfterProcessingInitializeOnLoad (1ms)
 				EditorAssembliesLoaded (0ms)
@@ -183,15 +183,15 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.37 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.36 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2226 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2229 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 118.2 MB.
 System memory in use after: 118.2 MB.
 
-Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 2687.
-Total: 2.410800 ms (FindLiveObjects: 0.121300 ms CreateObjectMapping: 0.032800 ms MarkObjects: 2.181000 ms  DeleteObjects: 0.074800 ms)
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 2690.
+Total: 2.341600 ms (FindLiveObjects: 0.119700 ms CreateObjectMapping: 0.032900 ms MarkObjects: 2.111000 ms  DeleteObjects: 0.077100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -206,126 +206,13 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Resources/images/Enemies/qqRen/Mask/qqRen_With_Mask_50%.psd
-  artifactKey: Guid(3e3e5afc3afcc9e48b603359750d6b05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen/Mask/qqRen_With_Mask_50%.psd using Guid(3e3e5afc3afcc9e48b603359750d6b05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '421ed66dc1a4d3e8d291345adb1bb799') in 0.075560 seconds 
+  path: Assets/Resources/Audios/蒙德战斗音乐.mp3
+  artifactKey: Guid(4c63165240a20d74c810ca16d609ac11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Audios/蒙德战斗音乐.mp3 using Guid(4c63165240a20d74c810ca16d609ac11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd8e8833bf35d8fb354a899b368057ba') in 0.079937 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000287 seconds.
-  path: Assets/Resources/images/Enemies/qqRen/Mask/qqRen_With_Mask_100%.psd
-  artifactKey: Guid(7f6f59415b43b404eb31302765c8a057) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/images/Enemies/qqRen/Mask/qqRen_With_Mask_100%.psd using Guid(7f6f59415b43b404eb31302765c8a057) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '024a557d0b7fe6abee9f8bb704f4b34b') in 0.008813 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 17.998573 seconds.
-  path: Assets/Resources/Audios
-  artifactKey: Guid(996b72293b6e6534ebfd6bc720bc7e58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios using Guid(996b72293b6e6534ebfd6bc720bc7e58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4ce441d0a2a38fdb0bf6291851d1ccb') in 0.001177 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.034534 seconds.
-  path: Assets/Resources/Audios/温迪倒下1.mp3
-  artifactKey: Guid(c0f0dcf194a07054f8dabb932b844736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/温迪倒下1.mp3 using Guid(c0f0dcf194a07054f8dabb932b844736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0b5da59ce37051c5a5ea2e31f309b25') in 0.037835 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000204 seconds.
-  path: Assets/Resources/Audios/诺艾尔倒下3.mp3
-  artifactKey: Guid(8cae1ca440de9d446b7a0507c5cd1963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/诺艾尔倒下3.mp3 using Guid(8cae1ca440de9d446b7a0507c5cd1963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc5783bad55a55aa582ebf5ae8615e4d') in 0.007526 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000283 seconds.
-  path: Assets/Resources/Audios/诺艾尔倒下2.mp3
-  artifactKey: Guid(976b081c860116d49b48bc334c9b3c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/诺艾尔倒下2.mp3 using Guid(976b081c860116d49b48bc334c9b3c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46c76df1e57002ccc5c95696c6bc6981') in 0.015145 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000272 seconds.
-  path: Assets/Resources/Audios/莫娜倒下1.mp3
-  artifactKey: Guid(eba7f284b3593864fb2014861548be0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/莫娜倒下1.mp3 using Guid(eba7f284b3593864fb2014861548be0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82bf5e759b4b838515e1798a66c317c8') in 0.005801 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000175 seconds.
-  path: Assets/Resources/Audios/莫娜加入队伍2.mp3
-  artifactKey: Guid(065931cba6d22fc4480cdb38f0888024) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/莫娜加入队伍2.mp3 using Guid(065931cba6d22fc4480cdb38f0888024) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1d6a29cf5843195d3749c8debb5c919') in 0.005056 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000151 seconds.
-  path: Assets/Resources/Audios/莫娜倒下3.mp3
-  artifactKey: Guid(eb4ef886667a6754a98b7488b4db4932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/莫娜倒下3.mp3 using Guid(eb4ef886667a6754a98b7488b4db4932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8943f0ee50da6ea738e5d4f2066e5543') in 0.005368 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000280 seconds.
-  path: Assets/Resources/Audios/诺艾尔加入队伍1.mp3
-  artifactKey: Guid(b8dfd48cfcb53e845841a9bcec01cbd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/诺艾尔加入队伍1.mp3 using Guid(b8dfd48cfcb53e845841a9bcec01cbd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb160ea34d2b575697e0fd74e97815a6') in 0.005443 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000276 seconds.
-  path: Assets/Resources/Audios/温迪倒下2.mp3
-  artifactKey: Guid(550a4181c609768408c2ca9b1b13da89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/温迪倒下2.mp3 using Guid(550a4181c609768408c2ca9b1b13da89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2f62f927fb33a36e13000cfecdf4fd3') in 0.006001 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000157 seconds.
-  path: Assets/Resources/Audios/温迪加入队伍1.mp3
-  artifactKey: Guid(d2b5c5014a77f93408274fb0be53896a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/温迪加入队伍1.mp3 using Guid(d2b5c5014a77f93408274fb0be53896a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b33093c3ae5a535d0e4013168272202e') in 0.005040 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000200 seconds.
-  path: Assets/Resources/Audios/温迪加入队伍2.mp3
-  artifactKey: Guid(012a40f9c8e10ee40af5f578aff6754d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/温迪加入队伍2.mp3 using Guid(012a40f9c8e10ee40af5f578aff6754d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85621a5cdd135c34a20efa88c73cfe67') in 0.005696 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Assets/Resources/Audios/莫娜加入队伍3.mp3
-  artifactKey: Guid(9792d6a35b16b7d4992acd902acbbdca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/莫娜加入队伍3.mp3 using Guid(9792d6a35b16b7d4992acd902acbbdca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1ce865423a30b27af7bb701ef7a20a3') in 0.005062 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000182 seconds.
-  path: Assets/Resources/Audios/诺艾尔加入队伍2.mp3
-  artifactKey: Guid(4a729756afd5a4b44ac3b967754af56f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/诺艾尔加入队伍2.mp3 using Guid(4a729756afd5a4b44ac3b967754af56f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbec532202861bff6f08862d7facea27') in 0.005951 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000162 seconds.
-  path: Assets/Resources/Audios/诺艾尔加入队伍3.mp3
-  artifactKey: Guid(a6c22ea412ca97d44906dd9cf31b9d8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/诺艾尔加入队伍3.mp3 using Guid(a6c22ea412ca97d44906dd9cf31b9d8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c778eba05aaa4df09c9ab0bf3b736c87') in 0.005037 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000162 seconds.
-  path: Assets/Resources/Audios/温迪加入队伍3.mp3
-  artifactKey: Guid(575fbf67683de9a40afee9466dbb8180) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/温迪加入队伍3.mp3 using Guid(575fbf67683de9a40afee9466dbb8180) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4271cba66a98f5ab69ab04de65850ce') in 0.005373 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000153 seconds.
-  path: Assets/Resources/Audios/莫娜倒下2.mp3
-  artifactKey: Guid(76340917153ce144f8cc3be3532afc05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/莫娜倒下2.mp3 using Guid(76340917153ce144f8cc3be3532afc05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bee7fbb5a814a4a36cc1b7f2eeab9479') in 0.005688 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000131 seconds.
-  path: Assets/Resources/Audios/莫娜加入队伍1.mp3
-  artifactKey: Guid(a1080c752b6f9d649a0aadc3c964bbc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/莫娜加入队伍1.mp3 using Guid(a1080c752b6f9d649a0aadc3c964bbc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a44d9498f072c589f44bde5d4a1d4821') in 0.005493 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000176 seconds.
-  path: Assets/Resources/Audios/诺艾尔倒下1.mp3
-  artifactKey: Guid(859e03255510f00428b432bc298fc499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/诺艾尔倒下1.mp3 using Guid(859e03255510f00428b432bc298fc499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3bdcf8e0914a18f8991d9db41967ab6') in 0.005276 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000159 seconds.
-  path: Assets/Resources/Audios/温迪倒下3.mp3
-  artifactKey: Guid(3b1610fc4cc31e044bd55efcaa816c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Audios/温迪倒下3.mp3 using Guid(3b1610fc4cc31e044bd55efcaa816c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfb6c7de2e4eb0f82b03d1b62a28a92d') in 0.005454 seconds 
+  Time since last request: 0.000226 seconds.
+  path: Assets/Resources/Audios/BGM0.mp3
+  artifactKey: Guid(f0a6bcb3df7facc4ca980439d005a905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Audios/BGM0.mp3 using Guid(f0a6bcb3df7facc4ca980439d005a905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '030e342e2f7d9cce9478914007482c38') in 0.008287 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

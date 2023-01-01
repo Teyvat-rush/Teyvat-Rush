@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Plant\Plant.cs" />
+    <Compile Include="Assets\Scripts\base\Menu.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_SelectLevel\Mondstadt\Button_0_1.cs" />
     <Compile Include="Assets\Scripts\UI\SpeedUp.cs" />
     <Compile Include="Assets\Scripts\UI\Card.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\Plant\Arrow.cs" />
     <Compile Include="Assets\Data.cs" />
     <Compile Include="Assets\Scripts\Plant\Wendi.cs" />
+    <Compile Include="Assets\Scripts\base\DeadLine.cs" />
     <Compile Include="Assets\Scripts\Plant\TestPlant.cs" />
     <Compile Include="Assets\Scripts\base\Globals.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
