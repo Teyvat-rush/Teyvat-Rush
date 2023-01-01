@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Menu : MonoBehaviour
 {
   public GameObject PauseMenu;
-  
+  public Text SpeedText;
   public void pauseGame()
   {
     Time.timeScale = 0f;
@@ -13,7 +13,14 @@ public class Menu : MonoBehaviour
   }
   public void resumeGame()
   {
-    Time.timeScale = 1f;
+    if(SpeedText.text.Equals("x1"))
+    {
+      Time.timeScale = 1f;
+    }
+    else
+    {
+      Time.timeScale = 2f;
+    }
     PauseMenu.SetActive(false);
   }
  
