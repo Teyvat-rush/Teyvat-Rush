@@ -3079,7 +3079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &309391434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3143,7 +3143,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 309391436}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1896970215}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: pauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &309391436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3371,7 +3383,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 336949536}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1896970215}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: resumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &336949536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9171,13 +9195,14 @@ GameObject:
   - component: {fileID: 852741860}
   - component: {fileID: 852741859}
   - component: {fileID: 852741858}
+  - component: {fileID: 852741861}
   m_Layer: 5
   m_Name: Button_TimeSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &852741857
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9241,7 +9266,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 852741859}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 852741861}
+        m_TargetAssemblyTypeName: SpeedUp, Assembly-CSharp
+        m_MethodName: Onclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &852741859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9280,6 +9317,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852741856}
   m_CullTransparentMesh: 1
+--- !u!114 &852741861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852741856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea024a6b19a9a747b4eae7a46440d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedText: {fileID: 671673805}
 --- !u!1 &871517482
 GameObject:
   m_ObjectHideFlags: 0
@@ -20744,6 +20794,7 @@ GameObject:
   - component: {fileID: 1896970211}
   - component: {fileID: 1896970210}
   - component: {fileID: 1896970214}
+  - component: {fileID: 1896970215}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -20860,6 +20911,19 @@ MonoBehaviour:
   starNumText: {fileID: 1589553165}
   MoraText: {fileID: 1413939139}
   timer: 0
+--- !u!114 &1896970215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896970209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da26f9816b5f53f42871c0483c426f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseMenu: {fileID: 1895421793}
 --- !u!1 &1906264889
 GameObject:
   m_ObjectHideFlags: 0
