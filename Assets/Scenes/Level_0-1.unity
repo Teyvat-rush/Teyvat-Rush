@@ -14102,7 +14102,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1280720273}
-  - component: {fileID: 1280720275}
   - component: {fileID: 1280720274}
   m_Layer: 6
   m_Name: Point_Abeiduo
@@ -14152,27 +14151,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1932404, y: 0.317742}
   m_EdgeRadius: 0
---- !u!50 &1280720275
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280720272}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!4 &1281310187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4773579218661393551, guid: a1f224f94997008498c34ceb14b96dda, type: 3}
@@ -24834,6 +24812,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1811223323}
     m_Modifications:
+    - target: {fileID: 494005786341041710, guid: f5ba5f5d39cf5f24bb27aabf79a0006b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.818
+      objectReference: {fileID: 0}
     - target: {fileID: 1313869860363446031, guid: f5ba5f5d39cf5f24bb27aabf79a0006b, type: 3}
       propertyPath: m_RootOrder
       value: 7
