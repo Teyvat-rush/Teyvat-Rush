@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
+
 [System.Serializable]
 public class Coin
 {
@@ -35,9 +35,8 @@ public class GameManager : MonoBehaviour
     {
     curProgressEnemy = new List<GameObject>();
     ReadData();
-    LoadData();
-
-
+    
+    
     }
   void ReadData()
   {
@@ -151,16 +150,5 @@ public class GameManager : MonoBehaviour
       curProgressID += 1;
       TableCreateEnemy();
     }
-  }
-  void LoadData()
-  {
-    string json;
-    string filepath = Application.streamingAssetsPath + "/Moranum.json";
-    using (StreamReader streamReader = new StreamReader(filepath))
-    {
-      json = streamReader.ReadToEnd();
-      streamReader.Close();
-    }
-    GameManager.instance.coin = JsonUtility.FromJson<Coin>(json);
   }
 }
