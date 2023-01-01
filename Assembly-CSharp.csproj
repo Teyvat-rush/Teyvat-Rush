@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Plant\Plant.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_SelectLevel\Mondstadt\Button_0_1.cs" />
+    <Compile Include="Assets\Scripts\UI\SpeedUp.cs" />
     <Compile Include="Assets\Scripts\UI\Card.cs" />
     <Compile Include="Assets\Scripts\UI\Panel_Failed.cs" />
     <Compile Include="Assets\Scripts\Plant\Nuoaier.cs" />
