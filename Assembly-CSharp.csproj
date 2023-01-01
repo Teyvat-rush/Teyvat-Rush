@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Plant\Plant.cs" />
+    <Compile Include="Assets\Scripts\base\Menu.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_SelectLevel\Mondstadt\Button_0_1.cs" />
     <Compile Include="Assets\Scripts\UI\Card.cs" />
     <Compile Include="Assets\Scripts\UI\Panel_Failed.cs" />
@@ -78,7 +79,7 @@
     <Compile Include="Assets\Scripts\base\UIManager.cs" />
     <Compile Include="Assets\Scripts\base\GameManager.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_MainMenu\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\base\Menu.cs" />
+    <Compile Include="Assets\Scripts\UI\SpeedUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Level\Level 1-X\Failed\Blur.shader" />
