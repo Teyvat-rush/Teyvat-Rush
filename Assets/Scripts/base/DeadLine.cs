@@ -10,6 +10,7 @@ public class DeadLine : MonoBehaviour
     if(collision.tag=="Enemy")
     {
       Failed.SetActive(true);
+      SoundManager.instance.StopBGM();
     }
   }
 
