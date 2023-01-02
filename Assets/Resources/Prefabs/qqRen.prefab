@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 973935492}
   - component: {fileID: 973935493}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: qqRen_WoodenShield_100%
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2038948247}
   - component: {fileID: 2038948248}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: qqRen_Attack_wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2641200282570155519}
   - component: {fileID: 8216361996848819415}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: qqRen_Mask_100%
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 3011888218128687497}
   - component: {fileID: 878546364593463995}
   - component: {fileID: 3885156500415390645}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Mora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 8478119575798901158}
   - component: {fileID: 1144881458}
   - component: {fileID: 898228896}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: qqRen
   m_TagString: Enemy
   m_Icon: {fileID: 0}
