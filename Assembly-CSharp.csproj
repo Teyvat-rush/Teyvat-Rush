@@ -56,6 +56,7 @@
     <Analyzer Include="D:\Program Files\Visual Studio\main\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemy\qqRen_Stick_Shield.cs" />
     <Compile Include="Assets\Scripts\Plant\Plant.cs" />
     <Compile Include="Assets\Scripts\base\Menu.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_SelectLevel\Mondstadt\Button_0_1.cs" />
@@ -80,12 +81,12 @@
     <Compile Include="Assets\Scripts\base\UIManager.cs" />
     <Compile Include="Assets\Scripts\base\GameManager.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_MainMenu\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\Enemy\qqRen_Stick_Shield.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Level\Level 1-X\Failed\Blur.shader" />
     <None Include="Assets\Resources\Audios\Paimon\0-2\0-2.txt" />
     <None Include="Assets\Resources\images\Enemies\qqRen\Die\Dissipate.shader" />
+    <None Include="Assets\Resources\Audios\Paimon\0-3\0-3.txt" />
     <None Include="Assets\Materials\Shader_Blur.shader" />
     <None Include="Assets\Resources\Audios\Paimon\0-1\0-1.txt" />
   </ItemGroup>
