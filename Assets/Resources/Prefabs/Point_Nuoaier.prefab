@@ -152,6 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2599605004690497243}
   - component: {fileID: 1968196362031920692}
+  - component: {fileID: 8806435817188713055}
   m_Layer: 6
   m_Name: Point_Nuoaier
   m_TagString: Plant
@@ -190,3 +191,22 @@ CircleCollider2D:
   m_Offset: {x: -0.068119764, y: -0.09567261}
   serializedVersion: 2
   m_Radius: 0.650604
+--- !u!95 &8806435817188713055
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2599605004690497244}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 404b7c8f46702734ba82be347e6a5b13, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
