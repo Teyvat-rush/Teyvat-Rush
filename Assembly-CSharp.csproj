@@ -80,13 +80,15 @@
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\base\UIManager.cs" />
     <Compile Include="Assets\Scripts\base\GameManager.cs" />
-    <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Plant\Abeiduo.cs" />
+    <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_MainMenu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Plant\Anbo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Level\Level 1-X\Failed\Blur.shader" />
     <None Include="Assets\Resources\Audios\Paimon\0-2\0-2.txt" />
     <None Include="Assets\Resources\images\Enemies\qqRen\Die\Dissipate.shader" />
+    <None Include="Assets\Resources\Audios\Paimon\0-3\0-3.txt" />
     <None Include="Assets\Materials\Shader_Blur.shader" />
     <None Include="Assets\Resources\Audios\Paimon\0-1\0-1.txt" />
   </ItemGroup>
