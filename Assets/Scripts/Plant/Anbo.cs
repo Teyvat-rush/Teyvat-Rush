@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class Anbo : Plant
 {
+  public Transform BoomCenter;
   public float range;
   private Animator animator;
   private void Start()
   {
-    health = 10000000;
+    currentHealth = 10000000;
     animator = GetComponent<Animator>();
   }
   public void BOOM()
   {
-    Collider[] colliders = Physics.OverlapBox(transform.position,new Vector3(range,range,transform.localScale.z),Quaternion.identity,2);
+    Collider[] colliders = Physics.OverlapBox(transform.position,new Vector3(range,range,1000000),Quaternion.identity);
     for(int i=0;i<colliders.Length;i++)
     {
-      if(colliders[i].tag=="Enemy")
-      {
+
         Destroy(colliders[i].gameObject);
-        Debug.Log(colliders[i].name);
-      }
+        print(colliders[i].gameObject.name);
+
     }
     GameObject.Destroy(gameObject);
   }
-  private void OnDrawGizmosSelected()
+  private void OnDrawGizmos()
   {
-    Gizmos.DrawWireCube(transform.position,new Vector3(range,range,transform.localScale.z));
+    Gizmos.DrawWireCube(transform.position,new Vector3(range*2,range*2,transform.localScale.z));
   }
 }
