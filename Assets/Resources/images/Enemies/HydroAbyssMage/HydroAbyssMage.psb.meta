@@ -91,7 +91,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: "\u56FE\u5C42 3"
+  - name: Shield
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -112,16 +112,16 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -66, y: -258}
-  - name: "\u56FE\u5C42 2"
+    uvTransform: {x: -74, y: -258}
+  - name: Body_100%
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 721
+      x: 845
+      y: 4
       width: 561
       height: 693
     spriteID: f8e6da0d4b5cdcd4fb52c99301a91260
@@ -134,40 +134,69 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -183, y: 549}
+    uvTransform: {x: 658, y: -168}
+  - name: Body_50%
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 708
+      width: 685
+      height: 676
+    spriteID: 3375fda888b409f4c96f76d1fdf2025a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -183, y: 536}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 1024
+  importedTextureWidth: 2048
   importedTextureHeight: 2048
   documentSize: {x: 1058, y: 1086}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
-  textureActualWidth: 1024
+  textureActualWidth: 2048
   textureActualHeight: 2048
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: "\u56FE\u5C42 3"
-    spriteName: "\u56FE\u5C42 3"
+  - name: Shield
+    spriteName: Shield
     isGroup: 0
     parentIndex: -1
     spriteID: 674de2850c4095b45b9382ba7897ec26
     layerID: 5
     mosaicPosition: {x: 4, y: 4}
-  - name: "\u56FE\u5C42 2"
-    spriteName: "\u56FE\u5C42 2"
+  - name: Body_50%
+    spriteName: Body_50%
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3375fda888b409f4c96f76d1fdf2025a
+    layerID: 9
+    mosaicPosition: {x: 4, y: 708}
+  - name: Body_100%
+    spriteName: Body_100%
     isGroup: 0
     parentIndex: -1
     spriteID: f8e6da0d4b5cdcd4fb52c99301a91260
     layerID: 3
-    mosaicPosition: {x: 4, y: 721}
+    mosaicPosition: {x: 845, y: 4}
   characterData:
     bones: []
     parts: []

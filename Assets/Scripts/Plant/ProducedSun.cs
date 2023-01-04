@@ -43,7 +43,7 @@ public class ProducedSun : MonoBehaviour
   {
 
     // 将屏幕坐标转化为世界坐标
-    Vector3 sunNumPos = Camera.main.ScreenToWorldPoint(UIManager.instance.GetSunNumTextPos());
+    Vector3 sunNumPos = (UIManager.instance.GetSunNumTextPos());
     sunNumPos = new Vector3(sunNumPos.x, sunNumPos.y, 0);
     FlyAnimation(sunNumPos);
   }
