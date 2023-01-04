@@ -53,13 +53,17 @@ public class qqRen_Stick_Shield : MonoBehaviour
   }
   private void OnTriggerStay2D(Collider2D collision)
   {
-    Plant plant = collision.GetComponent<Plant>();
-    float newHealth = plant.ChangeHealth(-damage);
-    if (newHealth <= 0)
+    if(collision.tag=="Plant")
     {
-      animator.SetBool("Walk", true);
-      animator.SetBool("Attack", false);
-      Speed = 0.28f;
+      Plant plant = collision.GetComponent<Plant>();
+      float newHealth = plant.ChangeHealth(-damage);
+      if (newHealth <= 0)
+      {
+        Destroy(plant.gameObject);
+        animator.SetBool("Walk", true);
+        animator.SetBool("Attack", false);
+        Speed = 0.28f;
+      }
     }
   }
   public void ChangeHealth(float num)
