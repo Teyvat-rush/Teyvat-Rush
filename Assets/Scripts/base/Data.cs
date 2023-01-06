@@ -8,3 +8,8 @@ public class Data : ScriptableObject
     public List<Data> AllData = new List<Data>();
   public int Moranum;
 }
+[System.Serializable]
+public class Coin
+{
+  public int num;
+}

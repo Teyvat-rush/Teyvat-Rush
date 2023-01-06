@@ -2,15 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Coin
-{
-  public int num;
-}
+
 
 public class GameManager : MonoBehaviour
 {
-  public Coin coin = new Coin();
+  
   // Start is called before the first frame update
   public GameObject bornParent;//敌人生成的父级
   public GameObject EnemyPrefab;//敌人的预制件
