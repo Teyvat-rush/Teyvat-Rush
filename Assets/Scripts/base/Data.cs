@@ -13,3 +13,13 @@ public class Coin
 {
   public int num;
 }
+public class Likability
+{
+  public int num;
+  public int level;
+  public string name;
+}
+public class Characters_Likability
+{
+  public List<Likability> Likabilities = new List<Likability>();
+}
