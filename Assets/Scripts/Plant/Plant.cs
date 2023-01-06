@@ -6,10 +6,20 @@ public class Plant : MonoBehaviour
 {
   public float health = 100;
   public float currentHealth;
-    // Start is called before the first frame update
-    void Start()
+  bool PlantAwake;
+  protected Rigidbody2D rb;
+  protected CapsuleCollider2D coll;
+  protected Animator animator;
+  // Start is called before the first frame update
+  protected virtual void Start()
     {
-        currentHealth = health;
+    rb = GetComponent<Rigidbody2D>();
+    coll = GetComponent<CapsuleCollider2D>();
+    animator = GetComponent<Animator>();
+    currentHealth = health;
+    coll.enabled = false;
+    PlantAwake = false;
+    animator.speed = 0;
     }
 
     // Update is called once per frame
@@ -17,6 +27,13 @@ public class Plant : MonoBehaviour
     {
         
     }
+  //种植完成再启用植物
+  public void SetPlantAwake()
+  {
+    PlantAwake = true;
+    animator.speed = 1;
+    coll.enabled = true;
+  }
     public float ChangeHealth(float num)
     {
     currentHealth = Mathf.Clamp(currentHealth + num, 0, health);

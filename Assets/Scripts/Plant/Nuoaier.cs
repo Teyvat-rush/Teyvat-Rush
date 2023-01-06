@@ -7,8 +7,9 @@ public class Nuoaier : Plant
   private SpriteRenderer sr;
   public Sprite[] pic;
     // Start is called before the first frame update
-    void Start()
+    protected override  void Start()
     {
+    base.Start();
     sr = GetComponent<SpriteRenderer>();
     }
 

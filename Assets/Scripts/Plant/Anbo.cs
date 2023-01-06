@@ -5,11 +5,10 @@ using UnityEngine;
 public class Anbo : Plant
 {
   public float range;
-  private Animator animator;
-  private void Start()
+  protected override void Start()
   {
+    base.Start();
     health = 10000000;
-    animator = GetComponent<Animator>();
   }
   public void BOOM()
   {

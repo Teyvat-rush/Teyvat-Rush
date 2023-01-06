@@ -6,13 +6,12 @@ public class Abeiduo : Plant
 {
   private float timer;//计时器
   public float ReadyTime;//准备时间
-  private Animator animator;
   private bool ready;
   public float damage;
   // Start is called before the first frame update
-  void Start()
+ protected override void Start()
     {
-    animator = GetComponent<Animator>();
+    base.Start();
     ready = false;
     }
 

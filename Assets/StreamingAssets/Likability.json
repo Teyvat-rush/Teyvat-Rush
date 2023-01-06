@@ -1,1 +1,34 @@
-{"num":0,"level":0}
+{
+    "Likabilities": [
+        {
+            "name": "Wendi",
+            "num": 0,
+            "level": 0
+        },
+        {
+            "name": "Mona",
+            "num": 0,
+            "level": 0
+        },
+        {
+            "name": "Nuoaier",
+            "num": 0,
+            "level": 0
+        },
+        {
+            "name": "Abeiduo",
+            "num": 0,
+            "level": 0
+        },
+        {
+            "name": "Anbo",
+            "num": 0,
+            "level": 0
+        },
+        {
+            "name": "Diaona",
+            "num": 0,
+            "level": 0
+        }
+    ]
+}

@@ -7,8 +7,9 @@ public class Mona : Plant
   public GameObject SunPrefab;
     public float ReadyTime;
   private float timer;
-    void Start()
+    protected override void Start()
     {
+    base.Start();
     timer = 0;
     }
 

@@ -13,11 +13,12 @@ public class Coin
 {
   public int num;
 }
+[System.Serializable]
 public class Likability
 {
+  public string name;
   public int num;
   public int level;
-  public string name;
 }
 public class Characters_Likability
 {

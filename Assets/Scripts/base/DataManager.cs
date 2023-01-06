@@ -22,6 +22,7 @@ public class DataManager : MonoBehaviour
   }
   void Start()
     {
+    GenerateData();
     LoadData();
     }
 
@@ -32,7 +33,7 @@ public class DataManager : MonoBehaviour
     }
   void SaveData()
   {
-    string json_Likability = JsonUtility.ToJson(DataManager.instance.likability);
+    string json_Likability = JsonUtility.ToJson(Characters_Likability_List,true);
     string json_Mora = JsonUtility.ToJson(DataManager.instance.coin);
     string filepath_Likability = Application.streamingAssetsPath + "/Likability.json";
     string filepath_Mora = Application.streamingAssetsPath + "/Mora.json";
@@ -51,7 +52,7 @@ public class DataManager : MonoBehaviour
   }
   void LoadData()
   {
-    string json_Likability = JsonUtility.ToJson(DataManager.instance.likability);
+    string json_Likability = JsonUtility.ToJson(Characters_Likability_List);
     string json_Mora = JsonUtility.ToJson(DataManager.instance.coin);
     string filepath_Likability = Application.streamingAssetsPath + "/Likability.json";
     string filepath_Mora = Application.streamingAssetsPath + "/Mora.json";
@@ -67,5 +68,26 @@ public class DataManager : MonoBehaviour
     }
     DataManager.instance.coin = JsonUtility.FromJson<Coin>(json_Mora);
     DataManager.instance.likability = JsonUtility.FromJson<Likability>(json_Likability);
+  }
+  void GenerateData()
+  {
+    Wendi = new Likability();
+    Wendi.name = "Wendi";
+    Mona = new Likability();
+    Mona.name = "Mona";
+    Nuoaier = new Likability();
+    Nuoaier.name = "Nuoaier";
+    Abeiduo = new Likability();
+    Abeiduo.name = "Abeiduo";
+    Anbo = new Likability();
+    Anbo.name = "Anbo";
+    Diaona = new Likability();
+    Diaona.name = "Diaona";
+    Characters_Likability_List.Likabilities.Add(Wendi);
+    Characters_Likability_List.Likabilities.Add(Mona);
+    Characters_Likability_List.Likabilities.Add(Nuoaier);
+    Characters_Likability_List.Likabilities.Add(Abeiduo);
+    Characters_Likability_List.Likabilities.Add(Anbo);
+    Characters_Likability_List.Likabilities.Add(Diaona);
   }
 }
