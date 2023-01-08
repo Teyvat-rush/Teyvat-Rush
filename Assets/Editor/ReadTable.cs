@@ -6,6 +6,7 @@ using OfficeOpenXml;
 using System.IO;
 using System;
 using System.Reflection;
+
 [InitializeOnLoad]
 public class Startup
 {
