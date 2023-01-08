@@ -70,6 +70,8 @@ GameObject:
   m_Component:
   - component: {fileID: 494005786341041710}
   - component: {fileID: 2335958434681313908}
+  - component: {fileID: 3062596063348601276}
+  - component: {fileID: 8743409229710178510}
   m_Layer: 6
   m_Name: Slime
   m_TagString: Enemy
@@ -121,6 +123,53 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &3062596063348601276
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207101281349531125}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.033831596, y: 0.5886696}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4195118, y: 1.1759242}
+  m_EdgeRadius: 0
+--- !u!50 &8743409229710178510
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207101281349531125}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1555725368728327046
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +931,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1313869860363446031}
-  - component: {fileID: 8109535729671157269}
+  - component: {fileID: 6982066294560243294}
+  - component: {fileID: 4293781873263672596}
   m_Layer: 6
   m_Name: Point_FengSlime
   m_TagString: Enemy
@@ -905,7 +955,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8109535729671157269
+--- !u!114 &6982066294560243294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -919,6 +969,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 0.8
   slime: {fileID: 1207101281349531125}
+--- !u!50 &4293781873263672596
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761104359525181589}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8901260701919846810
 GameObject:
   m_ObjectHideFlags: 0

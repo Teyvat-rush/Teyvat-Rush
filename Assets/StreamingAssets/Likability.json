@@ -2,31 +2,37 @@
     "Likabilities": [
         {
             "name": "Wendi",
+            "locked": false,
             "num": 0,
             "level": 0
         },
         {
             "name": "Mona",
+            "locked": false,
             "num": 0,
             "level": 0
         },
         {
             "name": "Nuoaier",
+            "locked": false,
             "num": 0,
             "level": 0
         },
         {
             "name": "Abeiduo",
+            "locked": false,
             "num": 0,
             "level": 0
         },
         {
             "name": "Anbo",
+            "locked": false,
             "num": 0,
             "level": 0
         },
         {
             "name": "Diaona",
+            "locked": false,
             "num": 0,
             "level": 0
         }

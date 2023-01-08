@@ -9093,6 +9093,7 @@ MonoBehaviour:
     num: 0
   likability:
     name: 
+    locked: 0
     num: 0
     level: 0
 --- !u!1 &731783117
@@ -28366,17 +28367,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1811223323}
     m_Modifications:
-    - target: {fileID: 494005786341041710, guid: f5ba5f5d39cf5f24bb27aabf79a0006b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.818
-      objectReference: {fileID: 0}
     - target: {fileID: 1313869860363446031, guid: f5ba5f5d39cf5f24bb27aabf79a0006b, type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1313869860363446031, guid: f5ba5f5d39cf5f24bb27aabf79a0006b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.926
+      value: -4.24
       objectReference: {fileID: 0}
     - target: {fileID: 1313869860363446031, guid: f5ba5f5d39cf5f24bb27aabf79a0006b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28413,6 +28410,10 @@ PrefabInstance:
     - target: {fileID: 1313869860363446031, guid: f5ba5f5d39cf5f24bb27aabf79a0006b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2335958434681313908, guid: f5ba5f5d39cf5f24bb27aabf79a0006b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8761104359525181589, guid: f5ba5f5d39cf5f24bb27aabf79a0006b, type: 3}
       propertyPath: m_Name

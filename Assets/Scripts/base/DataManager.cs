@@ -73,16 +73,22 @@ public class DataManager : MonoBehaviour
   {
     Wendi = new Likability();
     Wendi.name = "Wendi";
+    Wendi.locked = false;
     Mona = new Likability();
     Mona.name = "Mona";
+    Mona.locked = false;
     Nuoaier = new Likability();
     Nuoaier.name = "Nuoaier";
+    Nuoaier.locked = false;
     Abeiduo = new Likability();
     Abeiduo.name = "Abeiduo";
+    Abeiduo.locked = false;
     Anbo = new Likability();
     Anbo.name = "Anbo";
+    Anbo.locked = false;
     Diaona = new Likability();
     Diaona.name = "Diaona";
+    Diaona.locked = false;
     Characters_Likability_List.Likabilities.Add(Wendi);
     Characters_Likability_List.Likabilities.Add(Mona);
     Characters_Likability_List.Likabilities.Add(Nuoaier);
