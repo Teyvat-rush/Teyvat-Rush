@@ -17,6 +17,7 @@ public class Coin
 public class Likability
 {
   public string name;
+  public bool locked;
   public int num;
   public int level;
 }
