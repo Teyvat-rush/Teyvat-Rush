@@ -8,7 +8,7 @@ public class ChooseLevel : MonoBehaviour
   public void OpenCanvasSelectLevel()
   {
     canvasSelectLevel.SetActive(true);
-    gameObject.SetActive(false);
+    //gameObject.SetActive(false);
   }
 
 }

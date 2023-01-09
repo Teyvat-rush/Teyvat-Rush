@@ -15,11 +15,18 @@ public class CardSlot : MonoBehaviour
     public GameObject button_Menu;//主菜单按钮
     public GameObject button_TimeSpeed;//倍速按钮
     public GameObject button_Pause;//暂停按钮
+    public GameObject button_SeeEnemy;//敌人预览按钮
+    public GameObject button_changeLibraryToC;
+    public GameObject button_changeLibraryToE;
+    public GameObject button_returnToLevelC;
+    public GameObject button_returnToLevelE;
+    public GameObject canvas_LibraryOfEnemy;
+    public GameObject canvas_LibraryOfCharacter;
     public List<Transform> slots = new List<Transform>();//将10个按钮的位置导入
     public List<GameObject> attainedCards = new List<GameObject>();//将拥有的角色卡导入
     public List<GameObject> selectedCards = new List<GameObject>();//选中的角色卡
     public List<int> selectedCardsIndex_2 = new List<int>();//卡槽中卡的图鉴的顺序
-    public List<Button> unselectedCardsButtons = new List<Button>();
+    public List<Button> attainedCardsButtons = new List<Button>();
     public List<Button> selectedCardsButtons = new List<Button>();
     public int attainedCardsNum;
     public int filledNum = 0;//已选择角色数
@@ -29,6 +36,12 @@ public class CardSlot : MonoBehaviour
     {
         GameManager.instance.gameStart = false;
         button_Start.GetComponent<Button>().onClick.AddListener(StartGame);
+        button_SeeEnemy.GetComponent<Button>().onClick.AddListener(OpenLibraryEnemy_Review);
+        button_changeLibraryToC.GetComponent<Button>().onClick.AddListener(OpenLibraryC);
+        button_changeLibraryToE.GetComponent<Button>().onClick.AddListener(OpenLibraryE);
+        button_returnToLevelC.GetComponent<Button>().onClick.AddListener(ReturnToLevel);
+        button_returnToLevelE.GetComponent<Button>().onClick.AddListener(ReturnToLevel);
+
         attainedCardsNum = 3;////////////////////////////////读取关卡进度，改变拥有角色数
         for(int i=0;i<attainedCardsNum;i++)
         {
@@ -46,10 +59,10 @@ public class CardSlot : MonoBehaviour
         }
         for (int i = 0; i < attainedCardsNum; i++)
         {
-            unselectedCardsButtons.Add(attainedCards[i].GetComponent<Button>());//找到每一个按钮的Button组件并加入这个List
+            attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());//找到每一个按钮的Button组件并加入这个List
             attainedCards[i].GetComponent<EventTrigger>().enabled= false;
             int temp_1 = i;
-            unselectedCardsButtons[i].onClick.AddListener(delegate {SelectingMove(temp_1);});//每一个按钮增加监听事件，并传递参数，temp_1是原来的序号（太nice了！！！）
+            attainedCardsButtons[i].onClick.AddListener(delegate {SelectingMove(temp_1);});//每一个按钮增加监听事件，并传递参数，temp_1是原来的序号（太nice了！！！）
         }
     }
 
@@ -70,7 +83,7 @@ public class CardSlot : MonoBehaviour
         if(filledNum<maxCardNumHere)
         {
             Vector3 targetPosition = slots[filledNum].transform.position;       //找到卡槽中的位置
-            unselectedCardsButtons[index_1].interactable = false;                //选中的植物不能再点
+            attainedCardsButtons[index_1].interactable = false;                //选中的植物不能再点
             GameObject selectedObject = Instantiate(attainedCards[index_1], slots[filledNum].position, slots[filledNum].rotation, slots[filledNum].parent);
             //将选中的角色在卡槽中生成为物体        
             selectedObject.transform.position = new Vector3(targetPosition.x, targetPosition.y, 0);
@@ -92,7 +105,7 @@ public class CardSlot : MonoBehaviour
     {
         //Debug.Log("调用监听" +index_1+ index_2);
         //Vector3 targetPosition = unselectedCards[index_1].transform.position;
-        unselectedCardsButtons[index_1].interactable= true;
+        attainedCardsButtons[index_1].interactable= true;
         Destroy(selectedCards[index_2]);
         for(int i=index_2+1;i<=selectedCards.Count-1;i++)
         {
@@ -119,10 +132,30 @@ public class CardSlot : MonoBehaviour
             button_TimeSpeed.SetActive(true);
             button_Pause.SetActive(true);
             panel_SelectCard.SetActive(false);
-            for(int i=0;i<maxCardNumHere;i++)
+            for(int i=0;i<filledNum;i++)
             {
                 selectedCardsButtons[i].GetComponent<EventTrigger>().enabled = true;//可以拖动
             }
         }
+    }
+    public void OpenLibraryEnemy_Review()
+    {
+        GameManager.instance.isBattling= true;/////////////////不应该在这里设置isBattling的值，GameManager提前设置.
+        canvas_LibraryOfEnemy.SetActive(true);
+    }
+    public void OpenLibraryC()
+    {
+        canvas_LibraryOfEnemy.SetActive(false);
+        canvas_LibraryOfCharacter.SetActive(true);
+    }
+    public void OpenLibraryE()
+    {
+        canvas_LibraryOfEnemy.SetActive(true);
+        canvas_LibraryOfCharacter.SetActive(false);
+    }
+    public void ReturnToLevel()
+    {
+        canvas_LibraryOfEnemy.SetActive(false);
+        canvas_LibraryOfCharacter.SetActive(false);
     }
 }

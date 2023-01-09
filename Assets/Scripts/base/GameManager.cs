@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
   public float BornSunInterval;
   [HideInInspector]
   public LevelData levelData;
-    public bool gameStart;
+    public bool gameStart = false;//true:已开始作战，无论是否暂停
+    public bool gameEnd = false;
+    public bool isBattling = false;//true:在关卡内
     public int circulateTimes = 1;//当前周目
   public int curLevelID = 1;//当前关卡
   public int curProgressID = 1;//当前波次
@@ -46,20 +48,26 @@ public class GameManager : MonoBehaviour
     ResourceRequest request = Resources.LoadAsync("Level");
     yield return request;
     levelData = request.asset as LevelData;
-    GameStart();
+    if (gameStart)
+    {
+         GameStart();
+    }
+    
   }
   private void GameStart()
   {
     CreateEnemy();
     InvokeRepeating("CreateSunDown", 10, 10);
 
-    gameStart = true;
   }
     // Update is called once per frame
     void Update()
     {
-    BornSuntimer += Time.deltaTime;
-    CreatSun();
+        if(gameStart&&!gameEnd)//游戏结束后不掉阳光
+        {
+            BornSuntimer += Time.deltaTime;
+            CreatSun();
+        }
     }
     public void ChangeStarNum(int ChangeNum)
     {

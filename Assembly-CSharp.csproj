@@ -87,6 +87,10 @@
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI\CardSlot.cs" />
     <Compile Include="Assets\Scripts\base\DataManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Canvas_LibraryOfCharacter.cs" />
+    <Compile Include="Assets\Scripts\base\LibraryOfCharacter.cs" />
+    <Compile Include="Assets\Scripts\UI\Canvas_LibraryOfEnemy.cs" />
+    <Compile Include="Assets\Scripts\base\LibraryOfEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Level\Level 1-X\Failed\Blur.shader" />
