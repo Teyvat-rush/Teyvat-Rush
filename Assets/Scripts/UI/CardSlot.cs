@@ -134,6 +134,11 @@ public class CardSlot : MonoBehaviour
             panel_SelectCard.SetActive(false);
             for(int i=0;i<filledNum;i++)
             {
+                selectedCards[i].transform.GetChild(0).gameObject.SetActive(false);
+                selectedCards[i].transform.GetChild(1).gameObject.SetActive(true);
+                selectedCards[i].GetComponent<Card>().enabled = true;
+                selectedCardsButtons[i].onClick.RemoveAllListeners();
+                //selectedCardsButtons[i].interactable=false;
                 selectedCardsButtons[i].GetComponent<EventTrigger>().enabled = true;//ø…“‘Õœ∂Ø
             }
         }

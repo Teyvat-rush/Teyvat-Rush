@@ -7,6 +7,10 @@ public class Menu : MonoBehaviour
 {
   public GameObject PauseMenu;
   public Text SpeedText;
+     void Start()
+    {
+        Time.timeScale = 1f;
+    }
   public void pauseGame()
   {
     Time.timeScale = 0f;
