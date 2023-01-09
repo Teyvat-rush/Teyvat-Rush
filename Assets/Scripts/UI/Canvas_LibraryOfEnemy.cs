@@ -63,7 +63,7 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
                 text_EnemyReview.SetActive(true);
                 text_Return.GetComponent<Text>().text = "返 回 关 卡";
                 text_SelectCard.GetComponent<Text>().text = "点击查看本关出现的敌人！";
-                attainedCardsNum = 2;////////////////////////////////读取关卡进度，改变本关卡包含的敌人数
+                attainedCardsNum = 6;////////////////////////////////读取关卡进度，改变本关卡包含的敌人数
                 for (int i = 0; i < attainedCardsNum; i++)
                 {
                     attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
