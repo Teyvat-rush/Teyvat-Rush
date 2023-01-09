@@ -7666,6 +7666,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9c7e50ff7a79b409a1f5b4134a7a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel_SelectCard: {fileID: 1987853692}
+  panel_Cards: {fileID: 121816428}
+  button_Start: {fileID: 1160932586}
+  button_Menu: {fileID: 731783117}
+  button_TimeSpeed: {fileID: 852741856}
+  button_Pause: {fileID: 309391433}
   slots:
   - {fileID: 1949353288}
   - {fileID: 1071346889}
@@ -7677,10 +7683,7 @@ MonoBehaviour:
   - {fileID: 629503543}
   - {fileID: 1730832418}
   - {fileID: 234328061}
-  attainedCards:
-  - {fileID: 1036068685}
-  - {fileID: 1458293461}
-  - {fileID: 954012426}
+  attainedCards: []
   selectedCards: []
   selectedCardsIndex_2: 
   unselectedCardsButtons: []

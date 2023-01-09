@@ -85,7 +85,7 @@
     <Compile Include="Assets\Scripts\Plant\Anbo.cs" />
     <Compile Include="Assets\Scripts\Plant\Abeiduo.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_MainMenu\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\base\CardSlot.cs" />
+    <Compile Include="Assets\Scripts\UI\CardSlot.cs" />
     <Compile Include="Assets\Scripts\base\DataManager.cs" />
   </ItemGroup>
   <ItemGroup>

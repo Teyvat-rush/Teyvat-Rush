@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
   }
   void Start()
     {
-        
     curProgressEnemy = new List<GameObject>();
     ReadData();
     
