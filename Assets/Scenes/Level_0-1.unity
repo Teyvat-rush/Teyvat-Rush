@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 29777725}
   - component: {fileID: 29777724}
   m_Layer: 5
-  m_Name: Button_ReturnToMenu
+  m_Name: Button_ReturnToLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2944,7 +2944,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u67E5\u770B \u654C\u4EBA\u56FE\u9274"
+  m_Text: "\u67E5\u770B \u654C\u4EBA\u9884\u89C8"
 --- !u!222 &100456074
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4590,7 +4590,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8FD4\u56DE"
+  m_Text: "\u8FD4 \u56DE \u5173 \u5361"
 --- !u!222 &148031900
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22936,7 +22936,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8BA9\u89D2\u8272\u52A0\u5165\u4F60\u7684\u961F\u4F0D\uFF01"
+  m_Text: "\u70B9\u51FB\u8BA9\u89D2\u8272\u52A0\u5165\u4F60\u7684\u961F\u4F0D\uFF01"
 --- !u!222 &789667369
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32263,7 +32263,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u654C\u4EBA\u56FE\u9274"
+  m_Text: "\u654C\u4EBA\u9884\u89C8"
 --- !u!222 &1105881135
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43803,7 +43803,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u70B9\u51FB\u67E5\u770B\u9047\u5230\u8FC7\u7684\u654C\u4EBA\uFF01"
+  m_Text: "\u70B9\u51FB\u67E5\u770B\u672C\u5173\u51FA\u73B0\u7684\u654C\u4EBA\uFF01"
 --- !u!222 &1483715147
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47643,7 +47643,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u4E3B \u83DC \u5355"
+  m_Text: "\u8FD4 \u56DE \u5173 \u5361"
 --- !u!222 &1601252106
 CanvasRenderer:
   m_ObjectHideFlags: 0
