@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CardSlot : MonoBehaviour
@@ -36,14 +37,19 @@ public class CardSlot : MonoBehaviour
     {
         GameManager.instance.gameStart = false;
         button_Start.GetComponent<Button>().onClick.AddListener(StartGame);
+        button_Menu.GetComponent<Button>().onClick.AddListener(ReturnToMenu);
         button_SeeEnemy.GetComponent<Button>().onClick.AddListener(OpenLibraryEnemy_Review);
         button_changeLibraryToC.GetComponent<Button>().onClick.AddListener(OpenLibraryC);
         button_changeLibraryToE.GetComponent<Button>().onClick.AddListener(OpenLibraryE);
         button_returnToLevelC.GetComponent<Button>().onClick.AddListener(ReturnToLevel);
         button_returnToLevelE.GetComponent<Button>().onClick.AddListener(ReturnToLevel);
 
-        attainedCardsNum = 3;////////////////////////////////读取关卡进度，改变拥有角色数
-        for(int i=0;i<attainedCardsNum;i++)
+        attainedCardsNum = 2;////////////////////////////////读取关卡进度，改变拥有角色数
+
+        canvas_LibraryOfCharacter.SetActive(true);//调用一次Awake
+        canvas_LibraryOfCharacter.SetActive(false);
+
+        for (int i=0;i<attainedCardsNum;i++)
         {
             attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
         }
@@ -98,19 +104,18 @@ public class CardSlot : MonoBehaviour
             selectedCardsButtons[filledNum].onClick.AddListener(delegate { RemovingMove(temp_1, temp_2); });
             //Debug.Log("图鉴序号" + temp_1 + " 卡槽序号" + temp_2 + "（+移除动作监听）");
             filledNum++;
+            LibraryOfCharacter.ALLCharacters[temp_1].friendshipEXP += 1;///////测试用，实际效果是每选中一次卡EXP+1
         }
         
     }
     public void RemovingMove(int index_1,int index_2)
     {
         //Debug.Log("调用监听" +index_1+ index_2);
-        //Vector3 targetPosition = unselectedCards[index_1].transform.position;
         attainedCardsButtons[index_1].interactable= true;
         Destroy(selectedCards[index_2]);
         for(int i=index_2+1;i<=selectedCards.Count-1;i++)
         {
             //Debug.Log("当前卡槽序号"+i+" 被删除的卡的卡槽序号"+index_2);
-            //if (i == selectedCards.Count) return;
             int temp_0 = selectedCardsIndex_2[i];
             int temp_2 = i;
             selectedCards[i].transform.position = slots[i-1].position;
@@ -138,7 +143,6 @@ public class CardSlot : MonoBehaviour
                 selectedCards[i].transform.GetChild(1).gameObject.SetActive(true);
                 selectedCards[i].GetComponent<Card>().enabled = true;
                 selectedCardsButtons[i].onClick.RemoveAllListeners();
-                //selectedCardsButtons[i].interactable=false;
                 selectedCardsButtons[i].GetComponent<EventTrigger>().enabled = true;//可以拖动
             }
         }
@@ -150,17 +154,26 @@ public class CardSlot : MonoBehaviour
     }
     public void OpenLibraryC()
     {
+        Canvas_LibraryOfCharacter.initialize = true;////////////////更新角色好感度
         canvas_LibraryOfEnemy.SetActive(false);
         canvas_LibraryOfCharacter.SetActive(true);
+        
     }
     public void OpenLibraryE()
     {
+        Canvas_LibraryOfCharacter.initialize = true;////////////////更新角色好感度
         canvas_LibraryOfEnemy.SetActive(true);
         canvas_LibraryOfCharacter.SetActive(false);
+        
     }
     public void ReturnToLevel()
     {
         canvas_LibraryOfEnemy.SetActive(false);
         canvas_LibraryOfCharacter.SetActive(false);
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

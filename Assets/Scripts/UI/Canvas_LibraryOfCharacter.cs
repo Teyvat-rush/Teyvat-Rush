@@ -27,29 +27,41 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
     public GameObject friendshipLevelReward;
     public int attainedCardsNum;
     //public static int checkMode = 1;//1：主菜单图鉴；2：选卡或关卡内打开图鉴
+    public static bool initialize = true;
     public int lastChosenIndex = 0;//默认选第一个
     // Start is called before the first frame update
     void Start()
     {
 
-        button_Close_FriendshipLevelReward.GetComponent<Button>().onClick.AddListener(CloseFriendshipLevelReward);
-        button_FriendshipLevelReward.GetComponent<Button>().onClick.AddListener(OpenFriendshipLevelReward);
-        attainedCardsNum = 2;////////////////////////////////读取关卡进度，改变拥有角色数
-        for (int i = 0; i < attainedCardsNum; i++)
-        {
-            attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
-            attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());
-            attainedCards[i].GetComponent<EventTrigger>().enabled = false;
-            int temp_1 = i;
-            attainedCardsButtons[i].onClick.AddListener(delegate { OpenPanelDetail(temp_1); });//每一个按钮增加监听事件，并传递参数，temp_1图鉴序号（太nice了！！！）
-        }
-        attainedCards[lastChosenIndex].GetComponent<Button>().interactable = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (initialize)
+        {
+            lastChosenIndex= 0;
+            button_Close_FriendshipLevelReward.GetComponent<Button>().onClick.AddListener(CloseFriendshipLevelReward);
+            button_FriendshipLevelReward.GetComponent<Button>().onClick.AddListener(OpenFriendshipLevelReward);
+            attainedCardsNum = 2;////////////////////////////////读取关卡进度，改变拥有角色数
+            for (int i = 0; i < attainedCardsNum; i++)
+            {
+                attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
+                attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());
+                attainedCards[i].GetComponent<EventTrigger>().enabled = false;
+                int temp_1 = i;
+                attainedCardsButtons[i].onClick.RemoveAllListeners();
+                attainedCardsButtons[i].onClick.AddListener(delegate { OpenPanelDetail(temp_1); });//每一个按钮增加监听事件，并传递参数，temp_1图鉴序号（太nice了！！！）
+            }
+            attainedCards[lastChosenIndex].GetComponent<Button>().interactable = false;
+            OpenPanelDetail(lastChosenIndex);
+            initialize = false;
+            for(int i=1;i<attainedCardsNum;i++)
+            {
+                attainedCards[i].SetActive(true);
+            }
+        }
     }
     public void CloseFriendshipLevelReward()
     {
@@ -69,6 +81,7 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
         ATKLevel.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].ATKLevel;
         ATKorSkillInterval.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].ATKorSkillInterval;
         reloadTimeLevel.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].ATKorSkillInterval;
+        Debug.Log("更新第"+index+"角色好感度");
         friendshipEXP.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipEXP.ToString();
         friendshipEXPMAX.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipEXPMAX.ToString();
         friendshipLevelNum.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum.ToString();

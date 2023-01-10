@@ -17,7 +17,7 @@ public class LibraryOfCharacter : MonoBehaviour
     public string friendshipLevelRewardTitle;
     public string friendshipLevelReward;
     public static List<LibraryOfCharacter> ALLCharacters = new List<LibraryOfCharacter>();
-    public List<Sprite> ALLImages;
+    public List<Sprite> ALLImages=new List<Sprite>();
 
     public LibraryOfCharacter(string characterName, string description, Sprite image, string hPLevel, string aTKLevel, string aTKorSkillInterval, string reloadTimeLevel, int friendshipEXP, int friendshipEXPMAX, int friendshipLevelNum, string friendshipLevelRewardTitle, string text_FriendshipLevelReward)
     {
@@ -47,6 +47,5 @@ public class LibraryOfCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
