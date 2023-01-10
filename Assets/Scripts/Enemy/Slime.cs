@@ -2,32 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slime : MonoBehaviour
+public class Slime : Enemy
 {
-  public float Speed;
-  public GameObject slime;
-  private Animator animator;
-  private Rigidbody2D rigidbody2D;
-  private Rigidbody2D rb;
-  private BoxCollider2D boxCollider;
+  public GameObject LeftWing;
+  public GameObject RightWing;
     // Start is called before the first frame update
     void Start()
     {
-    animator = slime.GetComponent<Animator>();
-    rigidbody2D = slime.GetComponent<Rigidbody2D>();
+    anim = GetComponent<Animator>();
     rb = GetComponent<Rigidbody2D>();
-    boxCollider = slime.GetComponent<BoxCollider2D>();
-    animator.SetBool("Jump", true);
+    coll = GetComponent<BoxCollider2D>();
+    anim.SetBool("Jump", true);
+    currentHealth = health;
     }
 
     // Update is called once per frame
     void Update()
     {
-    if(animator.GetBool("Jump"))
+    if (!isDead)
     {
       Movement();
+      if(currentHealth<=health/2)
+      {
+        LeftWing.SetActive(false);
+        RightWing.SetActive(false);
+      }
     }
+    else
+    {
+      Instantiate(EnemyDieParticle, transform.position, transform.rotation);
+      Destroy(gameObject);
     }
+  }
   void Movement()
   {
     rb.velocity = new Vector2(-Speed, rb.velocity.y);
@@ -36,9 +42,32 @@ public class Slime : MonoBehaviour
   {
     if(collision.gameObject.tag=="Plant")
     {
-      animator.SetBool("Jump", false);
-      animator.SetBool("Attack", true);
+      anim.SetBool("Jump", false);
+      anim.SetBool("Attack", true);
       PauseMove();
+    }
+  }
+  private void OnTriggerStay2D(Collider2D collision)
+  {
+    if (collision.gameObject.tag == "Plant")
+    {
+      anim.SetBool("Jump", false);
+      anim.SetBool("Attack", true);
+      PauseMove();
+      damageTimer += Time.deltaTime;
+      if(damageTimer>=damageInterval)
+      {
+        damageTimer = 0;
+        Plant plant = collision.GetComponent<Plant>();
+        float newHealth = plant.ChangeHealth(-damage);
+        if (newHealth <= 0)
+        {
+          anim.SetBool("Attack", false);
+          anim.SetBool("Jump", true);
+          Speed = 0.8f;
+        }
+        Debug.Log("哈哈");
+      }
     }
   }
   public void PauseMove()
