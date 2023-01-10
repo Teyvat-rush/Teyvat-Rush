@@ -59,7 +59,7 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
             
             for(int i=1;i< GameManager.instance.attainedCardsNum; i++)
             {
-                attainedCards[i].SetActive(true);
+                attainedCards[i].GetComponent<Button>().interactable = true;
             }
             initialize = false;
         }

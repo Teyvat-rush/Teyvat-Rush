@@ -46,7 +46,7 @@ public class CardSlot : MonoBehaviour
 
         //attainedCardsNum = 2;////////////////////////////////读取关卡进度，改变拥有角色数
 
-        canvas_LibraryOfCharacter.SetActive(true);//调用一次Awake
+        canvas_LibraryOfCharacter.SetActive(true);//调用一次canvas_LibraryOfCharacter物体挂载的LibraryOfCharacter脚本的Awake()
         Canvas_LibraryOfCharacter.initialize = true;
         canvas_LibraryOfCharacter.SetActive(false);
 

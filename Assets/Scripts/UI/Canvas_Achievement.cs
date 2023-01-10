@@ -34,7 +34,7 @@ public class Canvas_Achievement : MonoBehaviour
             {
                 notAchieved.Add(panel_Achievements.transform.GetChild(i));
                 button_Attain.Add(notAchieved[i].GetChild(4).GetComponent<Button>());///////////注意GetChild括号，可能有变动
-                index_2.Add(i);
+                index_2.Add(i);//////////////后续暂时没用到，因为没有把已领取的成就分离出去
                 progress.Add(0);
                 target.Add(int.Parse(button_Attain[i].gameObject.transform.parent.GetChild(3).GetChild(2).GetComponent<Text>().text));
                 AchieveState.Add(false);
