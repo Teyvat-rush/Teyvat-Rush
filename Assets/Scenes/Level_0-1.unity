@@ -18480,7 +18480,6 @@ MonoBehaviour:
   selectedCardsIndex_2: 
   attainedCardsButtons: []
   selectedCardsButtons: []
-  attainedCardsNum: 3
   filledNum: 0
   maxCardNumHere: 0
 --- !u!1 &648432975
@@ -28052,7 +28051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &954012427
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36400,7 +36399,6 @@ MonoBehaviour:
   friendshipLevelNum: {fileID: 2027831620}
   friendshipLevelRewardTitle: {fileID: 893015900}
   friendshipLevelReward: {fileID: 1211302174}
-  attainedCardsNum: 0
   lastChosenIndex: 0
 --- !u!114 &1232973547
 MonoBehaviour:
@@ -57598,7 +57596,8 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 3786385676328421589, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
   SunPrefab: {fileID: 6566572701411190375, guid: b56a8322f7951ca47aa1772a01c910a2, type: 3}
   creatEnemyInterval: 10
-  maxCardNum: 6
+  maxCardsNum: 0
+  attainedCardsNum: 0
   starNum: 500
   BornSunInterval: 3
   levelData: {fileID: 0}

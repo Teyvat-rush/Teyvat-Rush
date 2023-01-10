@@ -31,6 +31,7 @@ public class MainMenu : MonoBehaviour
   }
   public void OpenAchievements()
   {
+    Canvas_Achievement.initiate = true;
     Mainmenu.SetActive(false);
     Libraryofcharacter.SetActive(false);
     Libraryofenemy.SetActive(false);

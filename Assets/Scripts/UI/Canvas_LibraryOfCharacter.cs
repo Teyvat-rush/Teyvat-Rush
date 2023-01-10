@@ -25,7 +25,7 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
     public GameObject friendshipLevelNum;
     public GameObject friendshipLevelRewardTitle;
     public GameObject friendshipLevelReward;
-    public int attainedCardsNum;
+    //public int attainedCardsNum;
     //public static int checkMode = 1;//1：主菜单图鉴；2：选卡或关卡内打开图鉴
     public static bool initialize = true;
     public int lastChosenIndex = 0;//默认选第一个
@@ -44,8 +44,8 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
             lastChosenIndex= 0;
             button_Close_FriendshipLevelReward.GetComponent<Button>().onClick.AddListener(CloseFriendshipLevelReward);
             button_FriendshipLevelReward.GetComponent<Button>().onClick.AddListener(OpenFriendshipLevelReward);
-            attainedCardsNum = 2;////////////////////////////////读取关卡进度，改变拥有角色数
-            for (int i = 0; i < attainedCardsNum; i++)
+            //attainedCardsNum = 2;////////////////////////////////读取关卡进度，改变拥有角色数(已在GameManager中存储)
+            for (int i = 0; i < GameManager.instance.attainedCardsNum; i++)
             {
                 attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
                 attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());
@@ -56,11 +56,12 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
             }
             attainedCards[lastChosenIndex].GetComponent<Button>().interactable = false;
             OpenPanelDetail(lastChosenIndex);
-            initialize = false;
-            for(int i=1;i<attainedCardsNum;i++)
+            
+            for(int i=1;i< GameManager.instance.attainedCardsNum; i++)
             {
                 attainedCards[i].SetActive(true);
             }
+            initialize = false;
         }
     }
     public void CloseFriendshipLevelReward()

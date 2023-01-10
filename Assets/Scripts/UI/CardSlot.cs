@@ -29,7 +29,7 @@ public class CardSlot : MonoBehaviour
     public List<int> selectedCardsIndex_2 = new List<int>();//卡槽中卡的图鉴的顺序
     public List<Button> attainedCardsButtons = new List<Button>();
     public List<Button> selectedCardsButtons = new List<Button>();
-    public int attainedCardsNum;
+    //public int attainedCardsNum;/////////////////已在GameManager中存储
     public int filledNum = 0;//已选择角色数
     public int maxCardNumHere;//最大卡槽数
     // Start is called before the first frame update
@@ -44,16 +44,17 @@ public class CardSlot : MonoBehaviour
         button_returnToLevelC.GetComponent<Button>().onClick.AddListener(ReturnToLevel);
         button_returnToLevelE.GetComponent<Button>().onClick.AddListener(ReturnToLevel);
 
-        attainedCardsNum = 2;////////////////////////////////读取关卡进度，改变拥有角色数
+        //attainedCardsNum = 2;////////////////////////////////读取关卡进度，改变拥有角色数
 
         canvas_LibraryOfCharacter.SetActive(true);//调用一次Awake
+        Canvas_LibraryOfCharacter.initialize = true;
         canvas_LibraryOfCharacter.SetActive(false);
 
-        for (int i=0;i<attainedCardsNum;i++)
+        for (int i=0;i<GameManager.instance.attainedCardsNum;i++)
         {
             attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
         }
-        maxCardNumHere = GameManager.instance.maxCardNum;//////////////////////////////////读取关卡进度，获取最大卡槽数
+        maxCardNumHere = GameManager.instance.maxCardsNum;//////////////////////////////////读取关卡进度，获取最大卡槽数
         for (int i = 0; i < maxCardNumHere; i++)
         {
             slots[i].gameObject.transform.parent.gameObject.SetActive(true);//找到按钮的父物体并启用，按钮也启用
@@ -63,7 +64,7 @@ public class CardSlot : MonoBehaviour
         {
             slots[i].gameObject.transform.parent.gameObject.SetActive(false);//将剩下的按钮的父物体禁用
         }
-        for (int i = 0; i < attainedCardsNum; i++)
+        for (int i = 0; i < GameManager.instance.attainedCardsNum; i++)
         {
             attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());//找到每一个按钮的Button组件并加入这个List
             attainedCards[i].GetComponent<EventTrigger>().enabled= false;
