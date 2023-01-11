@@ -91,9 +91,10 @@
     <Compile Include="Assets\Scripts\Plant\Abeiduo.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\base\LibraryOfEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\qqRen_Stick.cs" />
     <Compile Include="Assets\Scripts\UI\CardSlot.cs" />
     <Compile Include="Assets\Scripts\base\DataManager.cs" />
-    <Compile Include="Assets\Scripts\Enemy\qqRen_Stick.cs" />
+    <Compile Include="Assets\Scripts\Plant\Boom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Level\Level 1-X\Failed\Blur.shader" />
