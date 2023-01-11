@@ -30,8 +30,8 @@ public class GameManager : MonoBehaviour
   public List<GameObject> curProgressEnemy;
   private void Awake()
   {
-        maxCardsNum = 3;/////////////////////////
-        attainedCardsNum = 2;//////////////////////
+        maxCardsNum = 4;/////////////////////////
+        attainedCardsNum = 3;//////////////////////
         instance = this;
   }
   void Start()
