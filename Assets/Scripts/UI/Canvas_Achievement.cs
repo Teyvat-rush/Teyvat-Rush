@@ -13,7 +13,7 @@ public class Canvas_Achievement : MonoBehaviour
     public List<Button> button_Attain;//全部未未达成成就的领取按钮
     public List<Transform> notAchieved;//全部未达成成就的位置
     public List<int> index_2;//未完成列表中的成就序号，初始状态第0个位置的成就序号为0，以此类推
-    public List<int> progress;
+    public static List<int> progress=new List<int>();
     public List<int> target;
     public List<bool> AchieveState;//各成就达成状态
     public int ALLAchievedNum;

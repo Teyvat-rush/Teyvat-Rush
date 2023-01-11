@@ -70,6 +70,7 @@ public class MainMenu : MonoBehaviour
 
     public void OpenShop()
     {
+        Mainmenu.SetActive(false);
         Shop.SetActive(true);
         
     }
