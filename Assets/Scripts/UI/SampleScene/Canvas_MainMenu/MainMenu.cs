@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
   public GameObject Libraryofcharacter;
   public GameObject Achievements;
   public GameObject Selecetlevel;
+    public GameObject Shop;
   public GameObject Mainmenu;
     // Start is called before the first frame update
     public void LibraryofEnemy()
@@ -66,4 +67,10 @@ public class MainMenu : MonoBehaviour
     Achievements.SetActive(false);
     Selecetlevel.SetActive(false);
   }
+
+    public void OpenShop()
+    {
+        Shop.SetActive(true);
+        
+    }
 }
