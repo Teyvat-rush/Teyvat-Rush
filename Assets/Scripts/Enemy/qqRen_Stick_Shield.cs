@@ -1,78 +1,88 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class qqRen_Stick_Shield : MonoBehaviour
+public class qqRen_Stick_Shield : Enemy
 {
-    public GameObject qqRen_Stick_Shield100;
-  public GameObject qqRen_Stick_Shield50;
-  public GameObject qqRen_Stick_Shield20;
-  private Rigidbody2D rigidbody2D;
-  public GameObject EnemyDieParticle;
-  private BoxCollider2D boxCollider;
-  private Animator animator;
-  public float damage;//伤害值
-  public float Health;
-  private float currentHealth;
-  private bool isDead;
-  public float Speed;//移动速度
+  public GameObject shield_100;
+  public GameObject shield_50;
+  public GameObject shield_20;
+  public GameObject mask_100;
+  public GameObject mask_50;
+  // Start is called before the first frame update
   void Start()
-    {
-    rigidbody2D = GetComponent<Rigidbody2D>();
-    boxCollider = GetComponent<BoxCollider2D>();
-    animator = GetComponent<Animator>();
+  {
+    rb = GetComponent<Rigidbody2D>();
+    coll = GetComponent<BoxCollider2D>();
+    anim = GetComponent<Animator>();
     isDead = false;
-    currentHealth = Health;
-    }
+    currentHealth = health;
+  }
 
-    // Update is called once per frame
-    void Update()
+  // Update is called once per frame
+  void Update()
+  {
+    if (!isDead)
     {
-        if(!isDead)
-    {
-      Move();
+      Movement();
     }
     else
     {
       Instantiate(EnemyDieParticle, transform.position, transform.rotation);
       Destroy(gameObject);
     }
+    if (currentHealth <= health*2 / 3)
+    {
+      shield_100.SetActive(false);
+      shield_50.SetActive(true);
+      if(currentHealth<=health/2)
+      {
+        shield_50.SetActive(false);
+        shield_20.SetActive(true);
+        if(currentHealth<=health/3)
+        {
+          shield_20.SetActive(false);
+          if(currentHealth<=health*2/10)
+          {
+            mask_100.SetActive(false);
+            mask_50.SetActive(true);
+          }
+        }
+      }
+    }
   }
-  private void Move()
+  void Movement()
   {
-    rigidbody2D.velocity = new Vector2(-Speed, rigidbody2D.velocity.y);
+    rb.velocity = new Vector2(-Speed, 0);
   }
+
   private void OnTriggerEnter2D(Collider2D collision)
   {
-    if(collision.tag=="Plant")
+    if (collision.gameObject.tag == "Plant")
     {
+      anim.SetBool("Attack", true);
       Speed = 0;
-      animator.SetBool("Walk", false);
-      animator.SetBool("Attack", true);
     }
   }
   private void OnTriggerStay2D(Collider2D collision)
   {
-    if(collision.tag=="Plant")
+    if (collision.gameObject.tag == "Plant")
     {
-      Plant plant = collision.GetComponent<Plant>();
-      float newHealth = plant.ChangeHealth(-damage);
-      if (newHealth <= 0)
+      Speed = 0;
+      anim.SetBool("Attack", true);
+      damageTimer += Time.deltaTime;
+      if (damageTimer >= damageInterval)
       {
-        Destroy(plant.gameObject);
-        animator.SetBool("Walk", true);
-        animator.SetBool("Attack", false);
-        Speed = 0.28f;
+        damageTimer = 0;
+        Plant plant = collision.GetComponent<Plant>();
+        float newHealth = plant.ChangeHealth(-damage);
+        if (newHealth <= 0)
+        {
+          anim.SetBool("Attack", false);
+          Speed = 0.28f;
+        }
       }
     }
   }
-  public void ChangeHealth(float num)
-  {
-    currentHealth = Mathf.Clamp(currentHealth + num, 0, Health);
-    if (currentHealth <= 0)
-    {
-      isDead = true;
-      GameManager.instance.EnemyDied(gameObject);
-    }
-  }
+
+
 }

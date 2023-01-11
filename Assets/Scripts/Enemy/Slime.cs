@@ -66,7 +66,6 @@ public class Slime : Enemy
           anim.SetBool("Jump", true);
           Speed = 0.8f;
         }
-        Debug.Log("哈哈");
       }
     }
   }
