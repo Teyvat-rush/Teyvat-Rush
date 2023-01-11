@@ -8463,13 +8463,14 @@ GameObject:
   - component: {fileID: 280726973}
   - component: {fileID: 280726975}
   - component: {fileID: 280726974}
+  - component: {fileID: 280726976}
   m_Layer: 2
   m_Name: qqRen_Stick
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &280726972
 Transform:
   m_ObjectHideFlags: 0
@@ -8478,7 +8479,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280726971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.328, y: 0, z: -3}
+  m_LocalPosition: {x: -8.54, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 706150310}
@@ -8556,6 +8557,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1939543, y: 1.6971623}
   m_EdgeRadius: 0
+--- !u!114 &280726976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280726971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23e9209c6b56204387f0d619c63e87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyDieParticle: {fileID: 8158399772484601155, guid: 65b0db89d48a66c45bcae49f88dffeb9, type: 3}
+  Speed: 0.4
+  damage: 20
+  health: 120
+  currentHealth: 0
+  damageInterval: 0.8
+  damageTimer: 0
+  mask100: {fileID: 1768745120}
+  mask50: {fileID: 468843669}
 --- !u!1 &281162643
 GameObject:
   m_ObjectHideFlags: 0
@@ -13158,7 +13180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &452773434
 Transform:
   m_ObjectHideFlags: 0
@@ -35501,7 +35523,7 @@ GameObject:
   - component: {fileID: 1211070969}
   m_Layer: 2
   m_Name: qqRen_Stick_Shield
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35558,17 +35580,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyDieParticle: {fileID: 8158399772484601155, guid: 65b0db89d48a66c45bcae49f88dffeb9, type: 3}
-  Speed: 0.28
+  Speed: 0.4
   damage: 20
-  health: 100
+  health: 300
   currentHealth: 0
-  damageInterval: 0
+  damageInterval: 0.8
   damageTimer: 0
-  shield_100: {fileID: 0}
-  shield_50: {fileID: 0}
-  shield_20: {fileID: 0}
-  mask_100: {fileID: 0}
-  mask_50: {fileID: 0}
+  shield_100: {fileID: 485652242}
+  shield_50: {fileID: 1403239222}
+  shield_20: {fileID: 762288919}
+  mask_100: {fileID: 474091730}
+  mask_50: {fileID: 1377963779}
 --- !u!61 &1211070970
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45547,7 +45569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1530635348
 Transform:
   m_ObjectHideFlags: 0
@@ -67364,11 +67386,11 @@ GameObject:
   - component: {fileID: 9079472773231698101}
   m_Layer: 0
   m_Name: HydroAbyssMage
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &9079472773231698101
 Animator:
   serializedVersion: 3
