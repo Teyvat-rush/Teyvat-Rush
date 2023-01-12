@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Abeiduo : Plant
 {
+  public GameObject Explode;
   private float timer;//计时器
   public float ReadyTime;//准备时间
   private bool ready;
@@ -13,19 +14,21 @@ public class Abeiduo : Plant
     {
     base.Start();
     ready = false;
+    timer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
     Ready();
+    timer += Time.deltaTime;
     }
   private void Ready()
   {
-    timer += Time.deltaTime;
     if(timer>=ReadyTime)
     {
       ready = true;
+      health = 1000000;
       currentHealth = 1000000;
     }
   }
@@ -39,7 +42,7 @@ public class Abeiduo : Plant
     if(collision.tag=="Enemy"&&ready)
     {
       animator.SetBool("PrepareOver", true);
-      collision.GetComponent<Enemy>().ChangeHealth(-damage);
+      Explode.SetActive(true);
     }
   }
 }
