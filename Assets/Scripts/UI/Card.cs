@@ -100,7 +100,7 @@ public class Card : MonoBehaviour
           SoundManager.instance.PlaySound(Globals.NuoaierPlanted + i.ToString());
         }
         //重置
-        curGameObject.GetComponent<Plant>().SetPlantAwake();
+        curGameObject.GetComponent<Plant>().PlantAwake = true;
         curGameObject = null;
         GameManager.instance.ChangeStarNum(-UseStar);
         timer = 0;
