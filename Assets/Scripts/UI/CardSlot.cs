@@ -176,5 +176,7 @@ public class CardSlot : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene(0);
+        
+        Canvas_Achievement.initialize= true;
     }
 }

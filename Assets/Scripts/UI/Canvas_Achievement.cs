@@ -13,16 +13,16 @@ public class Canvas_Achievement : MonoBehaviour
     public List<Button> button_Attain;//全部未未达成成就的领取按钮
     public List<Transform> notAchieved;//全部未达成成就的位置
     public List<int> index_2;//未完成列表中的成就序号，初始状态第0个位置的成就序号为0，以此类推
-    public static List<int> progress=new List<int>();
+    public static List<int> progress = new List<int>();
     public List<int> target;
     public List<bool> AchieveState;//各成就达成状态
     public int ALLAchievedNum;
     public int achievedNum;
     public bool isFirst=true;
     public bool isRemainingReward;//true:有奖励没领取
-    public static bool initiate = true;
+    public static bool initialize = true;
     // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
         ALLAchievedNum = 2;//////////手动更新总成就个数
 
@@ -51,7 +51,7 @@ public class Canvas_Achievement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(initiate) 
+        if(initialize) 
         {
             
             text_Indexs.text = "";
@@ -76,7 +76,7 @@ public class Canvas_Achievement : MonoBehaviour
                 panel_RewardIndex.SetActive(false);
             }
             text_AchievedNum.text = achievedNum.ToString();
-            initiate= false;
+            initialize= false;
         }
         
     }
@@ -91,6 +91,6 @@ public class Canvas_Achievement : MonoBehaviour
         button_Attain[n2].gameObject.transform.parent.GetChild(3).gameObject.SetActive(false);
         //Debug.Log("1");
         AchieveState[n2] = true;
-        initiate= true;//每领取一次刷新一遍图鉴
+        initialize= true;//每领取一次刷新一遍图鉴
     }
 }

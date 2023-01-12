@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
   public GameObject Selecetlevel;
     public GameObject Shop;
   public GameObject Mainmenu;
+    public static bool initialize = true;
     // Start is called before the first frame update
     public void LibraryofEnemy()
   {
@@ -32,7 +33,7 @@ public class MainMenu : MonoBehaviour
   }
   public void OpenAchievements()
   {
-    Canvas_Achievement.initiate = true;
+    Canvas_Achievement.initialize = true;
     Mainmenu.SetActive(false);
     Libraryofcharacter.SetActive(false);
     Libraryofenemy.SetActive(false);
@@ -73,5 +74,19 @@ public class MainMenu : MonoBehaviour
         Mainmenu.SetActive(false);
         Shop.SetActive(true);
         
+    }
+
+    void Update()
+    {
+       if(initialize)
+        {
+            Canvas_Achievement.initialize = true;
+            Achievements.SetActive(true);
+            //Canvas_Achievement.
+            Achievements.SetActive(false);
+            
+            initialize =false;
+            ///////成就初始化
+        }
     }
 }
