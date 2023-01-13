@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\Enemy\qqRen_Stick.cs" />
     <Compile Include="Assets\Scripts\UI\CardSlot.cs" />
     <Compile Include="Assets\Scripts\base\DataManager.cs" />
+    <Compile Include="Assets\Scripts\Plant\ShootZone.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Level\Level 1-X\Failed\Blur.shader" />
