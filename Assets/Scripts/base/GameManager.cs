@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour
   public float creatEnemyInterval;//生成敌人的间隔时间
   
   public static GameManager instance;
-    public int maxCardsNum;//最大卡槽数
-    public int attainedCardsNum;
+    public static int maxCardsNum=2;////////最大卡槽数
+    public int attainedCardsNum=3;////////////获得角色数
   public int starNum;
   private float BornSuntimer;
   public float BornSunInterval;
@@ -30,8 +30,6 @@ public class GameManager : MonoBehaviour
   public List<GameObject> curProgressEnemy;
   private void Awake()
   {
-        maxCardsNum = 4;/////////////////////////
-        attainedCardsNum = 3;//////////////////////
         instance = this;
   }
   void Start()

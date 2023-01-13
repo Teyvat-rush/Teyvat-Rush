@@ -82,7 +82,6 @@ public class MainMenu : MonoBehaviour
         {
             Canvas_Achievement.initialize = true;
             Achievements.SetActive(true);
-            //Canvas_Achievement.
             Achievements.SetActive(false);
             
             initialize =false;

@@ -40,7 +40,7 @@ public class Canvas_Achievement : MonoBehaviour
                 AchieveState.Add(false);
                 int temp_1 = i;//图鉴中的位置
                 int temp_2 = i;//成就序号
-                Debug.Log(temp_1+"  "+temp_2);
+                //Debug.Log(temp_1+"  "+temp_2);
                 button_Attain[i].onClick.AddListener(delegate{AttainedMove(temp_1,temp_2);});
             }
             isFirst = false;

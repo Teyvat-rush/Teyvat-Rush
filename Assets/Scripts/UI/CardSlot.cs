@@ -32,6 +32,7 @@ public class CardSlot : MonoBehaviour
     //public int attainedCardsNum;/////////////////已在GameManager中存储
     public int filledNum = 0;//已选择角色数
     public int maxCardNumHere;//最大卡槽数
+    public static bool initialize = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,33 +45,9 @@ public class CardSlot : MonoBehaviour
         button_returnToLevelC.GetComponent<Button>().onClick.AddListener(ReturnToLevel);
         button_returnToLevelE.GetComponent<Button>().onClick.AddListener(ReturnToLevel);
 
-        //attainedCardsNum = 2;////////////////////////////////读取关卡进度，改变拥有角色数
+        
 
-        canvas_LibraryOfCharacter.SetActive(true);//调用一次canvas_LibraryOfCharacter物体挂载的LibraryOfCharacter脚本的Awake()
-        Canvas_LibraryOfCharacter.initialize = true;
-        canvas_LibraryOfCharacter.SetActive(false);
-
-        for (int i=0;i<GameManager.instance.attainedCardsNum;i++)
-        {
-            attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
-        }
-        maxCardNumHere = GameManager.instance.maxCardsNum;//////////////////////////////////读取关卡进度，获取最大卡槽数
-        for (int i = 0; i < maxCardNumHere; i++)
-        {
-            slots[i].gameObject.transform.parent.gameObject.SetActive(true);//找到按钮的父物体并启用，按钮也启用
-            //slots[i].gameObject.SetActive(true);
-        }
-        for(int i = maxCardNumHere;i<10;i++)
-        {
-            slots[i].gameObject.transform.parent.gameObject.SetActive(false);//将剩下的按钮的父物体禁用
-        }
-        for (int i = 0; i < GameManager.instance.attainedCardsNum; i++)
-        {
-            attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());//找到每一个按钮的Button组件并加入这个List
-            attainedCards[i].GetComponent<EventTrigger>().enabled= false;
-            int temp_1 = i;
-            attainedCardsButtons[i].onClick.AddListener(delegate {SelectingMove(temp_1);});//每一个按钮增加监听事件，并传递参数，temp_1是原来的序号（太nice了！！！）
-        }
+        
     }
 
 
@@ -83,6 +60,37 @@ public class CardSlot : MonoBehaviour
         }else
         {
             button_Start.GetComponent<Button>().interactable = true;
+        }
+
+        if(initialize)
+        {
+            canvas_LibraryOfCharacter.SetActive(true);//调用一次canvas_LibraryOfCharacter物体挂载的LibraryOfCharacter脚本的Awake()
+            Canvas_LibraryOfCharacter.initialize = true;
+            canvas_LibraryOfCharacter.SetActive(false);
+
+            for (int i = 0; i < GameManager.instance.attainedCardsNum; i++)
+            {
+                attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
+            }
+            Debug.Log("场景1：GameManager.maxCardsNum=" + GameManager.maxCardsNum);
+            maxCardNumHere = GameManager.maxCardsNum;//////////////////////////////////读取关卡进度，获取最大卡槽数
+            for (int i = 0; i < maxCardNumHere; i++)
+            {
+                slots[i].gameObject.transform.parent.gameObject.SetActive(true);//找到按钮的父物体并启用，按钮也启用
+                                                                                //slots[i].gameObject.SetActive(true);
+            }
+            for (int i = maxCardNumHere; i < 10; i++)
+            {
+                slots[i].gameObject.transform.parent.gameObject.SetActive(false);//将剩下的按钮的父物体禁用
+            }
+            for (int i = 0; i < GameManager.instance.attainedCardsNum; i++)
+            {
+                attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());//找到每一个按钮的Button组件并加入这个List
+                attainedCards[i].GetComponent<EventTrigger>().enabled = false;
+                int temp_1 = i;
+                attainedCardsButtons[i].onClick.AddListener(delegate { SelectingMove(temp_1); });//每一个按钮增加监听事件，并传递参数，temp_1是原来的序号（太nice了！！！）
+            }
+            initialize = false;
         }
     }
     public void SelectingMove(int index_1) 
