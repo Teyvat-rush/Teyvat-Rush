@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &448618057248422432
 Transform:
   m_ObjectHideFlags: 0
@@ -207,8 +207,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5fd16f96399bb43aec195e402b7630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShootAwake: 0
   health: 100
   currentHealth: 100
+  PlantAwake: 0
   pic:
   - {fileID: 21300000, guid: 553679b9e12074047a4990fa13b96006, type: 3}
   - {fileID: 21300000, guid: bf34da96afe2f724e8fce0e7e2c05a6b, type: 3}

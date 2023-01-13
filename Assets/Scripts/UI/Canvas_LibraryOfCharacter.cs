@@ -32,7 +32,7 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        initialize = true;
         
     }
 
@@ -41,7 +41,8 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
     {
         if (initialize)
         {
-            lastChosenIndex= 0;
+            Debug.Log("Canvas_LibraryOfCharacter:initialize");
+            lastChosenIndex = 0;
             button_Close_FriendshipLevelReward.GetComponent<Button>().onClick.AddListener(CloseFriendshipLevelReward);
             button_FriendshipLevelReward.GetComponent<Button>().onClick.AddListener(OpenFriendshipLevelReward);
             //attainedCardsNum = 2;////////////////////////////////读取关卡进度，改变拥有角色数(已在GameManager中存储)
@@ -81,7 +82,7 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
         HPLevel.GetComponent<Text>().text= LibraryOfCharacter.ALLCharacters[index].HPLevel;     
         ATKLevel.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].ATKLevel;
         ATKorSkillInterval.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].ATKorSkillInterval;
-        reloadTimeLevel.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].ATKorSkillInterval;
+        reloadTimeLevel.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].reloadTimeLevel;
         Debug.Log("更新第"+index+"角色好感度");
         friendshipEXP.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipEXP.ToString();
         friendshipEXPMAX.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipEXPMAX.ToString();

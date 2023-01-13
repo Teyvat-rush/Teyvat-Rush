@@ -34,6 +34,8 @@ public class Menu : MonoBehaviour
   }
  public void Restart()
   {
+       // CardSlot.initialize=true;
+        //Canvas_LibraryOfCharacter.initialize=true;
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
   }
 }

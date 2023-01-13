@@ -36,6 +36,7 @@ public class CardSlot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         GameManager.instance.gameStart = false;
         button_Start.GetComponent<Button>().onClick.AddListener(StartGame);
         button_Menu.GetComponent<Button>().onClick.AddListener(ReturnToMenu);
@@ -44,7 +45,7 @@ public class CardSlot : MonoBehaviour
         button_changeLibraryToE.GetComponent<Button>().onClick.AddListener(OpenLibraryE);
         button_returnToLevelC.GetComponent<Button>().onClick.AddListener(ReturnToLevel);
         button_returnToLevelE.GetComponent<Button>().onClick.AddListener(ReturnToLevel);
-
+        initialize = true;
         
 
         
@@ -64,32 +65,40 @@ public class CardSlot : MonoBehaviour
 
         if(initialize)
         {
+            
             canvas_LibraryOfCharacter.SetActive(true);//调用一次canvas_LibraryOfCharacter物体挂载的LibraryOfCharacter脚本的Awake()
             Canvas_LibraryOfCharacter.initialize = true;
             canvas_LibraryOfCharacter.SetActive(false);
-
+            Debug.Log("CardSlot:initialize1");
             for (int i = 0; i < GameManager.instance.attainedCardsNum; i++)
             {
+                Debug.Log("CardSlot:initialize2 "+i);
                 attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
             }
-            Debug.Log("场景1：GameManager.maxCardsNum=" + GameManager.maxCardsNum);
+            //Debug.Log("场景1：GameManager.maxCardsNum=" + GameManager.maxCardsNum);
+            Debug.Log("CardSlot:initialize3");
             maxCardNumHere = GameManager.maxCardsNum;//////////////////////////////////读取关卡进度，获取最大卡槽数
             for (int i = 0; i < maxCardNumHere; i++)
             {
+                Debug.Log("CardSlot:initialize4 " + i);
                 slots[i].gameObject.transform.parent.gameObject.SetActive(true);//找到按钮的父物体并启用，按钮也启用
                                                                                 //slots[i].gameObject.SetActive(true);
             }
             for (int i = maxCardNumHere; i < 10; i++)
             {
+                Debug.Log("CardSlot:initialize5 " + i);
                 slots[i].gameObject.transform.parent.gameObject.SetActive(false);//将剩下的按钮的父物体禁用
             }
             for (int i = 0; i < GameManager.instance.attainedCardsNum; i++)
             {
+                Debug.Log("CardSlot:initialize6 " + i);
                 attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());//找到每一个按钮的Button组件并加入这个List
                 attainedCards[i].GetComponent<EventTrigger>().enabled = false;
                 int temp_1 = i;
+                attainedCardsButtons[i].onClick.RemoveAllListeners();
                 attainedCardsButtons[i].onClick.AddListener(delegate { SelectingMove(temp_1); });//每一个按钮增加监听事件，并传递参数，temp_1是原来的序号（太nice了！！！）
             }
+            Debug.Log("CardSlot:initialize7");
             initialize = false;
         }
     }
@@ -148,7 +157,7 @@ public class CardSlot : MonoBehaviour
             panel_SelectCard.SetActive(false);
             for(int i=0;i<filledNum;i++)
             {
-                selectedCards[i].transform.GetChild(0).gameObject.SetActive(false);
+                selectedCards[i].transform.GetChild(0).gameObject.SetActive(true);
                 selectedCards[i].transform.GetChild(1).gameObject.SetActive(true);
                 selectedCards[i].GetComponent<Card>().enabled = true;
                 selectedCardsButtons[i].onClick.RemoveAllListeners();
@@ -185,6 +194,6 @@ public class CardSlot : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         
-        Canvas_Achievement.initialize= true;
+        //Canvas_Achievement.initialize= true;
     }
 }

@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{F8E77A07-D7CC-831A-BB26-843201048F62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -60,6 +61,8 @@
     <Compile Include="Assets\Scripts\Plant\Plant.cs" />
     <Compile Include="Assets\Scripts\UI\Button_Reward.cs" />
     <Compile Include="Assets\Scripts\base\Menu.cs" />
+    <Compile Include="Assets\Scripts\UI\Canvas_Achievement.cs" />
+    <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_SelectLevel\Mondstadt\Button_0_1.cs" />
     <Compile Include="Assets\Scripts\UI\SpeedUp.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime.cs" />
@@ -70,7 +73,6 @@
     <Compile Include="Assets\Scripts\Plant\Nuoaier.cs" />
     <Compile Include="Assets\Scripts\UI\Mora.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
-    <Compile Include="Assets\Scripts\UI\Canvas_Achievement.cs" />
     <Compile Include="Assets\Scripts\base\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Plant\ProducedSun.cs" />
     <Compile Include="Assets\Scripts\Plant\DroppingSun.cs" />
@@ -85,18 +87,17 @@
     <Compile Include="Assets\Scripts\Plant\Wendi.cs" />
     <Compile Include="Assets\Scripts\base\DeadLine.cs" />
     <Compile Include="Assets\Scripts\Plant\TestPlant.cs" />
+    <Compile Include="Assets\Scripts\Plant\ShootZone.cs" />
     <Compile Include="Assets\Scripts\base\Globals.cs" />
     <Compile Include="Assets\Scripts\Enemy\QQRen.cs" />
     <Compile Include="Assets\Scripts\base\UIManager.cs" />
     <Compile Include="Assets\Scripts\base\GameManager.cs" />
     <Compile Include="Assets\Scripts\Plant\Anbo.cs" />
     <Compile Include="Assets\Scripts\Plant\Abeiduo.cs" />
-    <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\base\LibraryOfEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\qqRen_Stick.cs" />
     <Compile Include="Assets\Scripts\UI\CardSlot.cs" />
     <Compile Include="Assets\Scripts\base\DataManager.cs" />
-    <Compile Include="Assets\Scripts\Plant\ShootZone.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Level\Level 1-X\Failed\Blur.shader" />

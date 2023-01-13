@@ -32,7 +32,7 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        initialize = true;
     }
 
     // Update is called once per frame
