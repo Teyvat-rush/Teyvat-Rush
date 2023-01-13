@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
+  public bool ShootAwake;
   public float health = 100;
   public float currentHealth;
   public bool PlantAwake;
@@ -23,7 +24,7 @@ public class Plant : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if(PlantAwake)
     {

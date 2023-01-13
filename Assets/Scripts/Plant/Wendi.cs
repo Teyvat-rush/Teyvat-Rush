@@ -17,15 +17,18 @@ public class Wendi : Plant
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-    timer += Time.deltaTime;
-    if(timer>=interval)
+    base.Update();
+    if(PlantAwake&&ShootAwake)
     {
-      timer = 0;
-      Instantiate(Bullet, BulletPos.position, Quaternion.identity);
+      timer += Time.deltaTime;
+      if (timer >= interval)
+      {
+        timer = 0;
+        Instantiate(Bullet, BulletPos.position, Quaternion.identity);
+      }
     }
-    
     }
   
 }
