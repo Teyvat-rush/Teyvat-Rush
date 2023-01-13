@@ -18,10 +18,14 @@ public class Abeiduo : Plant
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-    Ready();
-    timer += Time.deltaTime;
+    base.Update();
+    if(PlantAwake)
+    {
+      Ready();
+      timer += Time.deltaTime;
+    }
     }
   private void Ready()
   {
