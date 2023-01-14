@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
   }
   public void LibraryofCharcater()
   {
-        Canvas_LibraryOfEnemy.initialize = true;
+    //Canvas_LibraryOfEnemy.initialize = true;
     Mainmenu.SetActive(false);
     Libraryofcharacter.SetActive(true);
     Libraryofenemy.SetActive(false);

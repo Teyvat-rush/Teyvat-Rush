@@ -33,7 +33,6 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
     void Start()
     {
         initialize = true;
-        
     }
 
     // Update is called once per frame

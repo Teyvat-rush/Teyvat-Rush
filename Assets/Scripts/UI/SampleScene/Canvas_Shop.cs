@@ -67,7 +67,7 @@ public class Canvas_Shop : MonoBehaviour
         button_plus.GetComponent<Button>().onClick.AddListener(PlusMove);
 
         items.Add(new Items(114514, 1, "置于蒙德地图防线的最后，敌人接触时艾琳登场清除一行内所有敌人。", "木桩"));
-        items.Add(new Items(11450, 8, "使队伍可携带的人数上限+1。", "扩充编队·1"));
+        items.Add(new Items(11450, 4, "使队伍可携带的人数上限+1。", "扩充编队·1"));
 
         for (int i=0;i<itemsCount;i++)
         {

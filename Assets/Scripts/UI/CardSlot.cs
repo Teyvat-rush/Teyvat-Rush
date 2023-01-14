@@ -172,14 +172,14 @@ public class CardSlot : MonoBehaviour
     }
     public void OpenLibraryC()
     {
-        Canvas_LibraryOfCharacter.initialize = true;////////////////更新角色好感度
+       //Canvas_LibraryOfCharacter.initialize = true;////////////////更新角色好感度
         canvas_LibraryOfEnemy.SetActive(false);
         canvas_LibraryOfCharacter.SetActive(true);
         
     }
     public void OpenLibraryE()
     {
-        Canvas_LibraryOfCharacter.initialize = true;////////////////更新角色好感度
+        //Canvas_LibraryOfCharacter.initialize = true;////////////////更新角色好感度
         canvas_LibraryOfEnemy.SetActive(true);
         canvas_LibraryOfCharacter.SetActive(false);
         
