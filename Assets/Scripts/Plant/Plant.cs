@@ -9,13 +9,13 @@ public class Plant : MonoBehaviour
   public float currentHealth;
   public bool PlantAwake;
   protected Rigidbody2D rb;
-  protected CapsuleCollider2D coll;
+  protected Collider2D coll;
   protected Animator animator;
   // Start is called before the first frame update
   protected virtual void Start()
     {
     rb = GetComponent<Rigidbody2D>();
-    coll = GetComponent<CapsuleCollider2D>();
+    coll = GetComponent<Collider2D>();
     animator = GetComponent<Animator>();
     currentHealth = health;
     
