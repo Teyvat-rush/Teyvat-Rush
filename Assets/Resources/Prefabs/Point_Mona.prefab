@@ -63,8 +63,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c528486ee98bf4a90f878345589172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShootAwake: 0
   health: 100
   currentHealth: 100
+  PlantAwake: 0
   SunPrefab: {fileID: 1001220303305346936, guid: 91144f423ec69a9438e65491f33b48cb, type: 3}
   ReadyTime: 3
 --- !u!95 &7156235213586014000
@@ -221,8 +223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c528486ee98bf4a90f878345589172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShootAwake: 0
   health: 100
   currentHealth: 100
+  PlantAwake: 0
   SunPrefab: {fileID: 1001220303305346936, guid: 91144f423ec69a9438e65491f33b48cb, type: 3}
   ReadyTime: 3
 --- !u!1 &4773579219578459472
@@ -392,7 +396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4773579220289049991
 Transform:
   m_ObjectHideFlags: 0

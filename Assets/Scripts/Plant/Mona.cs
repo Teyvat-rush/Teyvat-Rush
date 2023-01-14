@@ -17,8 +17,11 @@ public class Mona : Plant
     protected override void Update()
     {
     base.Update();
-    timer += Time.deltaTime;
-    BornSun();
+    if(PlantAwake)
+    {
+      timer += Time.deltaTime;
+      BornSun();
+    }
     }
   void BornSun()
   {

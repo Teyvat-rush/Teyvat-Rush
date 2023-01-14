@@ -14,8 +14,9 @@ public class Nuoaier : Plant
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+    base.Update();
     if (currentHealth <= health/2)
     {
       sr.sprite = pic[0];
