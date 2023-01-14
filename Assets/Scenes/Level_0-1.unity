@@ -8429,6 +8429,10 @@ MonoBehaviour:
   currentHealth: 0
   damageInterval: 0.8
   damageTimer: 0
+  Big_Mora: {fileID: 0}
+  Small_Mora: {fileID: 0}
+  Big_PaiMora: {fileID: 0}
+  Small_PaiMora: {fileID: 0}
   mask100: {fileID: 1768745120}
   mask50: {fileID: 468843669}
 --- !u!1 &281162643
@@ -13171,6 +13175,10 @@ MonoBehaviour:
   currentHealth: 0
   damageInterval: 1
   damageTimer: 0
+  Big_Mora: {fileID: 0}
+  Small_Mora: {fileID: 0}
+  Big_PaiMora: {fileID: 0}
+  Small_PaiMora: {fileID: 0}
   shield_100: {fileID: 2071202534}
   shield_50: {fileID: 2132061243}
   shield_20: {fileID: 1949858082}
@@ -18934,7 +18942,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -846.0083, y: 0}
+  m_AnchoredPosition: {x: -846.00824, y: 0}
   m_SizeDelta: {x: -1692.0167, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641916839
@@ -36107,6 +36115,10 @@ MonoBehaviour:
   currentHealth: 0
   damageInterval: 0.8
   damageTimer: 0
+  Big_Mora: {fileID: 0}
+  Small_Mora: {fileID: 0}
+  Big_PaiMora: {fileID: 0}
+  Small_PaiMora: {fileID: 0}
   shield_100: {fileID: 485652242}
   shield_50: {fileID: 1403239222}
   shield_20: {fileID: 762288919}
@@ -47437,7 +47449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1573946167
 Transform:
   m_ObjectHideFlags: 0
@@ -47496,6 +47508,10 @@ MonoBehaviour:
   currentHealth: 0
   damageInterval: 1
   damageTimer: 0
+  Big_Mora: {fileID: 788374585637179602, guid: 6f2cedefd9d0d304b97712db0516e6b0, type: 3}
+  Small_Mora: {fileID: 788374585637179602, guid: 80abbf84de4a59a45b78fdf831b9b2db, type: 3}
+  Big_PaiMora: {fileID: 522148400624790811, guid: 2242196e65a1db24e860182aad6f3de0, type: 3}
+  Small_PaiMora: {fileID: 522148400624790811, guid: ce067fe907eb26742bbf255b57ec83d3, type: 3}
   mask100: {fileID: 998776512}
   mask50: {fileID: 1092643449}
 --- !u!61 &1573946170
@@ -66258,6 +66274,10 @@ MonoBehaviour:
   currentHealth: 0
   damageInterval: 1.5
   damageTimer: 0
+  Big_Mora: {fileID: 0}
+  Small_Mora: {fileID: 0}
+  Big_PaiMora: {fileID: 0}
+  Small_PaiMora: {fileID: 0}
   LeftWing: {fileID: 4516650687422071515}
   RightWing: {fileID: 3455550283989273795}
 --- !u!1 &325467244110214474
@@ -67262,6 +67282,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1067649516}
     m_Modifications:
+    - target: {fileID: 4625321320220106906, guid: 3f28ab7166c65704fa431d6297f3ece0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4625321320956159829, guid: 3f28ab7166c65704fa431d6297f3ece0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -67312,7 +67336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4625321320956159830, guid: 3f28ab7166c65704fa431d6297f3ece0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f28ab7166c65704fa431d6297f3ece0, type: 3}
