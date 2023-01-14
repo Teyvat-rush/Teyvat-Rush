@@ -1,84 +1,115 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 
 
 public class GameManager : MonoBehaviour
 {
+    public List<GameObject> enemies= new List<GameObject>();
+    // Start is called before the first frame update
+    public GameObject bornParent;//敌人生成的父级
+    public GameObject EnemyPrefab;//敌人的预制件
+    public GameObject SunPrefab;//飘落阳光的预制件
+    public GameObject Reward;
+    public GameObject canvas;
+    public float creatEnemyInterval;//生成敌人的间隔时间
   
-  // Start is called before the first frame update
-  public GameObject bornParent;//敌人生成的父级
-  public GameObject EnemyPrefab;//敌人的预制件
-  public GameObject SunPrefab;//飘落阳光的预制件
-  public float creatEnemyInterval;//生成敌人的间隔时间
-  
-  public static GameManager instance;
+    public static GameManager instance;
     public static int maxCardsNum=6;////////最大卡槽数
     public int attainedCardsNum=5;////////////获得角色数
-  public int starNum;
-  private float BornSuntimer;
-  public float BornSunInterval;
-  [HideInInspector]
-  public LevelData levelData;
+    public int starNum;
+    private float BornSuntimer;
+    public float BornSunInterval;
+    //[HideInInspector]
+    //public LevelData levelData;
     public bool gameStart = false;//true:已开始作战，无论是否暂停
     public bool gameEnd = false;
-    public bool isBattling = false;//true:在关卡内
-    public int circulateTimes = 1;//当前周目
-  public int curLevelID = 1;//当前关卡
-  public int curProgressID = 1;//当前波次
-  public List<GameObject> curProgressEnemy;
-  private void Awake()
-  {
+    public bool isBattling = false;//true:在关卡内）
+    //public int circulateTimes = 1;//当前周目（现在没用到）
+    public int curLevelID;//当前关卡，从0开始数,0-1是第0关
+    public int curProgressID;//当前波次数，从0开始数
+    public int totalDestroyedNum;//总击杀敌人数
+    public int waveDestroyedNum;//当前波次击杀敌人数
+    public int waveCreatedNum;//当前波次已生成敌人数
+    public int totalCreatedNum;//总已生成敌人数
+    public float MAINTIMER;//主计时器
+    public static bool initialize=false;
+    //public List<GameObject> curProgressEnemy;
+    private void Awake()
+    {
         instance = this;
-  }
-  void Start()
-    {
-    curProgressEnemy = new List<GameObject>();
-    ReadData();
-    
-    
+        curLevelID = 0;
     }
-  void ReadData()
-  {
-    StartCoroutine(LoadTable());
-  }
-  IEnumerator LoadTable()
-  {
-    ResourceRequest request = Resources.LoadAsync("Level");
-    yield return request;
-    levelData = request.asset as LevelData;
-    if (gameStart)
+    void Start()
     {
-         GameStart();
+        //curProgressEnemy = new List<GameObject>();
+        //ReadData();
     }
-    
-  }
-  private void GameStart()
-  {
-    CreateEnemy();
-    InvokeRepeating("CreateSunDown", 10, 10);
-
-  }
-    // Update is called once per frame
     void Update()
     {
-        if(gameStart&&!gameEnd)//游戏结束后不掉阳光
+        if(gameStart)
         {
-            BornSuntimer += Time.deltaTime;
+            GameStart();
+        }
+
+        if(initialize)//关卡开始后的初始化
+        {
+            //Debug.Log("initialize");
+            MAINTIMER = 0;
+            curProgressID = 0;
+            waveCreatedNum= 0;
+            waveDestroyedNum = 0;
+            initialize= false;
+
+
+            Instantiate(Reward);
+            Reward.transform.parent = canvas.transform;
+        }
+
+        
+        
+    }
+    /*
+    //void ReadData()
+    //{
+    //    StartCoroutine(LoadTable());
+    //}
+    //IEnumerator LoadTable()
+    //{
+    //    ResourceRequest request = Resources.LoadAsync("Level");
+    //    yield return request;
+    //    levelData = request.asset as LevelData;
+    //    if (gameStart)
+    //    {
+    //     GameStart();
+    //    }
+    //}*/
+    private void GameStart()
+    {
+        MAINTIMER += Time.deltaTime;
+        CreateEnemy();
+        if (!gameEnd)//游戏结束后不掉阳光
+        {
             CreatSun();
         }
+        //InvokeRepeating("CreateSunDown", 10, 10);
     }
+    // Update is called once per frame
+    
     public void ChangeStarNum(int ChangeNum)
     {
-    starNum += ChangeNum;
+        starNum += ChangeNum;
         if(starNum<=0)
         {
-      starNum = 0;
+            starNum = 0;
         }
     }
-  private void TableCreateEnemy()
-  {
+    //吴用↓
+    /*
+    private void TableCreateEnemy()
+    {
     //判断是否为最后一波并且敌人全部创建出来
     bool canCreate = false;
     for(int i=0;i<levelData.LevelDataList.Count;i++)
@@ -136,26 +167,106 @@ public class GameManager : MonoBehaviour
     //再次启动计时器
     StartCoroutine(DalayCreateEnemy());
   }
-  public void CreatSun()
-  {
-    if(BornSuntimer>=BornSunInterval)
+
+   */
+    public void CreatSun()
     {
-      BornSuntimer = 0;
-      Instantiate(SunPrefab);
-      
+        BornSuntimer += Time.deltaTime;
+        if (BornSuntimer>=BornSunInterval)
+        {
+            BornSuntimer = 0;
+            Instantiate(SunPrefab);
+        }
     }
-  }
-  public void EnemyDied(GameObject gameObject)
-  {
-    if(curProgressEnemy.Contains(gameObject))
+
+    public void CreateEnemy()
     {
-      curProgressEnemy.Remove(gameObject);
+        if(totalCreatedNum < LevelData.totalNums[curLevelID]) 
+        {
+            if (MAINTIMER > LevelData.Levels[curLevelID][totalCreatedNum].CreateTime)
+            {
+
+                //生成实例
+                GameObject Enemy = Instantiate(enemies[LevelData.Levels[curLevelID][totalCreatedNum].EnemyType]);
+                //根据配表的生成位置，找到父物体
+                //Transform EnemyLine = bornParent.transform.Find("Born" + Random.Range(0, 6).ToString());
+                List<int> ran_n = new List<int>();
+                if (LevelData.Levels[curLevelID][totalCreatedNum].Ran0 == 1)
+                {
+                    ran_n.Add(0);
+                }
+                if (LevelData.Levels[curLevelID][totalCreatedNum].Ran1 == 1)
+                {
+                    ran_n.Add(1);
+                }
+                if (LevelData.Levels[curLevelID][totalCreatedNum].Ran2 == 1)
+                {
+                    ran_n.Add(2);
+                }
+                if (LevelData.Levels[curLevelID][totalCreatedNum].Ran3 == 1)
+                {
+                    ran_n.Add(3);
+                }
+                if (LevelData.Levels[curLevelID][totalCreatedNum].Ran4 == 1)
+                {
+                    ran_n.Add(4);
+                }
+                if (LevelData.Levels[curLevelID][totalCreatedNum].Ran5 == 1)
+                {
+                    ran_n.Add(5);
+                }
+                int n = Random.Range(0, ran_n.Count);
+                Transform EnemyLine = bornParent.transform.Find("Born" + ran_n[n].ToString());
+                //Debug.Log("生成行序号" + ran_n + "在第" + ran_n[n] + "行生成");
+                Enemy.transform.parent = EnemyLine;
+                Enemy.transform.localPosition = Vector3.zero;
+                if (LevelData.Levels[curLevelID][totalCreatedNum].EnemyType == 0)
+                {
+                    Enemy.transform.position = new Vector3(Enemy.transform.position.x, Enemy.transform.position.y - 0.8f, Enemy.transform.position.z);
+                }
+                waveCreatedNum++;
+                totalCreatedNum++;
+            }
+        }
+        
     }
+
+    public void EnemyDied(GameObject gameObject,Vector3 f_vector3)
+    {
+        /*
+    //if(curProgressEnemy.Contains(gameObject))
+    //{
+      //curProgressEnemy.Remove(gameObject);
+    //}
     //当前波次的全部敌人都被消灭了，开启下一个波次
-    if(curProgressEnemy.Count==0)
-    {
-      curProgressID += 1;
-      TableCreateEnemy();
+    //if(curProgressEnemy.Count==0)
+    //{
+    //  curProgressID += 1;
+     // CreateEnemy();
+    //}
+        */
+        waveDestroyedNum++;
+        totalDestroyedNum++;
+        if(waveDestroyedNum == LevelData.Levels[curLevelID][totalDestroyedNum - 1].TimeID_max)//这波次鲨完了
+        {
+            if (curProgressID < LevelData.Levels[curLevelID][0].ProgressID_max)
+            {
+                Debug.Log("Next Wave");
+                curProgressID += 1;
+                MAINTIMER = LevelData.Levels[curLevelID][totalDestroyedNum].CreateTime - 3f;
+                waveDestroyedNum = 0;
+                waveCreatedNum = 0;
+            }
+            else
+            {
+                Instantiate(Reward);
+                Reward.transform.position = f_vector3;
+                Reward.GetComponent<Animator>().SetBool("IsOK", true);
+                gameEnd = true;
+            }
+        }
+
+        
+
     }
-  }
 }

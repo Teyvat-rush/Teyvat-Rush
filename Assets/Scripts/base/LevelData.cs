@@ -4,13 +4,15 @@ using UnityEngine;
 using System;
 public class LevelData : ScriptableObject
 {
-  public List<LevelItem> LevelDataList = new List<LevelItem>();
+    public static List<List<LevelItem>> Levels = new List<List<LevelItem>>();
+    public static List<LevelItem> LevelDataList = new List<LevelItem>();
+    public static List<int> totalNums= new List<int>();
 }
 [System.Serializable]//可序列化的类
 public class LevelItem
 {
-    public int ID;
-    public int LevelID;
+    //public int ID;
+    //public int LevelID;
     public int ProgressID_max;
     public int ProgressID;
     public int TimeID;
@@ -23,4 +25,6 @@ public class LevelItem
     public int Ran3;
     public int Ran4;
     public int Ran5;
+    public int lines;
+    
 }
