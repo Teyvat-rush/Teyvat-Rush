@@ -21,7 +21,22 @@ public class Mora : MonoBehaviour
   private void OnMouseDown()
   {
     animator.SetBool("Fly", true);
-    DataManager.instance.coin.num += 1;
+    if (this.name == "Small_Mora")
+    {
+      DataManager.instance.coin.num += 16;
+    }
+    else if (this.name== "Big_Mora")
+    {
+      DataManager.instance.coin.num += 80;
+    }
+    else if (this.name == "Big_PaiMora")
+    {
+      DataManager.instance.coin.num -= 9;
+    }
+    else if (this.name == "Small_PaiMora")
+    {
+      DataManager.instance.coin.num -= 45;
+    }
     // 将屏幕坐标转化为世界坐标
     Vector3 MoraNumPos = Camera.main.ScreenToWorldPoint(UIManager.instance.GetMoraNumTextPos());
     MoraNumPos = new Vector3(MoraNumPos.x, MoraNumPos.y, 0);
