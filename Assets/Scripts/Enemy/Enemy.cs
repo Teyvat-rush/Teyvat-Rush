@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         big_mora.transform.localPosition = new Vector2(-0.738f, -0.561f);
         big_mora.transform.parent = GameManager.instance.transform;
       }
-      else if(i>8&&i<=100)
+      else if(i>8&&i<=30)
       {
        GameObject small_mora =Instantiate(Small_Mora);
         small_mora.transform.parent = transform;
