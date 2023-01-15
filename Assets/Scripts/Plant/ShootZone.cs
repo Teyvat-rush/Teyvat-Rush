@@ -12,6 +12,13 @@ public class ShootZone : MonoBehaviour
       Parent.GetComponent<Plant>().ShootAwake = true;
     }
   }
+  private void OnTriggerStay2D(Collider2D collision)
+  {
+    if (collision.tag == "Enemy")
+    {
+      Parent.GetComponent<Plant>().ShootAwake = true;
+    }
+  }
   private void OnTriggerExit2D(Collider2D collision)
   {
     if(collision.tag=="Enemy")

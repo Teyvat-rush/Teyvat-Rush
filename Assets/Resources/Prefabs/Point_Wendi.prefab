@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 908875694}
   - component: {fileID: 6867633888917266169}
   - component: {fileID: 1108996890}
+  - component: {fileID: 5428315781555410652}
   m_Layer: 6
   m_Name: Point_Wendi
   m_TagString: Plant
@@ -255,6 +256,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5428315781555410652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4625321320956159830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 4625321320956159829}
+  - {fileID: 1238595562}
+  - {fileID: 908875694}
+  - {fileID: 6867633888917266169}
+  - {fileID: 1108996890}
 --- !u!1 &4625321321343342275
 GameObject:
   m_ObjectHideFlags: 0

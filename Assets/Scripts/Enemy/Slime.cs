@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Slime : Enemy
 {
+  private Transform Bornposition;
   public GameObject LeftWing;
   public GameObject RightWing;
     // Start is called before the first frame update
     void Start()
     {
+    Bornposition = transform;
     anim = GetComponent<Animator>();
     rb = GetComponent<Rigidbody2D>();
     coll = GetComponent<BoxCollider2D>();
@@ -45,6 +47,7 @@ public class Slime : Enemy
       anim.SetBool("Jump", false);
       anim.SetBool("Attack", true);
       PauseMove();
+      transform.position = new Vector2(transform.position.x, Bornposition.position.y);
     }
   }
   private void OnTriggerStay2D(Collider2D collision)
