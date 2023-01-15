@@ -9,11 +9,13 @@ public class Anbo : Plant
   {
     base.Start();
     health = 10000000;
+    SoundManager.instance.PlaySound(Globals.AnboBoom);
   }
 
   private void BOOM()
   {
     Explode.SetActive(true);
+    
   }
   private void Boomover()
   {

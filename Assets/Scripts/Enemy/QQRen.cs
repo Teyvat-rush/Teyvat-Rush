@@ -6,8 +6,9 @@ public class QQRen : Enemy
   public GameObject mask100;
   public GameObject mask50;
     // Start is called before the first frame update
-    void Start()
+   protected override void Start()
     {
+    base.Start();
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();

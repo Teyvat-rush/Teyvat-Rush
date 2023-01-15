@@ -26,6 +26,8 @@ public class Mora : MonoBehaviour
   private void OnMouseDown()
   {
     animator.SetBool("Fly", true);
+    int i = Random.Range(1, 3);
+    SoundManager.instance.PlaySound(Globals.PickMora + i);
     if (this.name == "Small_Mora")
     {
       DataManager.instance.coin.num += 16;
