@@ -56,7 +56,7 @@ public class DroppingSun : MonoBehaviour
   private void OnMouseDown()
   {
     GameManager.instance.starNum += 25;
-    int i = Random.Range(1, 3);
+    int i = Random.Range(1, 4);
     SoundManager.instance.PlaySound(Globals.PickSun + i);
     rb.velocity = new Vector2(0, 0);
     // 将屏幕坐标转化为世界坐标

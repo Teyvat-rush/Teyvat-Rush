@@ -8,7 +8,7 @@ public class Slime : Enemy
   public GameObject LeftWing;
   public GameObject RightWing;
     // Start is called before the first frame update
-    void Start()
+   void Start()
     {
     Bornposition = transform;
     anim = GetComponent<Animator>();
