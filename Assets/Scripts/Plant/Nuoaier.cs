@@ -10,7 +10,7 @@ public class Nuoaier : Plant
     protected override  void Start()
     {
     base.Start();
-    sr = GetComponent<SpriteRenderer>();
+    sr = gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame

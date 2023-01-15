@@ -38,7 +38,7 @@ public class Slime : Enemy
   }
   void Movement()
   {
-    rb.velocity = new Vector2(-Speed, rb.velocity.y);
+    rb.velocity = new Vector3(-Speed, rb.velocity.y,0);
   }
   private void OnTriggerEnter2D(Collider2D collision)
   {
@@ -47,7 +47,7 @@ public class Slime : Enemy
       anim.SetBool("Jump", false);
       anim.SetBool("Attack", true);
       PauseMove();
-      transform.position = new Vector2(transform.position.x, Bornposition.position.y);
+      transform.position = new Vector3(transform.position.x, Bornposition.position.y, transform.position.z);
     }
   }
   private void OnTriggerStay2D(Collider2D collision)
@@ -79,7 +79,17 @@ public class Slime : Enemy
       anim.SetBool("Attack", false);
       anim.SetBool("Jump", true);
       ContinueMove();
-    }
+            float ran1 = Random.Range(50, 101);
+            int ran2 =Random.Range(0,2);
+            if(ran2==0)
+            {
+                transform.localPosition = new Vector3(transform.localPosition.x+ran1 / 300, -0.8f, transform.localPosition.z);
+            }else
+            {
+                transform.localPosition = new Vector3(transform.localPosition.x -ran1 / 300, -0.8f, transform.localPosition.z);
+            }
+
+        }
   }
   public void PauseMove()
   {

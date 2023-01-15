@@ -222,7 +222,7 @@ public class GameManager : MonoBehaviour
                 Enemy.transform.localPosition = Vector3.zero;
                 if (LevelData.Levels[curLevelID][totalCreatedNum].EnemyType == 0)
                 {
-                    Enemy.transform.position = new Vector3(Enemy.transform.position.x, Enemy.transform.position.y - 0.8f, Enemy.transform.position.z);
+                    Enemy.transform.position = new Vector3(Enemy.transform.position.x, Enemy.transform.position.y - 0.8f, -totalCreatedNum-1);
                 }
                 waveCreatedNum++;
                 totalCreatedNum++;
