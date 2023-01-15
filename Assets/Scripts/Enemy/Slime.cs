@@ -69,6 +69,15 @@ public class Slime : Enemy
       }
     }
   }
+  private void OnTriggerExit2D(Collider2D collision)
+  {
+    if(collision.tag=="Plant")
+    {
+      anim.SetBool("Attack", false);
+      anim.SetBool("Jump", true);
+      ContinueMove();
+    }
+  }
   public void PauseMove()
   {
     Speed = 0;

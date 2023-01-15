@@ -65,6 +65,13 @@ public class QQRen : Enemy
       }
     }
   }
-
+  private void OnTriggerExit2D(Collider2D collision)
+  {
+    if(collision.tag=="Plant")
+    {
+      Speed = 0.28f;
+      anim.SetBool("Attack", false);
+    }
+  }
 
 }
