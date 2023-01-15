@@ -7,6 +7,7 @@ public class Mora : MonoBehaviour
   private CircleCollider2D collider2D;
   private Rigidbody2D rb;
   private Animator animator;
+  public LayerMask ground;
     void Start()
     {
     rb = GetComponent<Rigidbody2D>();
@@ -15,7 +16,11 @@ public class Mora : MonoBehaviour
     }
     void Update()
     {
-        
+        if(collider2D.IsTouchingLayers(ground)&&rb.velocity.y<-5)
+    {
+      rb.velocity = new Vector2(0, 0);
+      rb.gravityScale = 0;
+    }
     }
   
   private void OnMouseDown()

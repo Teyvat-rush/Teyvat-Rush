@@ -33,12 +33,13 @@ public class Enemy : MonoBehaviour
         big_mora.transform.localPosition = new Vector2(-0.738f, -0.561f);
         big_mora.transform.parent = GameManager.instance.transform;
       }
-      else if(i>8&&i<=30)
+      else if(i>8&&i<=100)
       {
        GameObject small_mora =Instantiate(Small_Mora);
         small_mora.transform.parent = transform;
-        small_mora.transform.localPosition = new Vector2(-0.738f, -0.561f);
+        small_mora.transform.localPosition = Vector3.zero;
         small_mora.transform.parent = GameManager.instance.transform;
+        small_mora.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5);
       }
       else if(i>30&&i<=38)
       {
