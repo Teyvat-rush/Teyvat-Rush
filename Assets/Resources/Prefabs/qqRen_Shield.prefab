@@ -1179,6 +1179,7 @@ Transform:
   - {fileID: 260939117312872265}
   - {fileID: 260939118272153451}
   - {fileID: 260939118797530246}
+  - {fileID: 565462740147433753}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1271,6 +1272,7 @@ MonoBehaviour:
   Small_Mora: {fileID: 788374585637179602, guid: 80abbf84de4a59a45b78fdf831b9b2db, type: 3}
   Big_PaiMora: {fileID: 522148400624790811, guid: 2242196e65a1db24e860182aad6f3de0, type: 3}
   Small_PaiMora: {fileID: 522148400624790811, guid: ce067fe907eb26742bbf255b57ec83d3, type: 3}
+  MoraBag: {fileID: 6121092069021627125}
   shield_100: {fileID: 260939117704842959}
   shield_50: {fileID: 260939117769893906}
   shield_20: {fileID: 260939117616004363}
@@ -1559,3 +1561,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6121092069021627125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 565462740147433753}
+  m_Layer: 2
+  m_Name: MoraBag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &565462740147433753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6121092069021627125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 260939118249624083}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

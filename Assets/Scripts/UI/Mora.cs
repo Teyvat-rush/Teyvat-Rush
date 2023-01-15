@@ -7,7 +7,6 @@ public class Mora : MonoBehaviour
   private CircleCollider2D collider2D;
   private Rigidbody2D rb;
   private Animator animator;
-  public LayerMask ground;
     void Start()
     {
     rb = GetComponent<Rigidbody2D>();
@@ -16,16 +15,15 @@ public class Mora : MonoBehaviour
     }
     void Update()
     {
-        if(collider2D.IsTouchingLayers(ground)&&rb.velocity.y<-5)
-    {
-      rb.velocity = new Vector2(0, 0);
-      rb.gravityScale = 0;
-    }
+        
+    
     }
   
   private void OnMouseDown()
   {
     animator.SetBool("Fly", true);
+    int i = Random.Range(1, 3);
+    SoundManager.instance.PlaySound(Globals.PickMora + i);
     if (this.name == "Small_Mora")
     {
       DataManager.instance.coin.num += 16;

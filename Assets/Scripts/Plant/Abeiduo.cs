@@ -47,6 +47,8 @@ public class Abeiduo : Plant
     {
       animator.SetBool("PrepareOver", true);
       Explode.SetActive(true);
+      SoundManager.instance.PlaySound(Globals.YangHuaBoom);
+
     }
   }
 }

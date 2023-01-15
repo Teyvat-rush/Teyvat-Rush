@@ -219,7 +219,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 7543055423130692062}
   m_Bounds:
-    m_Center: {x: 0.0000120177865, y: 0.00014999509, z: 0}
+    m_Center: {x: 0.0000120177865, y: 0.00014951825, z: 0}
     m_Extent: {x: 0.08248751, y: 0.17668504, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -487,8 +487,8 @@ MonoBehaviour:
   - {fileID: 5104819316788203728}
   - {fileID: 9065887887678906553}
   m_Bounds:
-    m_Center: {x: -0.0002722144, y: -0.00022739172, z: 0}
-    m_Extent: {x: 0.61059266, y: 0.43225765, z: 0}
+    m_Center: {x: -0.00027233362, y: -0.00022745132, z: 0}
+    m_Extent: {x: 0.6105928, y: 0.4322576, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &5089799590243495308
@@ -593,6 +593,7 @@ Transform:
   - {fileID: 49643664412885572}
   - {fileID: 8740287781576822322}
   - {fileID: 9065887887678906553}
+  - {fileID: 4653979680750534161}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -685,6 +686,8 @@ MonoBehaviour:
   Small_Mora: {fileID: 788374585637179602, guid: 80abbf84de4a59a45b78fdf831b9b2db, type: 3}
   Big_PaiMora: {fileID: 522148400624790811, guid: 2242196e65a1db24e860182aad6f3de0, type: 3}
   Small_PaiMora: {fileID: 522148400624790811, guid: ce067fe907eb26742bbf255b57ec83d3, type: 3}
+  MoraBag: {fileID: 8328344102152049064}
+  Dump: {fileID: 0}
   LeftWing: {fileID: 7648658438052638314}
   RightWing: {fileID: 8899032742186229874}
 --- !u!1 &6184000314063555829
@@ -950,10 +953,40 @@ MonoBehaviour:
   - {fileID: 49643664412885572}
   - {fileID: 335274238979363046}
   m_Bounds:
-    m_Center: {x: -0.00007145852, y: -0.0003734678, z: 0}
-    m_Extent: {x: 0.099753514, y: 0.121958986, z: 0}
+    m_Center: {x: -0.00007145852, y: -0.00037370622, z: 0}
+    m_Extent: {x: 0.099753514, y: 0.12195875, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
+--- !u!1 &8328344102152049064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4653979680750534161}
+  m_Layer: 6
+  m_Name: MoraBag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4653979680750534161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328344102152049064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5088504468894153053}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8693267733680340950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1117,7 @@ MonoBehaviour:
   - {fileID: 5736823629692173062}
   - {fileID: 6990891217061927960}
   m_Bounds:
-    m_Center: {x: -0.00012352318, y: -0.00013601035, z: 0}
+    m_Center: {x: -0.0001232773, y: -0.00013648719, z: 0}
     m_Extent: {x: 0.09112625, y: 0.117278986, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1

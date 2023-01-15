@@ -41,7 +41,8 @@ public class ProducedSun : MonoBehaviour
     }
   private void OnMouseDown()
   {
-
+    int i = Random.Range(1, 4);
+    SoundManager.instance.PlaySound(Globals.PickSun + i);
     // 将屏幕坐标转化为世界坐标
     Vector3 sunNumPos = (UIManager.instance.GetSunNumTextPos());
     sunNumPos = new Vector3(sunNumPos.x, sunNumPos.y, 0);
