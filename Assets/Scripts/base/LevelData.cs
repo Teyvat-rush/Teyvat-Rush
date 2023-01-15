@@ -17,7 +17,7 @@ public class LevelItem
     public int ProgressID;
     public int TimeID;
     public int TimeID_max;
-    public int CreateTime;
+    public float CreateTime;
     public int EnemyType;
     public int Ran0;
     public int Ran1;
