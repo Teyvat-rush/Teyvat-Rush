@@ -13,7 +13,7 @@ public class LibraryOfEnemy : MonoBehaviour
     public string MoveVelocityLevel;
     public static List<LibraryOfEnemy> ALLEnemies = new List<LibraryOfEnemy>();
     public List<Sprite> ALLImages;
-
+    public static LibraryOfEnemy instance;
     public LibraryOfEnemy(string characterName, string description, Sprite image, string hPLevel, string aTKLevel, string aTKIntervalLevel, string moveVelocityLevel)
     {
         this.characterName = characterName;
@@ -28,6 +28,7 @@ public class LibraryOfEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        instance = this;
         ALLEnemies.Add(new LibraryOfEnemy("风 史 莱 姆", "逸散在自然之中\r\n的风元素凝聚形\r\n成的小小魔物。", ALLImages[0],"D","C+","B","B"));
         ALLEnemies.Add(new LibraryOfEnemy("大 型 风 史 莱 姆", "逸散在自然之中\r\n的风元素凝聚形\r\n成的小小魔物。\r\n\r\n相比于风史莱姆\r\n更具威胁。", ALLImages[1], "C", "B", "B", "B+"));
         ALLEnemies.Add(new LibraryOfEnemy("丘 丘 人", "提瓦特荒野中游\r\n荡的原始住民。\r\n\r\n与人类轮廓相似\r\n，却失去了智能\r\n与灵性。据记载\r\n，在大地上出没\r\n超过千年，却没有历史与文明。", ALLImages[2], "D+", "B", "A", "C"));

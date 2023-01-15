@@ -2,45 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
 public class GameManager : MonoBehaviour
 {
-    public List<GameObject> enemies= new List<GameObject>();
+    public static GameManager instance;
+    public List<Sprite> rewardImages = new List<Sprite>();//预制体override
+    public GameObject button_Reward;
+    public List<GameObject> enemies= new List<GameObject>();//预制体override
     // Start is called before the first frame update
     public GameObject bornParent;//敌人生成的父级
     public GameObject EnemyPrefab;//敌人的预制件
     public GameObject SunPrefab;//飘落阳光的预制件
-    public GameObject Reward;
+    
     public GameObject canvas;
     public float creatEnemyInterval;//生成敌人的间隔时间
-  
-    public static GameManager instance;
     public static int maxCardsNum=6;////////最大卡槽数
-    public int attainedCardsNum=5;////////////获得角色数
+    public static int cardsMaxCharacter = 5;/////////////////手动改变
+    public static int cardsMaxEnemy = 6;/////////////////手动改变
     public int starNum;
     private float BornSuntimer;
     public float BornSunInterval;
     //[HideInInspector]
     //public LevelData levelData;
-    public bool gameStart = false;//true:已开始作战，无论是否暂停
-    public bool gameEnd = false;
-    public bool isBattling = false;//true:在关卡内）
+    public static bool gameStart = false;//true:已开始作战，无论是否暂停
+    public bool gameEnd = false;//true:最后一只怪倒下，无论是否暂停
+    //public bool isBattling = false;//true:在关卡内）
     //public int circulateTimes = 1;//当前周目（现在没用到）
-    public int curLevelID;//当前关卡，从0开始数,0-1是第0关
+    public static int curLevelID=0;//当前关卡，从0开始数,0-1是第0关
     public int curProgressID;//当前波次数，从0开始数
     public int totalDestroyedNum;//总击杀敌人数
     public int waveDestroyedNum;//当前波次击杀敌人数
     public int waveCreatedNum;//当前波次已生成敌人数
     public int totalCreatedNum;//总已生成敌人数
     public float MAINTIMER;//主计时器
-    public static bool initialize=false;
+    public static bool initialize=false;//关卡开始后的初始化
     //public List<GameObject> curProgressEnemy;
+
+    
+
     private void Awake()
     {
+        Canvas_LibraryOfEnemy.checkMode = 2;
         instance = this;
-        curLevelID = 0;
     }
     void Start()
     {
@@ -56,16 +62,12 @@ public class GameManager : MonoBehaviour
 
         if(initialize)//关卡开始后的初始化
         {
-            //Debug.Log("initialize");
+            Debug.Log("GameManager:initialize");
             MAINTIMER = 0;
             curProgressID = 0;
             waveCreatedNum= 0;
             waveDestroyedNum = 0;
             initialize= false;
-
-
-            Instantiate(Reward);
-            Reward.transform.parent = canvas.transform;
         }
 
         
@@ -259,14 +261,13 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Instantiate(Reward);
-                Reward.transform.position = f_vector3;
-                Reward.GetComponent<Animator>().SetBool("IsOK", true);
+                Instantiate(button_Reward);
+                button_Reward.transform.position = f_vector3;
+                button_Reward.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = rewardImages[curLevelID];
+                button_Reward.GetComponent<Animator>().SetBool("IsOK", true);
+                gameStart = false;
                 gameEnd = true;
             }
         }
-
-        
-
     }
 }

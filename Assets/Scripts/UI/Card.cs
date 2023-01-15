@@ -66,7 +66,7 @@ public class Card : MonoBehaviour
     //根据鼠标移动的位置移动物体
     curGameObject.transform.position = TranslateScreenToWorld(pointerEventData.position);
     
-    print(Input.mousePosition);
+    //print(Input.mousePosition);
   }
   //拖拽结束（鼠标放开的一瞬间）
   public void OnEndDrag(BaseEventData data)

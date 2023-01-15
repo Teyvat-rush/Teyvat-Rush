@@ -158,6 +158,7 @@ public class Canvas_Shop : MonoBehaviour
         if (index_selected_item==1)
         {
             GameManager.maxCardsNum += int.Parse(text_PurchasedNum_Int.GetComponent<Text>().text);
+            Debug.Log("场景0 最大卡槽数(GameManager.instance.maxCardsNum)" + GameManager.maxCardsNum);
             CardSlot.initialize = true;
         }
 

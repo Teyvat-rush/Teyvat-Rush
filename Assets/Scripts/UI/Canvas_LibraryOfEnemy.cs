@@ -25,14 +25,19 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
     public GameObject ATKLevel;
     public GameObject ATKIntervalLevel;
     public GameObject MoveVelocityLevel;
-    public int attainedCardsNum;
-    //public static int checkMode = 1;//1：主菜单图鉴；2：选卡或关卡内打开图鉴 现已用isBattle替代
-    public static bool initialize = true;
+    public static int checkMode = 1;//1：主菜单或关卡结束图鉴；2：选卡或关卡未结束内打开图鉴
+    public static List<int> attainedNumPerLevel = new List<int>();//每关拥有的敌人卡数
+    public static bool initialize = false;
     public int lastChosenIndex=0;//默认选第一个
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         initialize = true;
+        Debug.Log("Canvas_LibraryOfEnemy:Awake");
+        attainedNumPerLevel.Clear();
+        attainedNumPerLevel.Add(6);
+        attainedNumPerLevel.Add(6);
+        attainedNumPerLevel.Add(6);
     }
 
     // Update is called once per frame
@@ -40,14 +45,17 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
     {
         if(initialize)//只调用一次
         {
-            if (!GameManager.instance.isBattling)//不在关卡中
+            Debug.Log(checkMode);
+            Debug.Log("Canvas_LibraryOfEnemy:initialize");
+            if (checkMode==1)//不在关卡中
             {
                 text_LibraryOfEnemy.SetActive(true);
                 text_EnemyReview.SetActive(false);
                 text_Return.GetComponent<Text>().text = "主 菜 单";
                 text_SelectCard.GetComponent<Text>().text = "点击查看遇到过的敌人！";
-                attainedCardsNum = 6;////////////////////////////////读取关卡进度，改变遇到的敌人数
-                for (int i = 0; i < attainedCardsNum; i++)
+                attainedCards.Clear();
+                attainedCardsButtons.Clear();
+                for (int i = 0; i < GameManager.cardsMaxEnemy; i++)
                 {
                     attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
                     attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());
@@ -55,6 +63,7 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
                     int temp_1 = i;
                     attainedCardsButtons[i].onClick.RemoveAllListeners();
                     attainedCardsButtons[i].onClick.AddListener(delegate { OpenPanelDetail(temp_1); });//每一个按钮增加监听事件，并传递参数，temp_1图鉴序号（太nice了！！！）
+                    attainedCards[i].SetActive(true);
                 }
                 attainedCards[lastChosenIndex].GetComponent<Button>().interactable = false;
             }else
@@ -63,8 +72,9 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
                 text_EnemyReview.SetActive(true);
                 text_Return.GetComponent<Text>().text = "返 回 关 卡";
                 text_SelectCard.GetComponent<Text>().text = "点击查看本关出现的敌人！";
-                attainedCardsNum = 6;////////////////////////////////读取关卡进度，改变本关卡包含的敌人数
-                for (int i = 0; i < attainedCardsNum; i++)
+                attainedCards.Clear();
+                attainedCardsButtons.Clear();
+                for (int i = 0; i < GameManager.cardsMaxEnemy; i++)
                 {
                     attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
                     attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());
@@ -72,6 +82,12 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
                     int temp_1 = i;
                     attainedCardsButtons[i].onClick.RemoveAllListeners();
                     attainedCardsButtons[i].onClick.AddListener(delegate { OpenPanelDetail(temp_1); });//每一个按钮增加监听事件，并传递参数，temp_1图鉴序号（太nice了！！！）
+                    attainedCards[i].SetActive(false);
+                    
+                }
+                for(int i=0;i< LevelData.totalNums[GameManager.curLevelID];i++)//对于这关出现的每一个敌人
+                {
+                    attainedCards[LevelData.Levels[GameManager.curLevelID][i].EnemyType].SetActive(true);
                 }
                 attainedCards[lastChosenIndex].GetComponent<Button>().interactable = false;
             }

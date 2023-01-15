@@ -19,7 +19,7 @@ public class Dialog : MonoBehaviour
     //public Text AutoText; //自动播放按钮的“自动播放”文本的text（用于实现自动手动切换的功能）
     //public GameObject Warning; //提醒玩家按左键继续，可要可不要
     [Header("文本文件")]
-    public TextAsset textfile; //剧情文本的txt文件
+    public List<TextAsset> textfile; //剧情文本的txt文件
     public int index; //进行到了第几句话，用于实现基础功能
     public float textSpeed = 0.05f; //每个字多久才能出现
 
@@ -36,7 +36,7 @@ public class Dialog : MonoBehaviour
     void Awake()
     {
         textStarted = false;
-        GetTextFromFile(textfile);
+        GetTextFromFile(textfile[GameManager.curLevelID]);
         index= 0;
     }
 

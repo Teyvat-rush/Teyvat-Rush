@@ -76,7 +76,6 @@
     <Compile Include="Assets\Scripts\Plant\ProducedSun.cs" />
     <Compile Include="Assets\Scripts\Plant\DroppingSun.cs" />
     <Compile Include="Assets\Scripts\Plant\Boom.cs" />
-    <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_MainMenu\ChooseLevel.cs" />
     <Compile Include="Assets\Scripts\Plant\Mona.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_Shop.cs" />
     <Compile Include="Assets\Scripts\base\LevelData.cs" />
@@ -98,6 +97,7 @@
     <Compile Include="Assets\Scripts\Enemy\qqRen_Stick.cs" />
     <Compile Include="Assets\Scripts\UI\CardSlot.cs" />
     <Compile Include="Assets\Scripts\base\DataManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Panel_Succeed.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Level\Level 1-X\Failed\Blur.shader" />

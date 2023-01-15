@@ -13,10 +13,17 @@ public class MainMenu : MonoBehaviour
     public GameObject Shop;
   public GameObject Mainmenu;
     public static bool initialize = true;
-    // Start is called before the first frame update
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+
     public void LibraryofEnemy()
   {
-    Mainmenu.SetActive(false);
+        Canvas_LibraryOfEnemy.checkMode = 1;
+        Canvas_LibraryOfEnemy.initialize = true;
+        Mainmenu.SetActive(false);
     Libraryofcharacter.SetActive(false);
     Libraryofenemy.SetActive(true);
     Achievements.SetActive(false);
@@ -24,8 +31,8 @@ public class MainMenu : MonoBehaviour
   }
   public void LibraryofCharcater()
   {
-    //Canvas_LibraryOfEnemy.initialize = true;
-    Mainmenu.SetActive(false);
+        Canvas_LibraryOfCharacter.initialize = true;
+        Mainmenu.SetActive(false);
     Libraryofcharacter.SetActive(true);
     Libraryofenemy.SetActive(false);
     Achievements.SetActive(false);
@@ -40,14 +47,14 @@ public class MainMenu : MonoBehaviour
     Achievements.SetActive(true);
     Selecetlevel.SetActive(false);
   }
-  public void OpenSelectLevel()
-  {
-    Mainmenu.SetActive(false);
-    Libraryofcharacter.SetActive(false);
-    Libraryofenemy.SetActive(false);
-    Achievements.SetActive(false);
-    Selecetlevel.SetActive(true);
-  }
+  //public void OpenSelectLevel()
+  //{
+  //  Mainmenu.SetActive(false);
+  //  Libraryofcharacter.SetActive(false);
+  //  Libraryofenemy.SetActive(false);
+  //  Achievements.SetActive(false);
+  //  Selecetlevel.SetActive(true);
+  //}
   public void QuitGame()
   {
     Application.Quit();
@@ -60,7 +67,7 @@ public class MainMenu : MonoBehaviour
     Achievements.SetActive(false);
     Selecetlevel.SetActive(false);
   }
-  public void ReturntoCaracter()
+  public void ReturntoCharacter()
   {
     Mainmenu.SetActive(false);
     Libraryofcharacter.SetActive(true);
@@ -73,17 +80,13 @@ public class MainMenu : MonoBehaviour
     {
         Mainmenu.SetActive(false);
         Shop.SetActive(true);
-        
     }
 
     void Update()
     {
        if(initialize)
         {
-            Canvas_Achievement.initialize = true;
-            Achievements.SetActive(true);
-            Achievements.SetActive(false);
-            
+            Canvas_LibraryOfEnemy.checkMode = 1;
             initialize =false;
             ///////成就初始化
         }

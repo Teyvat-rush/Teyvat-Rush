@@ -20,10 +20,10 @@ public class Button_Reward : MonoBehaviour
     }
     public void CreateDisappearParticle()
     {
+        GameManager.curLevelID++;///////////主线进度+1
         Instantiate(disappearParticle,transform.position,transform.rotation);
         panelSucceed.SetActive(true);
         buttonPause.SetActive(false);
         gameObject.SetActive(false);
     }
-
 }
