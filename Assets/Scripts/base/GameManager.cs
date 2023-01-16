@@ -11,6 +11,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public GameObject map;
+    public List<Sprite> Maps= new List<Sprite>();
     public List<Sprite> rewardImages = new List<Sprite>();//预制体override
     public GameObject button_Reward;
     public List<GameObject> enemies= new List<GameObject>();//预制体override
@@ -41,7 +43,7 @@ public class GameManager : MonoBehaviour
     public int waveCreatedNum;//当前波次已生成敌人数
     public static int totalCreatedNum;//总已生成敌人数
     public float MAINTIMER;//主计时器
-    public static bool initialize=true;//关卡开始后的初始化
+    public static bool initialize;//关卡开始后的初始化
     //public List<GameObject> curProgressEnemy;
     
 
@@ -51,6 +53,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         gameStart = false;
         gameEnd=false;
+        initialize = true;
     }
     void Start()
     {
@@ -66,6 +69,15 @@ public class GameManager : MonoBehaviour
 
         if(initialize)//关卡开始后的初始化
         {
+            // map = Maps[curLevelID];
+            if(curLevelID<=2)
+            {
+                map.GetComponent<SpriteRenderer>().sprite = Maps[curLevelID];
+            }else if(curLevelID<=4)
+            {
+                map.GetComponent<SpriteRenderer>().sprite = Maps[2];
+            }
+            
             LevelNames.Clear();
             LevelNames.Add("蒙德夜晚 - 1");
             LevelNames.Add("蒙德夜晚 - 2");
