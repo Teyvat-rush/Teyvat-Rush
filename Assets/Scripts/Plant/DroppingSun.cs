@@ -33,21 +33,20 @@ public class DroppingSun : MonoBehaviour
     if (Mathf.Abs(transform.position.y - TargetPos.y) <= 0.5f)
     {
       rb.velocity = new Vector2(0, 0);
+      SwitchAnim();
     }
-    SwitchAnim();
     }
 
   void SwitchAnim()
   {
-    if (anim.GetBool("idle"))
-    {
+    
       timer += Time.deltaTime;
       if (timer >= duration)
       {
         timer = 0;
         anim.SetBool("Disappear",true);
       }
-    }
+    
   }
   public void Disappearing()
   {
