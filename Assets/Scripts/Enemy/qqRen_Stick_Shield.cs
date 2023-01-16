@@ -8,6 +8,7 @@ public class qqRen_Stick_Shield : Enemy
   public GameObject shield_20;
   public GameObject mask_100;
   public GameObject mask_50;
+  public bool isAttack;
   // Start is called before the first frame update
   void Start()
   {
@@ -21,6 +22,11 @@ public class qqRen_Stick_Shield : Enemy
   // Update is called once per frame
   void Update()
   {
+    isAttack = false;
+    if(isAttack)
+    {
+      Speed = 0;
+    }
     if (!isDead)
     {
       Movement();
@@ -55,18 +61,12 @@ public class qqRen_Stick_Shield : Enemy
     rb.velocity = new Vector2(-Speed, 0);
   }
 
-  private void OnTriggerEnter2D(Collider2D collision)
-  {
-    if (collision.gameObject.tag == "Plant")
-    {
-      anim.SetBool("Attack", true);
-      Speed = 0;
-    }
-  }
+  
   private void OnTriggerStay2D(Collider2D collision)
   {
     if (collision.gameObject.tag == "Plant")
     {
+      isAttack = true;
       Speed = 0;
       anim.SetBool("Attack", true);
       damageTimer += Time.deltaTime;
@@ -77,6 +77,7 @@ public class qqRen_Stick_Shield : Enemy
         float newHealth = plant.ChangeHealth(-damage);
         if (newHealth <= 0)
         {
+          isAttack = false;
           anim.SetBool("Attack", false);
           Speed = 0.28f;
         }
@@ -85,11 +86,9 @@ public class qqRen_Stick_Shield : Enemy
   }
   private void OnTriggerExit2D(Collider2D collision)
   {
-    if (collision.tag == "Plant")
-    {
+    isAttack = false;
       Speed = 0.28f;
       anim.SetBool("Attack", false);
-    }
   }
 
 }

@@ -13,4 +13,6 @@ public class Globals
   public const string MonaDie = "Audios/莫娜倒下";
   public const string NuoaierPlanted = "Audios/诺艾尔加入队伍";
   public const string NuoaierDie = "Audios/诺艾尔倒下";
+  public const string AbeiduoPlanted = "Audios/阿贝多加入队伍";
+  public const string AbeiduoDie = "Audios/阿贝多倒下";
 }

@@ -99,6 +99,10 @@ public class Card : MonoBehaviour
           int i = Random.Range(1, 4);
           SoundManager.instance.PlaySound(Globals.NuoaierPlanted + i.ToString());
         }
+        if(objectPrefab.name== "Point_Anbo")
+        {
+          SoundManager.instance.PlaySound(Globals.AnboBoom);
+        }
         //重置
         curGameObject.GetComponent<Plant>().PlantAwake = true;
         curGameObject = null;

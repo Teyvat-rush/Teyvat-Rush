@@ -6,6 +6,7 @@ public class qqRen_Stick : Enemy
 {
   public GameObject mask100;
   public GameObject mask50;
+  public bool isAttack;
   // Start is called before the first frame update
   void Start()
   {
@@ -19,6 +20,11 @@ public class qqRen_Stick : Enemy
   // Update is called once per frame
   void Update()
   {
+    isAttack = false;
+    if(isAttack)
+    {
+      Speed = 0;
+    }
     if (!isDead)
     {
       Movement();
@@ -39,18 +45,11 @@ public class qqRen_Stick : Enemy
     rb.velocity = new Vector2(-Speed, 0);
   }
 
-  private void OnTriggerEnter2D(Collider2D collision)
-  {
-    if (collision.gameObject.tag == "Plant")
-    {
-      anim.SetBool("Attack", true);
-      Speed = 0;
-    }
-  }
   private void OnTriggerStay2D(Collider2D collision)
   {
     if (collision.gameObject.tag == "Plant")
     {
+      isAttack = true;
       Speed = 0;
       anim.SetBool("Attack", true);
       damageTimer += Time.deltaTime;
@@ -69,10 +68,7 @@ public class qqRen_Stick : Enemy
   }
   private void OnTriggerExit2D(Collider2D collision)
   {
-    if (collision.tag == "Plant")
-    {
       Speed = 0.28f;
       anim.SetBool("Attack", false);
-    }
   }
 }
