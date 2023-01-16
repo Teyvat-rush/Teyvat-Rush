@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-  int level = 1;
+    //int level = 1;
+    public Text startLevelName;
   public GameObject Libraryofenemy;
   public GameObject Libraryofcharacter;
   public GameObject Achievements;
@@ -13,6 +14,12 @@ public class MainMenu : MonoBehaviour
     public GameObject Shop;
   public GameObject Mainmenu;
     public static bool initialize = true;
+
+
+    public void Awake()
+    {
+        GameManager.initialize = true;
+    }
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -84,6 +91,8 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
+        startLevelName.text = GameManager.LevelNames[GameManager.curLevelID];
+
        if(initialize)
         {
             Canvas_LibraryOfEnemy.checkMode = 1;

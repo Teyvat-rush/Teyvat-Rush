@@ -23,6 +23,7 @@ public class CardSlot : MonoBehaviour
     public GameObject button_returnToLevelE;
     public GameObject canvas_LibraryOfEnemy;
     public GameObject canvas_LibraryOfCharacter;
+    public Text startLevelName;
     public List<Transform> slots = new List<Transform>();//将10个按钮的位置导入
     public List<GameObject> attainedCards = new List<GameObject>();//将拥有的角色卡导入
     public List<GameObject> selectedCards = new List<GameObject>();//选中的角色卡
@@ -60,6 +61,7 @@ public class CardSlot : MonoBehaviour
 
         if(initialize)
         {
+            startLevelName.text = GameManager.LevelNames[GameManager.curLevelID];
             attainedCards.Clear();
             attainedCardsButtons.Clear();
             for (int i = 0; i < GameManager.maxCardsNum; i++)
@@ -140,6 +142,7 @@ public class CardSlot : MonoBehaviour
         {
             GameManager.initialize = true;
             GameManager.gameStart = true;
+            ProgressBar.initialize = true;
             button_Menu.SetActive(false);
             button_TimeSpeed.SetActive(true);
             button_Pause.SetActive(true);

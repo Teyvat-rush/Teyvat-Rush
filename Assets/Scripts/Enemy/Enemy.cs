@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
       MoraBag.transform.parent = GameManager.instance.transform;
       CreateMora(); 
       isDead = true;
-      GameManager.instance.EnemyDied(gameObject,gameObject.transform.position);
+      GameManager.instance.EnemyDied(gameObject);
       
     }
   }

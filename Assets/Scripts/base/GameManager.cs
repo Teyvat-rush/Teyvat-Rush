@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using TMPro;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,21 +34,23 @@ public class GameManager : MonoBehaviour
     //public bool isBattling = false;//true:在关卡内）
     //public int circulateTimes = 1;//当前周目（现在没用到）
     public static int curLevelID=0;//当前关卡，从0开始数,0-1是第0关
+    public static List<string> LevelNames = new List<string>();
     public int curProgressID;//当前波次数，从0开始数
     public int totalDestroyedNum;//总击杀敌人数
     public int waveDestroyedNum;//当前波次击杀敌人数
     public int waveCreatedNum;//当前波次已生成敌人数
-    public int totalCreatedNum;//总已生成敌人数
+    public static int totalCreatedNum;//总已生成敌人数
     public float MAINTIMER;//主计时器
     public static bool initialize=false;//关卡开始后的初始化
     //public List<GameObject> curProgressEnemy;
-
     
 
     private void Awake()
     {
         Canvas_LibraryOfEnemy.checkMode = 2;
         instance = this;
+        gameStart = false;
+        gameEnd=false;
     }
     void Start()
     {
@@ -62,11 +66,17 @@ public class GameManager : MonoBehaviour
 
         if(initialize)//关卡开始后的初始化
         {
-            Debug.Log("GameManager:initialize");
+            LevelNames.Clear();
+            LevelNames.Add("蒙德夜晚 - 1");
+            LevelNames.Add("蒙德夜晚 - 2");
+            LevelNames.Add("蒙德夜晚 - 3");
+            Debug.Log("GameManager:initialize 当前关卡ID"+curLevelID);
             MAINTIMER = 0;
             curProgressID = 0;
             waveCreatedNum= 0;
             waveDestroyedNum = 0;
+            waveCreatedNum= 0;
+            totalCreatedNum= 0;
             initialize= false;
         }
 
@@ -183,11 +193,11 @@ public class GameManager : MonoBehaviour
 
     public void CreateEnemy()
     {
-        if(totalCreatedNum < LevelData.totalNums[curLevelID]) 
+        if (totalCreatedNum < LevelData.totalNums[curLevelID]) 
         {
             if (MAINTIMER > LevelData.Levels[curLevelID][totalCreatedNum].CreateTime)
             {
-
+                Debug.Log("生成敌人");
                 //生成实例
                 GameObject Enemy = Instantiate(enemies[LevelData.Levels[curLevelID][totalCreatedNum].EnemyType]);
                 //根据配表的生成位置，找到父物体
@@ -233,7 +243,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void EnemyDied(GameObject gameObject,Vector3 f_vector3)
+    public void EnemyDied(GameObject f_gameObject)
     {
         /*
     //if(curProgressEnemy.Contains(gameObject))
@@ -254,6 +264,7 @@ public class GameManager : MonoBehaviour
             if (curProgressID < LevelData.Levels[curLevelID][0].ProgressID_max)
             {
                 Debug.Log("Next Wave");
+                ProgressBar.Flags[curProgressID].transform.position = new Vector3(ProgressBar.Flags[curProgressID].transform.position.x, ProgressBar.Flags[curProgressID].transform.position.y + 0.21f, ProgressBar.Flags[curProgressID].transform.position.z);
                 curProgressID += 1;
                 MAINTIMER = LevelData.Levels[curLevelID][totalDestroyedNum].CreateTime - 3f;
                 waveDestroyedNum = 0;
@@ -261,10 +272,9 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Instantiate(button_Reward);
-                button_Reward.transform.position = f_vector3;
-                button_Reward.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = rewardImages[curLevelID];
-                button_Reward.GetComponent<Animator>().SetBool("IsOK", true);
+                Instantiate(button_Reward,f_gameObject.transform.position,f_gameObject.transform.rotation, canvas.transform);
+                //button_Reward.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = rewardImages[curLevelID];
+                //button_Reward.GetComponent<Animator>().SetBool("IsOK", true);
                 gameStart = false;
                 gameEnd = true;
             }

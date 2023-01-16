@@ -13,10 +13,10 @@ public class LevelItem
 {
     //public int ID;
     //public int LevelID;
-    public int ProgressID_max;
-    public int ProgressID;
-    public int TimeID;
-    public int TimeID_max;
+    public float ProgressID_max;
+    public float ProgressID;
+    public float TimeID;
+    public float TimeID_max;
     public float CreateTime;
     public int EnemyType;
     public int Ran0;

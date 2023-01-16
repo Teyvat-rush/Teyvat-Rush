@@ -20,13 +20,13 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    UIManager.instance.UpdateUI();
-    timer += Time.deltaTime;
-    if (timer >= 10)
-    {
-      slider.value += Time.deltaTime / 20;
+        UIManager.instance.UpdateUI();
+        //timer += Time.deltaTime;
+        //if (timer >= 10)
+        //{
+        //    slider.value += Time.deltaTime / 20;
+        //}
     }
-  }
   public void InitUI()//初始化UI
   {
    

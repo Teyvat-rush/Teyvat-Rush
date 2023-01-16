@@ -7624,7 +7624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.072500005, y: 0.24166667}
   m_AnchorMax: {x: 0.90250003, y: 0.8166667}
-  m_AnchoredPosition: {x: -92, y: 0.75650024}
+  m_AnchoredPosition: {x: -161.9, y: 0.75650024}
   m_SizeDelta: {x: -125.2847, y: 1.6241}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975253320
@@ -7660,7 +7660,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5F00\u59CB|\u5F53\u524D"
+  m_Text: "\u5F00 \u59CB"
 --- !u!222 &975253321
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8621,6 +8621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce94995148d936641aa7663422f4d84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startLevelName: {fileID: 2112583206}
   Libraryofenemy: {fileID: 1465904294}
   Libraryofcharacter: {fileID: 2095711651}
   Achievements: {fileID: 1301516357}
@@ -16727,8 +16728,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 214, y: 7}
-  m_SizeDelta: {x: 320.0343, y: 93.4099}
+  m_AnchoredPosition: {x: 72, y: 6.0065}
+  m_SizeDelta: {x: 330.7077, y: 93.4099}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2112583206
 MonoBehaviour:
@@ -16743,7 +16744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.33333334, g: 0.8666667, b: 0.9647059, a: 0.7529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16752,18 +16753,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 11f3766e3f60ef84ca5de43baa556f1d, type: 3}
-    m_FontSize: 70
+    m_FontSize: 54
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 75
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0-1
+  m_Text: "\u5566\u5566\u5566\u5566 - 1"
 --- !u!222 &2112583207
 CanvasRenderer:
   m_ObjectHideFlags: 0
