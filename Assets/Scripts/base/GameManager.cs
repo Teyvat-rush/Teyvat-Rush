@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public bool gameEnd = false;//true:最后一只怪倒下，无论是否暂停
     //public bool isBattling = false;//true:在关卡内）
     //public int circulateTimes = 1;//当前周目（现在没用到）
-    public static int curLevelID=0;//当前关卡，从0开始数,0-1是第0关
+    public static int curLevelID=1;//当前关卡，从0开始数,0-1是第0关
     public static List<string> LevelNames = new List<string>();
     public int curProgressID;//当前波次数，从0开始数
     public int totalDestroyedNum;//总击杀敌人数
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     public int waveCreatedNum;//当前波次已生成敌人数
     public static int totalCreatedNum;//总已生成敌人数
     public float MAINTIMER;//主计时器
-    public static bool initialize=false;//关卡开始后的初始化
+    public static bool initialize=true;//关卡开始后的初始化
     //public List<GameObject> curProgressEnemy;
     
 
@@ -231,7 +231,7 @@ public class GameManager : MonoBehaviour
                 Transform EnemyLine = bornParent.transform.Find("Born" + ran_n[n].ToString());
                 //Debug.Log("生成行序号" + ran_n + "在第" + ran_n[n] + "行生成");
                 Enemy.transform.parent = EnemyLine;
-                Enemy.transform.localPosition = Vector3.zero;
+                Enemy.transform.localPosition = new Vector3(0,0,-totalCreatedNum-1);
                 if (LevelData.Levels[curLevelID][totalCreatedNum].EnemyType == 0)
                 {
                     Enemy.transform.position = new Vector3(Enemy.transform.position.x, Enemy.transform.position.y - 0.8f, -totalCreatedNum-1);
@@ -272,8 +272,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Instantiate(button_Reward,f_gameObject.transform.position,f_gameObject.transform.rotation, canvas.transform);
-                //button_Reward.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = rewardImages[curLevelID];
+                GameObject rewardHere= Instantiate(button_Reward,f_gameObject.transform.position,f_gameObject.transform.rotation, canvas.transform);
+                rewardHere.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = rewardImages[curLevelID];
                 //button_Reward.GetComponent<Animator>().SetBool("IsOK", true);
                 gameStart = false;
                 gameEnd = true;
