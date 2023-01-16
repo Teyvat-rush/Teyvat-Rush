@@ -626,7 +626,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0044232607, y: 0.44897985}
@@ -661,7 +661,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &5802479409763314313
 MonoBehaviour:
@@ -687,9 +687,9 @@ MonoBehaviour:
   Big_PaiMora: {fileID: 522148400624790811, guid: 2242196e65a1db24e860182aad6f3de0, type: 3}
   Small_PaiMora: {fileID: 522148400624790811, guid: ce067fe907eb26742bbf255b57ec83d3, type: 3}
   MoraBag: {fileID: 8328344102152049064}
-  Dump: {fileID: 0}
   LeftWing: {fileID: 7648658438052638314}
   RightWing: {fileID: 8899032742186229874}
+  isAttack: 0
 --- !u!1 &6184000314063555829
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,8 @@ public class Slime : Enemy
     // Update is called once per frame
     void Update()
     {
-    isAttack = false;
+        Debug.Log("Ê·À³Ä·anim" + anim.GetBool("Attack"));
+        isAttack = false;
     if(isAttack)
     {
       Speed = 0;
@@ -49,10 +50,11 @@ public class Slime : Enemy
 
   private void OnTriggerStay2D(Collider2D collision)
   {
-    if (collision.gameObject.tag == "Plant")
+    if (collision.CompareTag("Plant"))
     {
-      isAttack = true;
+            isAttack = true;
       anim.SetBool("Jump", false);
+            Debug.Log("±ä³É¹¥»÷");
       anim.SetBool("Attack", true);
       Speed = 0;
       transform.position = new Vector3(transform.position.x, BornY, transform.position.z);
@@ -74,12 +76,15 @@ public class Slime : Enemy
   }
   private void OnTriggerExit2D(Collider2D collision)
   {
-    if(collision.tag=="Plant")
+        
+    if(collision.CompareTag("Plant"))
     {
-      isAttack = false;
-      anim.SetBool("Attack", false);
-      anim.SetBool("Jump", true);
-      ContinueMove();
+            Debug.Log("Ê·À³Ä·exit1");
+            isAttack = false;
+            anim.SetBool("Attack", false);
+            anim.SetBool("Jump", true);
+            
+            ContinueMove();
             float ran1 = Random.Range(50, 101);
             int ran2 =Random.Range(0,2);
             if(ran2==0)
@@ -89,7 +94,7 @@ public class Slime : Enemy
             {
                 transform.localPosition = new Vector3(transform.localPosition.x -ran1 / 300, -0.8f, transform.localPosition.z);
             }
-
+            Debug.Log("Ê·À³Ä·exit2");
         }
   }
   public void PauseMove()
