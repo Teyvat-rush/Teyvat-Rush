@@ -25,7 +25,7 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
     public GameObject ATKLevel;
     public GameObject ATKIntervalLevel;
     public GameObject MoveVelocityLevel;
-    public static int checkMode = 1;//1：主菜单或关卡结束图鉴；2：选卡或关卡未结束内打开图鉴
+    public static int checkMode;//1：主菜单或关卡结束图鉴；2：选卡或关卡未结束内打开图鉴
     public static List<int> attainedNumPerLevel = new List<int>();//每关拥有的敌人卡数
     public static bool initialize = false;
     public int lastChosenIndex=0;//默认选第一个

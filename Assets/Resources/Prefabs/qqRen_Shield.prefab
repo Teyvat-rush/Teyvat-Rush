@@ -1233,7 +1233,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.047297657, y: -0.03654909}
@@ -1278,6 +1278,7 @@ MonoBehaviour:
   shield_20: {fileID: 260939117616004363}
   mask_100: {fileID: 260939117055464239}
   mask_50: {fileID: 260939117725924156}
+  isAttack: 0
 --- !u!1 &260939118272153448
 GameObject:
   m_ObjectHideFlags: 0

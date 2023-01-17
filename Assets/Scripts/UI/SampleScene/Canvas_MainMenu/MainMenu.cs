@@ -22,6 +22,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame()
     {
+        Canvas_LibraryOfEnemy.checkMode = 2;
         SceneManager.LoadScene(1);
     }
 

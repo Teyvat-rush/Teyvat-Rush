@@ -61,6 +61,7 @@ public class CardSlot : MonoBehaviour
 
         if(initialize)
         {
+            Canvas_LibraryOfEnemy.checkMode = 2;
             startLevelName.text = GameManager.LevelNames[GameManager.curLevelID];
             attainedCards.Clear();
             attainedCardsButtons.Clear();
@@ -182,6 +183,7 @@ public class CardSlot : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        Canvas_LibraryOfEnemy.checkMode = 1;
         SceneManager.LoadScene(0);
     }
 }

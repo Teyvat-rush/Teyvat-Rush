@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject map;
+    
     public List<Sprite> Maps= new List<Sprite>();
     public List<Sprite> rewardImages = new List<Sprite>();//预制体override
     public GameObject button_Reward;
@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
     public GameObject bornParent;//敌人生成的父级
     public GameObject EnemyPrefab;//敌人的预制件
     public GameObject SunPrefab;//飘落阳光的预制件
-    
+    public GameObject map;
     public GameObject canvas;
+
     public float creatEnemyInterval;//生成敌人的间隔时间
     public static int maxCardsNum=6;////////最大卡槽数
     public static int cardsMaxCharacter = 5;/////////////////手动改变
@@ -43,13 +44,11 @@ public class GameManager : MonoBehaviour
     public int waveCreatedNum;//当前波次已生成敌人数
     public static int totalCreatedNum;//总已生成敌人数
     public float MAINTIMER;//主计时器
-    public static bool initialize;//关卡开始后的初始化
+    public static bool initialize=true;//关卡开始后的初始化
     //public List<GameObject> curProgressEnemy;
-    
 
     private void Awake()
     {
-        Canvas_LibraryOfEnemy.checkMode = 2;
         instance = this;
         gameStart = false;
         gameEnd=false;
@@ -69,14 +68,36 @@ public class GameManager : MonoBehaviour
 
         if(initialize)//关卡开始后的初始化
         {
-            // map = Maps[curLevelID];
-            if(curLevelID<=2)
+            
+            if(Canvas_LibraryOfEnemy.checkMode == 2)
             {
-                map.GetComponent<SpriteRenderer>().sprite = Maps[curLevelID];
-            }else if(curLevelID<=4)
-            {
-                map.GetComponent<SpriteRenderer>().sprite = Maps[2];
+                if (Canvas_Shop.purchasedState[0])
+                {
+                    Debug.Log("买了木桩");
+                    for (int i = 0; i < 5; i++)//仅5路地图，待更新
+                    {
+                        map.transform.GetChild(0).GetChild(i).GetChild(0).gameObject.SetActive(true);
+                    }
+                }else
+                {
+                    Debug.Log("没买木桩");
+                    for (int i = 0; i < 5; i++)//仅5路地图，待更新
+                    {
+                        map.transform.GetChild(0).GetChild(i).GetChild(0).gameObject.SetActive(false);
+                    }
+                }
+
+                if (curLevelID <= 2)
+                {
+                    map.GetComponent<SpriteRenderer>().sprite = Maps[curLevelID];
+                }else if (curLevelID <= 4)
+                {
+                    map.GetComponent<SpriteRenderer>().sprite = Maps[2];
+                }
             }
+            
+
+            
             
             LevelNames.Clear();
             LevelNames.Add("蒙德夜晚 - 1");
@@ -289,6 +310,7 @@ public class GameManager : MonoBehaviour
                 //button_Reward.GetComponent<Animator>().SetBool("IsOK", true);
                 gameStart = false;
                 gameEnd = true;
+                Canvas_LibraryOfEnemy.checkMode = 1;
             }
         }
     }

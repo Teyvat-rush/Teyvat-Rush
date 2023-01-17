@@ -48,7 +48,7 @@ public class Canvas_Shop : MonoBehaviour
     public List<int> price;//价格表
     public static List<bool> purchasedState=new List<bool>();//true:SOLDOUT
     //public static List<int> effectiveNum = new List<int>();
-    public bool isFirst = true;
+    public static bool isFirst = true;
     public int itemsCount = 2;///////////////////物品总种类数，待更新
     public int index_panel;//页面序号，一页12个够多了...吧
     public int index_selected_item;//选中的序号
@@ -65,7 +65,6 @@ public class Canvas_Shop : MonoBehaviour
         button_Purchase.GetComponent<Button>().onClick.AddListener(PurchaseMove);
         button_minus.GetComponent<Button>().onClick.AddListener(MinusMove);
         button_plus.GetComponent<Button>().onClick.AddListener(PlusMove);
-
         items.Add(new Items(114514, 1, "置于蒙德地图防线的最后，敌人接触时艾琳登场清除一行内所有敌人。", "木桩"));
         items.Add(new Items(11450, 4, "使队伍可携带的人数上限+1。", "扩充编队·1"));
 
@@ -79,14 +78,8 @@ public class Canvas_Shop : MonoBehaviour
             buttons_item[i].transform.GetChild(2).gameObject.GetComponent<Text>().text = price[i].ToString();
         }
         button_Menu.GetComponent<Button>().onClick.AddListener(OpenMainMenu);
-
-        
-
-
-
         if (isFirst)//第一次进游戏的初始化
         {
-            
             index_panel = 0;
             index_selected_item = 0;
             for (int i = 0; i <itemsCount; i++)
@@ -94,6 +87,7 @@ public class Canvas_Shop : MonoBehaviour
                 purchasedState.Add(false);
                 //effectiveNum.Add(0);
             }
+            gameObject.SetActive(false);
             isFirst = false;
         }
     }

@@ -30,6 +30,7 @@ public class Menu : MonoBehaviour
   }
   public void ReturntoMenu()
   {
+        Canvas_LibraryOfEnemy.checkMode = 1;
     SceneManager.LoadScene(0);
   }
  public void Restart()
