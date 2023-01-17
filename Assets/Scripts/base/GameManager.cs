@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     
     public List<Sprite> Maps= new List<Sprite>();
     public List<Sprite> rewardImages = new List<Sprite>();//预制体override
-    public GameObject button_Reward;
+    public GameObject button_Reward;//战斗结束奖励按钮
     public List<GameObject> enemies= new List<GameObject>();//预制体override
     // Start is called before the first frame update
     public GameObject bornParent;//敌人生成的父级

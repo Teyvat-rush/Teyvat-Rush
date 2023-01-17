@@ -143,7 +143,7 @@ public class Canvas_Shop : MonoBehaviour
         {
             buttons_item[index_selected_item].GetComponent<Button>().interactable = false;
             buttons_item[index_selected_item].transform.GetChild(3).gameObject.SetActive(true);
-            purchasedState[index_selected_item] = true;///////////GameManager¶ÁÈ¡¹ºÂò×´Ì¬
+            purchasedState[index_selected_item] = true;//GameManager¶ÁÈ¡¹ºÂò×´Ì¬
         }
         if(text_PurchasedNum_Int.GetComponent<Text>().text=="0")
         {
