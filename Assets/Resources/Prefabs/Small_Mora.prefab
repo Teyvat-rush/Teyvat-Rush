@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 942808080289874408}
   - component: {fileID: 2947852074147676890}
   - component: {fileID: 1239404506211042260}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Small_Mora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,9 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d32a8438b61be84793f7e5c93ae6170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!58 &2947852074147676890
 CircleCollider2D:
   m_ObjectHideFlags: 0
