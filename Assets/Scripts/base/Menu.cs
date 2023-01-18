@@ -5,19 +5,23 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
+  public bool isPause;
   public GameObject PauseMenu;
   public Text SpeedText;
      void Start()
     {
+    isPause = false;
         Time.timeScale = 1f;
     }
   public void pauseGame()
   {
+    isPause = true;
     Time.timeScale = 0f;
     PauseMenu.SetActive(true);
   }
   public void resumeGame()
   {
+    isPause = false;
     if(SpeedText.text.Equals("x1"))
     {
       Time.timeScale = 1f;
