@@ -24,6 +24,7 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
     public GameObject friendshipLevelNum;
     public GameObject friendshipLevelRewardTitle;
     public GameObject friendshipLevelReward;
+    public GameObject slider_FriendshipProgress;
     //public static int checkMode = 1;//1：主菜单图鉴；2：选卡或关卡内打开图鉴
     public static List<int> attainedNumPerLevel=new List<int>();//每关拥有的角色卡数
     public static bool initialize = false;
@@ -99,11 +100,11 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
         reloadTimeLevel.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].reloadTimeLevel;
         //Debug.Log("更新第"+index+"角色好感度");
         friendshipEXP.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipEXP.ToString();
-        friendshipEXPMAX.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipEXPMAX.ToString();
+        friendshipEXPMAX.GetComponent<Text>().text = LibraryOfCharacter.friendshipEXPMAXs[LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum].ToString();
         friendshipLevelNum.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum.ToString();
         friendshipLevelRewardTitle.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipLevelRewardTitle;
         friendshipLevelReward.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipLevelReward;
-
+        slider_FriendshipProgress.GetComponent<Slider>().value = (float)LibraryOfCharacter.ALLCharacters[index].friendshipEXP/ (float)LibraryOfCharacter.friendshipEXPMAXs[LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum];
         attainedCards[lastChosenIndex].GetComponent<Button>().interactable = true;
         lastChosenIndex = index;
         attainedCards[lastChosenIndex].GetComponent<Button>().interactable = false;//被选中的不能再选

@@ -27,7 +27,7 @@ public class CardSlot : MonoBehaviour
     public List<Transform> slots = new List<Transform>();//将10个按钮的位置导入
     public List<GameObject> attainedCards = new List<GameObject>();//将拥有的角色卡导入
     public List<GameObject> selectedCards = new List<GameObject>();//选中的角色卡
-    public List<int> selectedCardsIndex_2 = new List<int>();//卡槽中卡的图鉴的顺序
+    public static List<int> selectedCardsIndex_2 = new List<int>();//卡槽中卡的图鉴的顺序
     public List<Button> attainedCardsButtons = new List<Button>();
     public List<Button> selectedCardsButtons = new List<Button>();
     //public int attainedCardsNum;/////////////////已在GameManager中存储
@@ -113,7 +113,8 @@ public class CardSlot : MonoBehaviour
             selectedCardsButtons[filledNum].onClick.AddListener(delegate { RemovingMove(temp_1, temp_2); });
             //Debug.Log("图鉴序号" + temp_1 + " 卡槽序号" + temp_2 + "（+移除动作监听）");
             filledNum++;
-            LibraryOfCharacter.ALLCharacters[temp_1].friendshipEXP += 1;///////测试用，实际效果是每选中一次卡EXP+1
+            LibraryOfCharacter.ALLCharacters[temp_1].friendshipEXP += 1;///////测试用，每选中一次卡EXP+1
+            LibraryOfCharacter.UpdateFreindship(temp_1);
         }
         
     }
