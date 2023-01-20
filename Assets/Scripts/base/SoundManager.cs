@@ -49,6 +49,7 @@ public class SoundManager : MonoBehaviour
     audioSource.Stop();
     audioSource.clip = GetAudio(name);
     audioSource.Play();
+    
   }
 
   public void StopBGM()
@@ -61,6 +62,7 @@ public class SoundManager : MonoBehaviour
   {
     // PlayOneShot可以叠加播放
     this.audioSource.PlayOneShot(GetAudio(path), volume);
+    
     // this.audioSource.volume = volume;
   }
 

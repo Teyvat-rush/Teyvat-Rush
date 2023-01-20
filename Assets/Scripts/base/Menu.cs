@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 public class Menu : MonoBehaviour
 {
   public bool isPause;
   public GameObject PauseMenu;
   public Text SpeedText;
+  public AudioMixer audioMixer_Music;
+  public AudioMixer audioMixer_MusicEffect;
      void Start()
     {
     isPause = false;
@@ -42,5 +45,13 @@ public class Menu : MonoBehaviour
        // CardSlot.initialize=true;
         //Canvas_LibraryOfCharacter.initialize=true;
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+  }
+  public void SetMusicVolume(float value)
+  {
+    audioMixer_Music.SetFloat("MusicVolume", value);
+  }
+  public void SetMusicEffectVolume(float value)
+  {
+    audioMixer_MusicEffect.SetFloat("MusicEffectVolume", value);
   }
 }
