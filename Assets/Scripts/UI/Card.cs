@@ -88,20 +88,33 @@ public class Card : MonoBehaviour
         {
           int i = Random.Range(1, 4);
           SoundManager.instance.PlaySound(Globals.WendiPlanted+i.ToString());
+          LibraryOfCharacter.ALLCharacters[0].friendshipEXP += 1;
+          LibraryOfCharacter.UpdateFreindship(0);
         }
-        if (objectPrefab.name == "Point_Mona")
+        else if (objectPrefab.name == "Point_Mona")
         {
           int i = Random.Range(1, 4);
           SoundManager.instance.PlaySound(Globals.MonaPlanted + i.ToString());
+          LibraryOfCharacter.ALLCharacters[1].friendshipEXP += 1;
+          LibraryOfCharacter.UpdateFreindship(1);
         }
-        if (objectPrefab.name == "Point_Nuoaier")
+        else if (objectPrefab.name == "Point_Nuoaier")
         {
           int i = Random.Range(1, 4);
           SoundManager.instance.PlaySound(Globals.NuoaierPlanted + i.ToString());
+          LibraryOfCharacter.ALLCharacters[2].friendshipEXP += 1;
+          LibraryOfCharacter.UpdateFreindship(2);
         }
-        if(objectPrefab.name== "Point_Anbo")
+        else if(objectPrefab.name== "Point_Anbo")
         {
           SoundManager.instance.PlaySound(Globals.AnboBoom);
+          LibraryOfCharacter.ALLCharacters[3].friendshipEXP += 1;
+          LibraryOfCharacter.UpdateFreindship(3);
+        }
+        else if(objectPrefab.name == "Point_Abeiduo")
+        {
+          LibraryOfCharacter.ALLCharacters[4].friendshipEXP += 1;
+          LibraryOfCharacter.UpdateFreindship(4);
         }
         //重置
         curGameObject.GetComponent<Plant>().PlantAwake = true;
