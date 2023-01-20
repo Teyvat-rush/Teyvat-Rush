@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DroppingSun : MonoBehaviour
 {
+  private GameObject Menu;
   public float duration;//持续时间
   private float timer;//计时器
   private Animator anim;
@@ -18,6 +19,7 @@ public class DroppingSun : MonoBehaviour
   // Start is called before the first frame update
   void Start()
     {
+    Menu = GameObject.Find("Canvas");
     anim = GetComponent<Animator>();
     rb = GetComponent<Rigidbody2D>();
     timer = 0;
@@ -54,14 +56,17 @@ public class DroppingSun : MonoBehaviour
   }
   private void OnMouseDown()
   {
-    GameManager.instance.starNum += 25;
-    int i = Random.Range(1, 4);
-    SoundManager.instance.PlaySound(Globals.PickSun + i);
-    rb.velocity = new Vector2(0, 0);
-    // 将屏幕坐标转化为世界坐标
-    Vector3 sunNumPos = (UIManager.instance.GetSunNumTextPos());
-    sunNumPos = new Vector3(sunNumPos.x, sunNumPos.y, 0);
-    FlyAnimation(sunNumPos);
+    if(Menu.GetComponent<Menu>().isPause==false)
+    {
+      GameManager.instance.starNum += 25;
+      int i = Random.Range(1, 4);
+      SoundManager.instance.PlaySound(Globals.PickSun + i);
+      rb.velocity = new Vector2(0, 0);
+      // 将屏幕坐标转化为世界坐标
+      Vector3 sunNumPos = (UIManager.instance.GetSunNumTextPos());
+      sunNumPos = new Vector3(sunNumPos.x, sunNumPos.y, 0);
+      FlyAnimation(sunNumPos);
+    }
   }
   private void FlyAnimation(Vector3 pos)
   {
