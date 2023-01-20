@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public bool gameEnd = false;//true:最后一只怪倒下，无论是否暂停
     //public bool isBattling = false;//true:在关卡内）
     //public int circulateTimes = 1;//当前周目（现在没用到）
-    public static int curLevelID = 2;//当前关卡，从0开始数,0-1是第0关
+    public static int curLevelID = 0;//当前关卡，从0开始数,0-1是第0关
     public static List<string> LevelNames = new List<string>();
     public int curProgressID;//当前波次数，从0开始数
     public int totalDestroyedNum;//总击杀敌人数
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         if(initialize)//关卡开始后的初始化
         {
             
-            if(Canvas_LibraryOfEnemy.checkMode == 2)
+            if (Canvas_LibraryOfEnemy.checkMode == 2)
             {
                 if (Canvas_Shop.purchasedState[0])
                 {

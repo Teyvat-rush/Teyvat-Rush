@@ -82,15 +82,19 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
     }
     public void CloseFriendshipLevelReward()
     {
+        SoundManager.instance.PlaySound(Globals.Return0);
         panel_FriendshipLevelReward.SetActive(false);
     }
     public void OpenFriendshipLevelReward()
     {
+        SoundManager.instance.PlaySound(Globals.Open2);
         panel_FriendshipLevelReward.SetActive(true);
     }
     public void OpenPanelDetail(int index)
     {
         Debug.Log("打开（更新）第" + index + "个角色详情");
+        SoundManager.instance.PlaySound(Globals.Open1);
+
         characterName.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].characterName;
         description.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].description;
         image.GetComponent<Image>().sprite = LibraryOfCharacter.ALLCharacters[index].image;

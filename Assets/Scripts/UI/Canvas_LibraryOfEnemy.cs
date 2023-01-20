@@ -97,6 +97,7 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
     public void OpenPanelDetail(int index)
     {
         Debug.Log("打开第" + index + "个敌人详情");
+        SoundManager.instance.PlaySound(Globals.Open1);
         characterName.GetComponent<Text>().text = LibraryOfEnemy.ALLEnemies[index].characterName;
         description.GetComponent<Text>().text = LibraryOfEnemy.ALLEnemies[index].description;
         image.GetComponent<Image>().sprite = LibraryOfEnemy.ALLEnemies[index].image;

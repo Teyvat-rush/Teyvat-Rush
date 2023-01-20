@@ -15,13 +15,15 @@ public class Menu : MonoBehaviour
     }
   public void pauseGame()
   {
-    isPause = true;
+        SoundManager.instance.PlaySound(Globals.Open2);
+        isPause = true;
     Time.timeScale = 0f;
     PauseMenu.SetActive(true);
   }
   public void resumeGame()
   {
-    isPause = false;
+        SoundManager.instance.PlaySound(Globals.Return0);
+        isPause = false;
     if(SpeedText.text.Equals("x1"))
     {
       Time.timeScale = 1f;
@@ -34,6 +36,7 @@ public class Menu : MonoBehaviour
   }
   public void ReturntoMenu()
   {
+        SoundManager.instance.PlaySound(Globals.Return1);
         Canvas_LibraryOfEnemy.checkMode = 1;
     SceneManager.LoadScene(0);
   }

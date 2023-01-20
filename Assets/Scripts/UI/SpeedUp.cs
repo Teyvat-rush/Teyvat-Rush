@@ -12,7 +12,8 @@ public class SpeedUp : MonoBehaviour
   }
   public void Onclick()
   {
-    if(!flag)
+        SoundManager.instance.PlaySound(Globals.Open2);
+        if (!flag)
     {
       Time.timeScale = 2f;
       SpeedText.text = "x2";

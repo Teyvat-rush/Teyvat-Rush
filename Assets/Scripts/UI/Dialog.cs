@@ -68,6 +68,7 @@ public class Dialog : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && textFinished && gameObject.activeSelf)
         {
+            SoundManager.instance.PlaySound(Globals.Return0);
             StartCoroutine(SetTextUI());//如果按下鼠标左键的同时一句话已经放完了，就继续启动下一句的播放
             Image_Next.SetActive(false);
         }
@@ -98,6 +99,7 @@ public class Dialog : MonoBehaviour
     }
     public void EndDialogue()
     {//把114514个对话框组件全部隐藏，代表对话已经结束了
+        SoundManager.instance.PlaySound(Globals.Return0);
         gameObject.SetActive(false);
         panel_CardSlot.SetActive(true);
         panel_Sun.SetActive(true);

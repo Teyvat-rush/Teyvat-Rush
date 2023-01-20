@@ -34,6 +34,7 @@ public class CardSlot : MonoBehaviour
     public int filledNum = 0;//已选择角色数
     public static int maxCardNumHere=6;//最大卡槽数
     public static bool initialize = true;
+    public bool isInLibrary=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -97,6 +98,7 @@ public class CardSlot : MonoBehaviour
     {
         if(filledNum<maxCardNumHere)
         {
+            SoundManager.instance.PlaySound(Globals.SelectCard);
             Vector3 targetPosition = slots[filledNum].transform.position;       //找到卡槽中的位置
             attainedCardsButtons[index_1].interactable = false;                //选中的植物不能再点
             GameObject selectedObject = Instantiate(attainedCards[index_1], slots[filledNum].position, slots[filledNum].rotation, slots[filledNum].parent);
@@ -121,6 +123,7 @@ public class CardSlot : MonoBehaviour
     public void RemovingMove(int index_1,int index_2)
     {
         //Debug.Log("调用监听" +index_1+ index_2);
+        SoundManager.instance.PlaySound(Globals.RemoveCard);
         attainedCardsButtons[index_1].interactable= true;
         Destroy(selectedCards[index_2]);
         for(int i=index_2+1;i<=selectedCards.Count-1;i++)
@@ -142,6 +145,8 @@ public class CardSlot : MonoBehaviour
     {
         //if (filledNum != 0)//不需要判断。。undate里判断过了
         {
+            SoundManager.instance.PlaySound(Globals.StartLevel);
+
             GameManager.initialize = true;
             GameManager.gameStart = true;
             ProgressBar.initialize = true;
@@ -161,6 +166,8 @@ public class CardSlot : MonoBehaviour
     }
     public void OpenLibraryEnemy_Review()
     {
+        isInLibrary = true;
+        SoundManager.instance.PlaySound(Globals.Open0);
         Canvas_LibraryOfEnemy.checkMode = 2;
         Canvas_LibraryOfEnemy.initialize= true;
         canvas_LibraryOfEnemy.SetActive(true);
@@ -178,6 +185,8 @@ public class CardSlot : MonoBehaviour
     }
     public void ReturnToLevel()
     {
+        SoundManager.instance.PlaySound(Globals.Return0);
+        isInLibrary = false;
         canvas_LibraryOfEnemy.SetActive(false);
         canvas_LibraryOfCharacter.SetActive(false);
     }

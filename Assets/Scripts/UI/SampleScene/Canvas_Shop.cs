@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,12 +40,11 @@ public class Canvas_Shop : MonoBehaviour
     public GameObject text_RemainingNum_Int;
     public GameObject button_plus;
 
-    public Text moras;
     public List<Items> items = new List<Items>();
     public List<GameObject> panels= new List<GameObject>();//页面数应该等于国家数,手动添加
     public List<Sprite> images = new List<Sprite>();////////////手动添加
     public List<GameObject> buttons_item= new List<GameObject>();
-    public List<int> remainingNum;//库存数量
+    public static List<int> remainingNum=new List<int>();//库存数量
     public List<int> price;//价格表
     public static List<bool> purchasedState=new List<bool>();//true:SOLDOUT
     //public static List<int> effectiveNum = new List<int>();
@@ -52,8 +52,6 @@ public class Canvas_Shop : MonoBehaviour
     public int itemsCount = 2;///////////////////物品总种类数，待更新
     public int index_panel;//页面序号，一页12个够多了...吧
     public int index_selected_item;//选中的序号
-
-
 
 
     // Start is called before the first frame update
@@ -65,8 +63,8 @@ public class Canvas_Shop : MonoBehaviour
         button_Purchase.GetComponent<Button>().onClick.AddListener(PurchaseMove);
         button_minus.GetComponent<Button>().onClick.AddListener(MinusMove);
         button_plus.GetComponent<Button>().onClick.AddListener(PlusMove);
-        items.Add(new Items(114514, 1, "置于蒙德地图防线的最后，敌人接触时艾琳登场清除一行内所有敌人。", "木桩"));
-        items.Add(new Items(11450, 4, "使队伍可携带的人数上限+1。", "扩充编队·1"));
+        items.Add(new Items(1145, 1, "置于蒙德地图防线的最后，敌人接触时艾琳登场清除一行内所有敌人。", "木桩"));
+        items.Add(new Items(114, 4, "使队伍可携带的人数上限+1。", "扩充编队·1"));
 
         for (int i=0;i<itemsCount;i++)
         {
@@ -95,22 +93,26 @@ public class Canvas_Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (int.Parse(text_TotalPrice.GetComponent<Text>().text) > int.Parse(moras.text))
+        
+        
+        for(int i=0;i<itemsCount; i++)
         {
-            button_Purchase.GetComponent<Button>().interactable = false;
-        }
-        else
-        {
-            button_Purchase.GetComponent<Button>().interactable = true;
+            if (purchasedState[i])
+            {
+                buttons_item[i].GetComponent<Button>().interactable = false;
+                buttons_item[i].transform.GetChild(3).gameObject.SetActive(true);
+            }
         }
     }
     public void OpenMainMenu()
     {
+        SoundManager.instance.PlaySound(Globals.Return1);
         canvas_MainMenu.SetActive(true);
         gameObject.SetActive(false);
     }
     public void OpenDetail(int index)
     {
+        SoundManager.instance.PlaySound(Globals.Open1);
         index_selected_item = index;
         panel_ConfirmPurchase.SetActive(true);
         text_Item.GetComponent<Text>().text = items[index].m_name;
@@ -128,16 +130,36 @@ public class Canvas_Shop : MonoBehaviour
             button_plus.GetComponent<Button>().interactable = true;
         }
         text_RemainingNum_Int.GetComponent<Text>().text = remainingNum[index].ToString();
+
+        if (int.Parse(text_TotalPrice.GetComponent<Text>().text) > DataManager.instance.coin.num)
+        {
+            button_Purchase.GetComponent<Button>().interactable = false;
+        }else
+        {
+            button_Purchase.GetComponent<Button>().interactable = true;
+        }
     }
     public void CancelMove()
     {
+        SoundManager.instance.PlaySound(Globals.Return0);
         panel_ConfirmPurchase.SetActive(false);
-        
     }
     public void PurchaseMove()
     {
+        SoundManager.instance.PlaySound(Globals.Attain0);
         panel_ConfirmPurchase.SetActive(false);
-        moras.text = (int.Parse(moras.text)-int.Parse(text_TotalPrice.GetComponent<Text>().text)).ToString();
+
+        
+        DataManager.instance.coin.num = (DataManager.instance.coin.num - int.Parse(text_TotalPrice.GetComponent<Text>().text));
+        string json_Mora = JsonUtility.ToJson(DataManager.instance.coin);
+        string filepath_Mora = Application.streamingAssetsPath + "/Mora.json";
+        using (StreamWriter streamWriter = new StreamWriter(filepath_Mora))
+        {
+            streamWriter.WriteLine(json_Mora);
+            streamWriter.Close();
+            streamWriter.Dispose();
+        }
+
         remainingNum[index_selected_item] -= int.Parse(text_PurchasedNum_Int.GetComponent<Text>().text);
         if (remainingNum[index_selected_item]==0)
         {
@@ -159,6 +181,7 @@ public class Canvas_Shop : MonoBehaviour
     }
     public void MinusMove()
     {
+        SoundManager.instance.PlaySound(Globals.Open1);
         text_PurchasedNum_Int.GetComponent<Text>().text = (int.Parse(text_PurchasedNum_Int.GetComponent<Text>().text)-1).ToString();
         text_TotalPrice.GetComponent<Text>().text = (int.Parse(text_PurchasedNum_Int.GetComponent<Text>().text) * price[index_selected_item]).ToString();
         if (text_PurchasedNum_Int.GetComponent<Text>().text == "0")
@@ -166,18 +189,25 @@ public class Canvas_Shop : MonoBehaviour
             button_minus.GetComponent<Button>().interactable = false;
             button_plus.GetComponent<Button>().interactable = true;
             button_Purchase.GetComponent<Button>().interactable = false;
-        }
-        else
+        }else
         {
             button_minus.GetComponent<Button>().interactable = true;
             button_plus.GetComponent<Button>().interactable = true;
         }
 
+        if (int.Parse(text_TotalPrice.GetComponent<Text>().text) > DataManager.instance.coin.num)
+        {
+            button_Purchase.GetComponent<Button>().interactable = false;
+        }else
+        {
+            button_Purchase.GetComponent<Button>().interactable = true;
+        }
 
     }
 
     public void PlusMove()
     {
+        SoundManager.instance.PlaySound(Globals.Open1);
         button_Purchase.GetComponent<Button>().interactable = true;
         text_PurchasedNum_Int.GetComponent<Text>().text = (int.Parse(text_PurchasedNum_Int.GetComponent<Text>().text) + 1).ToString();
         text_TotalPrice.GetComponent<Text>().text = (int.Parse(text_PurchasedNum_Int.GetComponent<Text>().text) * price[index_selected_item]).ToString();
@@ -191,14 +221,14 @@ public class Canvas_Shop : MonoBehaviour
             button_plus.GetComponent<Button>().interactable = true;
         }
 
-        if (int.Parse(text_TotalPrice.GetComponent<Text>().text) > int.Parse(moras.text))
+        if (int.Parse(text_TotalPrice.GetComponent<Text>().text) > DataManager.instance.coin.num)
         {
             button_Purchase.GetComponent<Button>().interactable = false;
-        }
-        else
+        }else
         {
             button_Purchase.GetComponent<Button>().interactable = true;
         }
+        
 
     }
 }

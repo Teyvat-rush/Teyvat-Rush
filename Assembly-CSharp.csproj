@@ -60,6 +60,7 @@
     <Compile Include="Assets\Unity Save Load Utility\Surrogates\Vector4Surrogate.cs" />
     <Compile Include="Assets\Scripts\Enemy\qqRen_Stick_Shield.cs" />
     <Compile Include="Assets\Scripts\Plant\Plant.cs" />
+    <Compile Include="Assets\Scripts\UI\MoraBag.cs" />
     <Compile Include="Assets\Scripts\UI\ProgressBar.cs" />
     <Compile Include="Assets\Scripts\UI\Dialog.cs" />
     <Compile Include="Assets\Scripts\UI\Button_Reward.cs" />

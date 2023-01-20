@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Mora : MonoBehaviour
@@ -40,8 +41,17 @@ public class Mora : MonoBehaviour
     {
       DataManager.instance.coin.num -= 45;
     }
-    // 将屏幕坐标转化为世界坐标
-    Vector3 MoraNumPos = Camera.main.ScreenToWorldPoint(UIManager.instance.GetMoraNumTextPos());
+        string json_Mora = JsonUtility.ToJson(DataManager.instance.coin);
+        string filepath_Mora = Application.streamingAssetsPath + "/Mora.json";
+        using (StreamWriter streamWriter = new StreamWriter(filepath_Mora))
+        {
+            streamWriter.WriteLine(json_Mora);
+            streamWriter.Close();
+            streamWriter.Dispose();
+        }
+
+        // 将屏幕坐标转化为世界坐标
+        Vector3 MoraNumPos = Camera.main.ScreenToWorldPoint(UIManager.instance.GetMoraNumTextPos());
     MoraNumPos = new Vector3(MoraNumPos.x, MoraNumPos.y, 0);
     FlyAnimation(MoraNumPos);
   }
