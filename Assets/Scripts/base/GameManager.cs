@@ -10,7 +10,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-  public GameObject Menu;
     public List<Sprite> Maps= new List<Sprite>();
     public List<Sprite> rewardImages = new List<Sprite>();//预制体override
     public GameObject button_Reward;//战斗结束奖励按钮
@@ -134,7 +133,7 @@ public class GameManager : MonoBehaviour
     {
         MAINTIMER += Time.deltaTime;
         CreateEnemy();
-        if (!gameEnd&&Menu.GetComponent<Menu>().isPause==false)//游戏结束后不掉阳光
+        if (!gameEnd)//游戏结束后不掉阳光
         {
             CreatSun();
         }
