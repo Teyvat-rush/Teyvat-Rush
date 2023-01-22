@@ -62,13 +62,18 @@ public class Dialog : MonoBehaviour
 
         if(index==0 &&!textStarted)
         {
-            textStarted=true;
+            //Debug.Log("index = " + index);
+            textStarted =true;
+            PlayPaimon();
             StartCoroutine(SetTextUI());//如果按下鼠标左键的同时一句话已经放完了，就继续启动下一句的播放
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && textFinished && gameObject.activeSelf)
         {
+            //Debug.Log("index = " + index);
             SoundManager.instance.PlaySound(Globals.Return0);
+            PlayPaimon();
+
             StartCoroutine(SetTextUI());//如果按下鼠标左键的同时一句话已经放完了，就继续启动下一句的播放
             Image_Next.SetActive(false);
         }
@@ -100,6 +105,7 @@ public class Dialog : MonoBehaviour
     public void EndDialogue()
     {//把114514个对话框组件全部隐藏，代表对话已经结束了
         SoundManager.instance.PlaySound(Globals.Return0);
+        SoundManager.instance.Stop();
         gameObject.SetActive(false);
         panel_CardSlot.SetActive(true);
         panel_Sun.SetActive(true);
@@ -113,5 +119,21 @@ public class Dialog : MonoBehaviour
         //AutoButton.SetActive(false);
         index = 0; //把目录调整成最开始，这样下一次开始就是从第一句播放
         return;
+    }
+
+    public void PlayPaimon()
+    {
+        if (GameManager.curLevelID == 0)
+        {
+            SoundManager.instance.PlaySoundOfDialog("Audios/Paimon/" + "0-1/" + index);
+        }
+        else if (GameManager.curLevelID == 1)
+        {
+            SoundManager.instance.PlaySoundOfDialog("Audios/Paimon/" + "0-2/" + index);
+        }
+        else if (GameManager.curLevelID == 2)
+        {
+            SoundManager.instance.PlaySoundOfDialog("Audios/Paimon/" + "0-3/" + index);
+        }
     }
 }

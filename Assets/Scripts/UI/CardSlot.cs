@@ -174,12 +174,14 @@ public class CardSlot : MonoBehaviour
     }
     public void OpenLibraryC()
     {
+        SoundManager.instance.PlaySound(Globals.Open1);
         Canvas_LibraryOfCharacter.initialize = true;
         canvas_LibraryOfEnemy.SetActive(false);
         canvas_LibraryOfCharacter.SetActive(true);
     }
     public void OpenLibraryE()
     {
+        SoundManager.instance.PlaySound(Globals.Open1);
         canvas_LibraryOfEnemy.SetActive(true);
         canvas_LibraryOfCharacter.SetActive(false);
     }
@@ -194,6 +196,7 @@ public class CardSlot : MonoBehaviour
     public void ReturnToMenu()
     {
         Canvas_LibraryOfEnemy.checkMode = 1;
+        GameManager.initialize = true;
         SceneManager.LoadScene(0);
     }
 }

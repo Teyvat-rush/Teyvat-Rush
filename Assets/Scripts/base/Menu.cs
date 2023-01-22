@@ -45,9 +45,11 @@ public class Menu : MonoBehaviour
   }
  public void Restart()
   {
-       // CardSlot.initialize=true;
+        // CardSlot.initialize=true;
         //Canvas_LibraryOfCharacter.initialize=true;
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.initialize = true;
+        Canvas_LibraryOfEnemy.checkMode = 2;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
   }
   public void SetMusicVolume(float value)
   {

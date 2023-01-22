@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Canvas_LibraryOfCharacter : MonoBehaviour
 {
     public GameObject panel_Cards;
-    public List<GameObject> attainedCards=new List<GameObject>();
-    public List<Button> attainedCardsButtons=new List<Button>();
+    public static List<GameObject> attainedCards=new List<GameObject>();
+    public static List<Button> attainedCardsButtons=new List<Button>();
     public GameObject panel_FriendshipLevelReward;
     public GameObject button_Close_FriendshipLevelReward;
     public GameObject button_FriendshipLevelReward;

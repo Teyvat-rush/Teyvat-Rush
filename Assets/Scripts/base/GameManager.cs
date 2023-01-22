@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("GM awake");
         instance = this;
         gameStart = false;
         gameEnd=false;
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
 
         if(initialize)//关卡开始后的初始化
         {
-            
+            Debug.Log("GM initialize");
             if (Canvas_LibraryOfEnemy.checkMode == 2)
             {
                 if (Canvas_Shop.purchasedState[0])
@@ -309,6 +310,7 @@ public class GameManager : MonoBehaviour
                 //button_Reward.GetComponent<Animator>().SetBool("IsOK", true);
                 gameStart = false;
                 gameEnd = true;
+                //initialize = true;
                 Canvas_LibraryOfEnemy.checkMode = 1;
             }
         }

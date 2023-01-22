@@ -71,4 +71,16 @@ public class SoundManager : MonoBehaviour
     audioSource.PlayOneShot(GetAudio(path), volume);
     // audioSource.volume = volume;
   }
+
+    public void PlaySoundOfDialog(string path, float volume = 1f)
+    {
+        audioSource.Stop();
+        audioSource.PlayOneShot(GetAudio(path), volume);
+        // audioSource.volume = volume;
+    }
+
+    public void Stop()
+    {
+        audioSource.Stop();
+    }
 }

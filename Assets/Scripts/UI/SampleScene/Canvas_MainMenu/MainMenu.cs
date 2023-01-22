@@ -128,14 +128,16 @@ public class MainMenu : MonoBehaviour
 
         if(canStart)
         {
-            startTimer += Time.deltaTime;
-            if (startTimer > 2.8f)
+            //startTimer += Time.deltaTime;
+            //if (startTimer > 2.8f)
             {
+                GameManager.initialize = true;
+                SceneManager.LoadScene(1);
                 startTimer = 0;
                 canStart=false;
                 Canvas_LibraryOfEnemy.checkMode = 2;
                 
-                SceneManager.LoadScene(1);
+                
             }
         }
     }

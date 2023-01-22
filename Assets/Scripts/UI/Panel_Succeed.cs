@@ -19,6 +19,8 @@ public class Panel_Succeed : MonoBehaviour
     }
     public void GoToNextLevel()
     {
+        GameManager.initialize = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Canvas_LibraryOfEnemy.checkMode = 2;
     }
 }
