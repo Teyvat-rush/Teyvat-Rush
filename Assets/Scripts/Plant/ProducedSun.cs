@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ProducedSun : MonoBehaviour
 {
+  private GameObject Menu;
   public float duration;
   private float timer;
     public float g = -4;//重力加速度，正方向为y轴正方向
@@ -15,6 +16,7 @@ public class ProducedSun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    Menu = GameObject.Find("Canvas");
     timer = 0;
         rb= GetComponent<Rigidbody2D>();
         am= GetComponent<Animator>();
@@ -56,12 +58,15 @@ public class ProducedSun : MonoBehaviour
   }
   private void OnMouseDown()
   {
-    int i = Random.Range(1, 4);
-    SoundManager.instance.PlaySound(Globals.PickSun + i);
-    // 将屏幕坐标转化为世界坐标
-    Vector3 sunNumPos = (UIManager.instance.GetSunNumTextPos());
-    sunNumPos = new Vector3(sunNumPos.x, sunNumPos.y, 0);
-    FlyAnimation(sunNumPos);
+    if(!Menu.GetComponent<Menu>().isPause)
+    {
+      int i = Random.Range(1, 4);
+      SoundManager.instance.PlaySound(Globals.PickSun + i);
+      // 将屏幕坐标转化为世界坐标
+      Vector3 sunNumPos = (UIManager.instance.GetSunNumTextPos());
+      sunNumPos = new Vector3(sunNumPos.x, sunNumPos.y, 0);
+      FlyAnimation(sunNumPos);
+    }
   }
   private void FlyAnimation(Vector3 pos)
   {

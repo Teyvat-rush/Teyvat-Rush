@@ -60,7 +60,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3344847628089070338}
   - component: {fileID: 3344847628089070365}
-  - component: {fileID: 3344847628089070364}
   - component: {fileID: 3344847628089070367}
   m_Layer: 0
   m_Name: GameManager
@@ -96,12 +95,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea290b6faabd3a46b70b09edc08f068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Maps: []
   rewardImages: []
   button_Reward: {fileID: 0}
   enemies: []
   bornParent: {fileID: 3344847628089070366}
   EnemyPrefab: {fileID: 3786385676328421589, guid: 715d73836dd1dd34e8fd2937fac4319f, type: 3}
   SunPrefab: {fileID: 6566572701411190375, guid: b56a8322f7951ca47aa1772a01c910a2, type: 3}
+  map: {fileID: 0}
   canvas: {fileID: 0}
   creatEnemyInterval: 10
   starNum: 500
@@ -111,20 +112,7 @@ MonoBehaviour:
   totalDestroyedNum: 0
   waveDestroyedNum: 0
   waveCreatedNum: 0
-  totalCreatedNum: 0
   MAINTIMER: 0
---- !u!114 &3344847628089070364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3344847628089070366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6438b712b741e5148ba735b541c25f23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &3344847628089070367
 AudioSource:
   m_ObjectHideFlags: 0
@@ -132,9 +120,9 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3344847628089070366}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 2d119a5cb31e29447a81c14f17ef569e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 20ac841ccc52d7846a3fbf8ab4f0a803, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
