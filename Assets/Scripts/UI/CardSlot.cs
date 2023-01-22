@@ -196,7 +196,6 @@ public class CardSlot : MonoBehaviour
     public void ReturnToMenu()
     {
         Canvas_LibraryOfEnemy.checkMode = 1;
-        GameManager.initialize = true;
         SceneManager.LoadScene(0);
     }
 }

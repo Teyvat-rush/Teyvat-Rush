@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 public class Globals
 {
   public const string FallMora = "Audios/Sound Effect/掉落摩拉";
@@ -26,9 +28,4 @@ public class Globals
      public const string SelectCard = "Audios/Sound Effect/卡片进入卡槽";
      public const string RemoveCard = "Audios/Sound Effect/卡片退出卡槽";
     public const string StartLevel = "Audios/Sound Effect/开始作战";
-
-
-
-
-
 }

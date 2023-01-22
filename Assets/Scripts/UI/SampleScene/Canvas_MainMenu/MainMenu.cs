@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame()
     {
-        SoundManager.instance.PlaySound(Globals.StartGame);
+        //SoundManager.instance.PlaySound(Globals.StartGame);
         canStart= true;
         buuton_Start.GetComponent<Button>().interactable = false;
     }
