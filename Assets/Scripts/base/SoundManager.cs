@@ -66,11 +66,11 @@ public class SoundManager : MonoBehaviour
     // this.audioSource.volume = volume;
   }
 
-  public void PlaySound(AudioSource audioSource, string path, float volume = 1f)
-  {
-    audioSource.PlayOneShot(GetAudio(path), volume);
-    // audioSource.volume = volume;
-  }
+  //public void PlaySound(AudioSource audioSource, string path, float volume = 1f)
+  //{
+  //  audioSource.PlayOneShot(GetAudio(path), volume);
+  //  // audioSource.volume = volume;
+  //}
 
     public void PlaySoundOfDialog(string path, float volume = 1f)
     {
