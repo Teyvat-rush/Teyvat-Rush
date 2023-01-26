@@ -9,6 +9,9 @@ public class Menu : MonoBehaviour
   public bool isPause;
   public GameObject PauseMenu;
   public Text SpeedText;
+  public GameObject Achievements;
+  public GameObject Characters_Library;
+  public GameObject Enemies_Library;
   public AudioMixer audioMixer_Music;
   public AudioMixer audioMixer_MusicEffect;
      void Start()
@@ -22,6 +25,21 @@ public class Menu : MonoBehaviour
         isPause = true;
     Time.timeScale = 0f;
     PauseMenu.SetActive(true);
+  }
+  public void Open_Characters_Library()
+  {
+    Characters_Library.SetActive(true);
+    Enemies_Library.SetActive(false);
+  }
+  public void Open_Enemies_Library()
+  {
+    Characters_Library.SetActive(false);
+    Enemies_Library.SetActive(true);
+  }
+  public void Close_Library()
+  {
+    Characters_Library.SetActive(false);
+    Enemies_Library.SetActive(false);
   }
   public void resumeGame()
   {
