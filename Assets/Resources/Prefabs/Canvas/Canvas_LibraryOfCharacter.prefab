@@ -8059,8 +8059,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel_Cards: {fileID: 5143701973049580499}
-  attainedCards: []
-  attainedCardsButtons: []
   panel_FriendshipLevelReward: {fileID: 5143701972686861617}
   button_Close_FriendshipLevelReward: {fileID: 5143701974458295161}
   button_FriendshipLevelReward: {fileID: 5143701973088692513}
@@ -8983,8 +8981,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Return
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: Close_Library
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
