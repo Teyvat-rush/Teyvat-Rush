@@ -305,8 +305,9 @@ public class GameManager : MonoBehaviour
             else
             {
                 GameObject rewardHere= Instantiate(button_Reward,f_gameObject.transform.position,f_gameObject.transform.rotation, canvas.transform);
+                rewardHere.SetActive(true);
                 rewardHere.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = rewardImages[curLevelID];
-                //button_Reward.GetComponent<Animator>().SetBool("IsOK", true);
+                rewardHere.GetComponent<Animator>().SetBool("IsOK", true);
                 gameStart = false;
                 gameEnd = true;
                 //initialize = true;

@@ -22,7 +22,7 @@ public class Button_Reward : MonoBehaviour
     {
         GameManager.curLevelID++;///////////主线进度+1
         Instantiate(disappearParticle,transform.position,transform.rotation);
-        gameObject.GetComponent<Animator>().SetBool("IsOK", true);
+        
         panelSucceed.SetActive(true);
         buttonPause.SetActive(false);
         gameObject.SetActive(false);
