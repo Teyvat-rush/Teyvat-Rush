@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\UI\Mora.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Unity Save Load Utility\Surrogates\Color32Surrogate.cs" />
+    <Compile Include="Assets\Scripts\base\Lines.cs" />
     <Compile Include="Assets\Unity Save Load Utility\Surrogates\Vector2Surrogate.cs" />
     <Compile Include="Assets\Scripts\UI\Canvas_Achievement.cs" />
     <Compile Include="Assets\Scripts\base\SoundManager.cs" />
@@ -123,7 +124,6 @@
     <Compile Include="Assets\Scripts\base\DataManager.cs" />
     <Compile Include="Assets\Scripts\Plant\WoodPile.cs" />
     <Compile Include="Assets\Scripts\UI\Panel_Succeed.cs" />
-    <Compile Include="Assets\Scripts\base\Lines.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Level\Level 1-X\Failed\Blur.shader" />
