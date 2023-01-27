@@ -13,7 +13,7 @@ public class DroppingSun : MonoBehaviour
   public float DroppingSpeed;
   Vector2 Left = new Vector2(-4.83f,5.36f);
   Vector2  Right = new Vector2(8.32f,5.36f);
-  Vector2  Bottom=new Vector2(0,-4.26f);
+  Vector2  Bottom=new Vector2(0,-4.16f);
   Vector2 BornPos;
   Vector2 TargetPos;
   // Start is called before the first frame update
