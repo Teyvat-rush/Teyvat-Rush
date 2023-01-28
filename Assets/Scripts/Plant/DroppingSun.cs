@@ -13,7 +13,7 @@ public class DroppingSun : MonoBehaviour
   public float DroppingSpeed;
   Vector2 Left = new Vector2(-4.83f,5.36f);
   Vector2  Right = new Vector2(8.32f,5.36f);
-  Vector2  Bottom=new Vector2(0,-4.16f);
+  Vector2  Bottom=new Vector2(0,-4.55f);
   Vector2 BornPos;
   Vector2 TargetPos;
   // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class DroppingSun : MonoBehaviour
     timer = 0;
     BornPos = new Vector2(Random.Range(Left.x, Right.x), Left.y);
     transform.position = new Vector2(BornPos.x, BornPos.y);
-    TargetPos = new Vector2(BornPos.x, Random.Range(BornPos.y-4, Bottom.y-3));
+    TargetPos = new Vector2(BornPos.x, Random.Range(BornPos.y-3, Bottom.y));
     rb.velocity = new Vector2(0, -DroppingSpeed);
     
   }

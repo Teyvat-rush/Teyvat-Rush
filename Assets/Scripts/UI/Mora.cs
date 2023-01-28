@@ -25,19 +25,19 @@ public class Mora : MonoBehaviour
     animator.SetBool("Fly", true);
     int i = Random.Range(1, 3);
     SoundManager.instance.PlaySound(Globals.PickMora + i);
-    if (this.name == "Small_Mora")
+    if (this.name == "Small_Mora(Clone)")
     {
       DataManager.instance.coin.num += 16;
     }
-    else if (this.name== "Big_Mora")
+    else if (this.name== "Big_Mora(Clone)")
     {
       DataManager.instance.coin.num += 80;
     }
-    else if (this.name == "Big_PaiMora")
+    else if (this.name == "Big_PaiMora(Clone)")
     {
       DataManager.instance.coin.num -= 9;
     }
-    else if (this.name == "Small_PaiMora")
+    else if (this.name == "Small_PaiMora(Clone)")
     {
       DataManager.instance.coin.num -= 45;
     }
