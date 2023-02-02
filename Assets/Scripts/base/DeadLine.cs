@@ -11,7 +11,8 @@ public class DeadLine : MonoBehaviour
   {
     if(collision.tag=="Enemy")
     {
-      panel_Failed.SetActive(true);
+    Time.timeScale = 1f;
+    panel_Failed.SetActive(true);
       SoundManager.instance.StopBGM();
       image_Enemy.GetComponent<Image>().sprite= LibraryOfEnemy.instance.ALLImages[collision.GetComponent<Enemy>().Enemyid];
       Enemy_Name.text = LibraryOfEnemy.ALLEnemies[collision.GetComponent<Enemy>().Enemyid].characterName;
