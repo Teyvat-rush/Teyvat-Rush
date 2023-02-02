@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
   // Start is called before the first frame update
+  public int Enemyid;
   protected Rigidbody2D rb;
   protected Collider2D coll;
   protected Animator anim;

@@ -1261,6 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2523348281f148e428b5f7407f5795c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemyid: 4
   EnemyDieParticle: {fileID: 8158399772484601155, guid: 65b0db89d48a66c45bcae49f88dffeb9, type: 3}
   Speed: 0.28
   damage: 20

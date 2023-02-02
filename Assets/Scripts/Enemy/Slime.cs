@@ -11,6 +11,7 @@ public class Slime : Enemy
     // Start is called before the first frame update
    void Start()
     {
+    Enemyid = 0;
     BornY = transform.position.y;
     anim = GetComponent<Animator>();
     rb = GetComponent<Rigidbody2D>();
@@ -22,7 +23,7 @@ public class Slime : Enemy
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Ê·À³Ä·anim" + anim.GetBool("Attack"));
+        Debug.Log("å²è±å§†anim" + anim.GetBool("Attack"));
         isAttack = false;
     if(isAttack)
     {
@@ -54,7 +55,7 @@ public class Slime : Enemy
     {
             isAttack = true;
       anim.SetBool("Jump", false);
-            Debug.Log("±ä³É¹¥»÷");
+            Debug.Log("å˜æˆæ”»å‡»");
       anim.SetBool("Attack", true);
       Speed = 0;
       transform.position = new Vector3(transform.position.x, BornY, transform.position.z);
@@ -79,7 +80,7 @@ public class Slime : Enemy
         
     if(collision.CompareTag("Plant"))
     {
-            Debug.Log("Ê·À³Ä·exit1");
+            Debug.Log("å²è±å§†exit1");
             isAttack = false;
             anim.SetBool("Attack", false);
             anim.SetBool("Jump", true);
@@ -94,7 +95,7 @@ public class Slime : Enemy
             {
                 transform.localPosition = new Vector3(transform.localPosition.x -ran1 / 300, -0.8f, transform.localPosition.z);
             }
-            Debug.Log("Ê·À³Ä·exit2");
+            Debug.Log("å²è±å§†exit2");
         }
   }
   public void PauseMove()
