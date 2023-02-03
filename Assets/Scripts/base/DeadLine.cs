@@ -7,13 +7,15 @@ public class DeadLine : MonoBehaviour
   public GameObject panel_Failed;
     public GameObject image_Enemy;
   public Text Enemy_Name;
+  public GameObject Bgm;
     private void OnTriggerEnter2D(Collider2D collision)
   {
     if(collision.tag=="Enemy")
     {
+      SoundManager.instance.StopBGM();
     Time.timeScale = 1f;
     panel_Failed.SetActive(true);
-      SoundManager.instance.StopBGM();
+      Bgm.GetComponent<AudioSource>().Pause();
       image_Enemy.GetComponent<Image>().sprite= LibraryOfEnemy.instance.ALLImages[collision.GetComponent<Enemy>().Enemyid];
       Enemy_Name.text = LibraryOfEnemy.ALLEnemies[collision.GetComponent<Enemy>().Enemyid].characterName;
             //if(collision.gameObject.name=="qqRen")
