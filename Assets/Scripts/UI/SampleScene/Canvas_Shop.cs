@@ -41,7 +41,7 @@ public class Canvas_Shop : MonoBehaviour
     public GameObject button_plus;
 
     public List<Items> items = new List<Items>();
-    public List<GameObject> panels= new List<GameObject>();//页面数应该等于国家数,手动添加
+    public List<GameObject> panels= new List<GameObject>();////////页面数应该等于国家数,手动添加
     public List<Sprite> images = new List<Sprite>();////////////手动添加
     public List<GameObject> buttons_item= new List<GameObject>();
     public static List<int> remainingNum=new List<int>();//库存数量

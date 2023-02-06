@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\ReadTable.cs" />
+    <Compile Include="Assets\Editor\SavedFrame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\EPPlus.dll" />
