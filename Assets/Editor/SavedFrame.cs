@@ -1,12 +1,11 @@
 ﻿class GameManagerr
 {
-    bool isFirst;//第一次进游戏的初始化,控制各个面板
+    bool isFirst;//第一次进游戏的初始化,控制各个面板,用来初始化各种数据
     int curLevelID;//当前关卡序号，从0开始
     int mora;
 }
 class Shop
 {
-    bool isFirst;//首次进入游戏，用于初始化remainingNum,purchasedState等数据
     int itemsTotalCount;//物品种类数
     List<int> unlockedPerLevel;//随关卡解锁进度
     List<Item> items;//物品列表
