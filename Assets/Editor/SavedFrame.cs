@@ -1,4 +1,6 @@
-﻿class GameManagerr
+using System.Collections.Generic;
+
+class GameManagerr
 {
     bool isFirst;//第一次进游戏的初始化,控制各个面板,用来初始化各种数据
     int curLevelID;//当前关卡序号，从0开始
