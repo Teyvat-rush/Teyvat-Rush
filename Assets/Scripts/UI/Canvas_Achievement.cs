@@ -117,14 +117,15 @@ public class Canvas_Achievement : MonoBehaviour
         //Debug.Log("1");
         AchieveState[n2] = true;
         initialize= true;//每领取一次刷新一遍图鉴
-        DataManager.instance.coin.num += int.Parse(button_Attain[n2].gameObject.transform.parent.GetChild(2).GetChild(0).gameObject.GetComponent<Text>().text);
-        string json_Mora = JsonUtility.ToJson(DataManager.instance.coin);
-        string filepath_Mora = Application.streamingAssetsPath + "/Mora.json";
-        using (StreamWriter streamWriter = new StreamWriter(filepath_Mora))
-        {
-            streamWriter.WriteLine(json_Mora);
-            streamWriter.Close();
-            streamWriter.Dispose();
-        }
+        GameManager.gamemanagerr.mora += int.Parse(button_Attain[n2].gameObject.transform.parent.GetChild(2).GetChild(0).gameObject.GetComponent<Text>().text);
+        string json = JsonUtility.ToJson(GameManager.gamemanagerr, true);
+        File.WriteAllText(Application.streamingAssetsPath + "/GameManagerr.json", json);
+        //string filepath_Mora = Application.streamingAssetsPath + "/Mora.json";
+        //using (StreamWriter streamWriter = new StreamWriter(filepath_Mora))
+        //{
+        //    streamWriter.WriteLine(json_Mora);
+        //    streamWriter.Close();
+        //    streamWriter.Dispose();
+        //}
     }
 }

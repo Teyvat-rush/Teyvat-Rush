@@ -109,7 +109,7 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
         friendshipLevelRewardTitle.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipLevelRewardTitle;
         friendshipLevelReward.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipLevelReward;
         slider_FriendshipProgress.GetComponent<Slider>().value = (float)LibraryOfCharacter.ALLCharacters[index].friendshipEXP/ (float)LibraryOfCharacter.friendshipEXPMAXs[LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum];
-        if(LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum==9)
+        if(LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum==9)//满级存储为9，显示为10级
         {
             slider_FriendshipProgress.GetComponent<Slider>().value = 1;
         }

@@ -66,12 +66,12 @@ public class CardSlot : MonoBehaviour
             startLevelName.text = GameManager.LevelNames[GameManager.curLevelID];
             attainedCards.Clear();
             attainedCardsButtons.Clear();
-            for (int i = 0; i < GameManager.maxCardsNum; i++)
+            for (int i = 0; i < GameManager.gamemanagerr.maxCardsNum; i++)
             {
                 slots[i].gameObject.transform.parent.gameObject.SetActive(true);//找到按钮的父物体并启用，按钮也启用
                 slots[i].gameObject.SetActive(false);
             }
-            for (int i = GameManager.maxCardsNum; i < 10; i++)
+            for (int i = GameManager.gamemanagerr.maxCardsNum; i < 10; i++)
             {
                 slots[i].gameObject.transform.parent.gameObject.SetActive(false);//将剩下的按钮的父物体禁用
             }

@@ -27,28 +27,30 @@ public class Mora : MonoBehaviour
     SoundManager.instance.PlaySound(Globals.PickMora + i);
     if (this.name == "Small_Mora(Clone)")
     {
-      DataManager.instance.coin.num += 16;
+            GameManager.gamemanagerr.mora += 16;
     }
     else if (this.name== "Big_Mora(Clone)")
     {
-      DataManager.instance.coin.num += 80;
+      GameManager.gamemanagerr.mora += 80;
     }
     else if (this.name == "Big_PaiMora(Clone)")
     {
-      DataManager.instance.coin.num -= 9;
+      GameManager.gamemanagerr.mora -= 9;
     }
     else if (this.name == "Small_PaiMora(Clone)")
     {
-      DataManager.instance.coin.num -= 45;
+      GameManager.gamemanagerr.mora -= 45;
     }
-        string json_Mora = JsonUtility.ToJson(DataManager.instance.coin);
-        string filepath_Mora = Application.streamingAssetsPath + "/Mora.json";
-        using (StreamWriter streamWriter = new StreamWriter(filepath_Mora))
-        {
-            streamWriter.WriteLine(json_Mora);
-            streamWriter.Close();
-            streamWriter.Dispose();
-        }
+        string json = JsonUtility.ToJson(GameManager.gamemanagerr, true);
+        File.WriteAllText(Application.streamingAssetsPath + "/GameManagerr.json", json);
+        //string json_Mora = JsonUtility.ToJson(DataManager.instance.coin);
+        //string filepath_Mora = Application.streamingAssetsPath + "/Mora.json";
+        //using (StreamWriter streamWriter = new StreamWriter(filepath_Mora))
+        //{
+        //    streamWriter.WriteLine(json_Mora);
+        //    streamWriter.Close();
+        //    streamWriter.Dispose();
+        //}
 
         // 将屏幕坐标转化为世界坐标
         Vector3 MoraNumPos = Camera.main.ScreenToWorldPoint(UIManager.instance.GetMoraNumTextPos());

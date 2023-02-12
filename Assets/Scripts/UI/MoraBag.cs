@@ -16,14 +16,13 @@ public class MoraBag : MonoBehaviour
     void Update()
     {
         //¶ÁÄ¦À­Êý¾Ý
-        string json_Mora = JsonUtility.ToJson(DataManager.instance.coin);
-        string filepath_Mora = Application.streamingAssetsPath + "/Mora.json";
-        using (StreamReader streamReader = new StreamReader(filepath_Mora))
-        {
-            json_Mora = streamReader.ReadToEnd();
-            streamReader.Close();
-        }
-        DataManager.instance.coin = JsonUtility.FromJson<Coin>(json_Mora);
-        text_Mora.text = DataManager.instance.coin.num.ToString();
+        //string json_Mora = JsonUtility.ToJson(DataManager.instance.coin);
+        //string filepath_Mora = Application.streamingAssetsPath + "/Mora.json";
+        //using (StreamReader streamReader = new StreamReader(filepath_Mora))
+        //{
+        //    json_Mora = streamReader.ReadToEnd();
+        //    streamReader.Close();
+        //}
+        text_Mora.text = GameManager.gamemanagerr.mora.ToString();
     }
 }

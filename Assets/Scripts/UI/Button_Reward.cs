@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 public class Button_Reward : MonoBehaviour
 {
     public GameObject disappearParticle;
@@ -21,6 +22,9 @@ public class Button_Reward : MonoBehaviour
     public void CreateDisappearParticle()
     {
         GameManager.curLevelID++;///////////主线进度+1
+        GameManager.gamemanagerr.curLevelID++;
+        string json = JsonUtility.ToJson(GameManager.gamemanagerr, true);
+        File.WriteAllText(Application.streamingAssetsPath + "/GameManagerr.json", json);
         Instantiate(disappearParticle,transform.position,transform.rotation);
         
         panelSucceed.SetActive(true);

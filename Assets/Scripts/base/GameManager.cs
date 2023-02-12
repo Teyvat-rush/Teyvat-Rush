@@ -10,7 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public class GameManager : MonoBehaviour
 {
-    public GameManagerr gamemanagerr = new GameManagerr();
+    public static GameManagerr gamemanagerr = new GameManagerr();
 
     public static GameManager instance;
     public List<Sprite> Maps= new List<Sprite>();
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject canvas;
 
     public float creatEnemyInterval;//生成敌人的间隔时间
-    public static int maxCardsNum=6;////////最大卡槽数
+    //public static int maxCardsNum=6;////////最大卡槽数
     public static int cardsMaxCharacter = 5;/////////////////手动改变
     public static int cardsMaxEnemy = 6;/////////////////手动改变
     public int starNum;
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     public static List<string> LevelNames = new List<string>();
     public int curProgressID;//当前波次数，从0开始数
     public int totalDestroyedNum;//总击杀敌人数
-    public int waveDestroyedNum;//当前波次击杀敌人数
+    public int waveDestroyedNum;//当前波次击杀敌人数0
     public int waveCreatedNum;//当前波次已生成敌人数
     public static int totalCreatedNum;//总已生成敌人数
     public float MAINTIMER;//主计时器
@@ -53,12 +53,24 @@ public class GameManager : MonoBehaviour
         Debug.Log("GM awake");
         if(!File.Exists(Application.streamingAssetsPath + "/GameManagerr.json"))
         {
+            gamemanagerr.maxCardsNum = 6;
             string json = JsonUtility.ToJson(gamemanagerr, true);
             File.WriteAllText(Application.streamingAssetsPath + "/GameManagerr.json", json);
-        }else
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+        }
+        else
         {
             string json = File.ReadAllText(Application.streamingAssetsPath + "/GameManagerr.json");
             gamemanagerr = JsonUtility.FromJson<GameManagerr>(json);
+            curLevelID = gamemanagerr.curLevelID;
+            Debug.Log("摩拉数" + gamemanagerr.mora);
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
         }
         instance = this;
         gameStart = false;
@@ -81,7 +93,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("GM initialize");
             if (Canvas_LibraryOfEnemy.checkMode == 2)
             {
-                if (Canvas_Shop.purchasedState[0])
+                if (Canvas_Shop.shop.items[0].purchasedState)
                 {
                     Debug.Log("买了木桩");
                     for (int i = 0; i < 5; i++)//仅5路地图，待更新

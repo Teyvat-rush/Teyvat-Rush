@@ -1,5 +1,6 @@
 {
     "isFirst": false,
-    "curLevelID": 0,
-    "mora": 100
+    "maxCardsNum": 10,
+    "curLevelID": 1,
+    "mora": 406
 }

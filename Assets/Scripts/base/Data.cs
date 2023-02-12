@@ -6,49 +6,59 @@ using UnityEngine;
 public class Data : ScriptableObject
 {
     public List<Data> AllData = new List<Data>();
-  public int Moranum;
+  //public int Moranum;
 }
 [System.Serializable]
-public class Coin
-{
-  public int num;
-}
-[System.Serializable]
-public class Likability
-{
-  public string name;
-  public bool locked;
-  public int num;
-  public int level;
-}
-[System.Serializable]
-public class Characters_Likability
-{
-  public List<Likability> Likabilities = new List<Likability>();
-}
-[System.Serializable]
+//public class Coin
+//{
+//  public int num;
+//}
+//[System.Serializable]
+//public class Likability
+//{
+//  public string name;
+//  public bool locked;
+//  public int num;
+//  public int level;
+//}
+//[System.Serializable]
+//public class Characters_Likability
+//{
+//  public List<Likability> Likabilities = new List<Likability>();
+//}
+//[System.Serializable]
 public class GameManagerr
 {
     public bool isFirst;//第一次进游戏的初始化,控制各个面板,用来初始化各种数据
+    public int maxCardsNum;//队伍的最大卡槽数
     public int curLevelID;//当前关卡序号，从0开始
     public int mora;
 }
 [System.Serializable]
-class Shop
+public class Shop
 {
-  int itemsTotalCount;//物品种类数
-  List<int> unlockedPerLevel;//随关卡解锁进度
-  List<Item> items;//物品列表
-  [System.Serializable]
-  class Item
-  {
-    string name;//物品名
-    int index;//序号
-    int price;//价格
-    int maxNum;//最大数量
-    int remainingNum;//剩余数量
-    bool purchasedState;//购买状态
-  }
+    public int itemsTotalCount;//物品种类数
+    public List<int> unlockedPerLevel=new List<int>();//随关卡解锁进度
+    public List<Item> items=new List<Item>();//物品列表
+    [System.Serializable]
+    public class Item
+    {
+        public string name;//物品名
+        public string description;//描述
+        public int index;//序号
+        public int price;//价格
+        public int maxNum;//最大数量
+        public int remainingNum;//剩余数量
+        public bool purchasedState;//购买状态
+
+        public Item(string name, string description, int price, int maxNum)
+        {
+            this.name = name;
+            this.description = description;
+            this.price = price;
+            this.maxNum = maxNum;
+        }
+    }
 }
 [System.Serializable]
 class Achievement
