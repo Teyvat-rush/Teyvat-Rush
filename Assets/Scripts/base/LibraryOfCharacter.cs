@@ -19,7 +19,7 @@ public class LibraryOfCharacter : MonoBehaviour
     public List<Sprite> ALLImages = new List<Sprite>();
     public static List<LibraryOfCharacter> ALLCharacters = new List<LibraryOfCharacter>();
     
-    public static List<int> friendshipEXPMAXs = new List<int>(){ 0, 2, 2, 2, 2, 2, 2, 2, 2, 2,0};
+    public static List<int> friendshipEXPMAXs = new List<int>(){ 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,0};
     public static bool isFirst=true;
     public LibraryOfCharacter(string characterName, string description, Sprite image, string hPLevel, string aTKLevel, string aTKorSkillInterval, string reloadTimeLevel, int friendshipEXP, int friendshipEXPMAX, int friendshipLevelNum, string friendshipLevelRewardTitle, string text_FriendshipLevelReward)
     {
@@ -65,11 +65,12 @@ public class LibraryOfCharacter : MonoBehaviour
 
     public static void UpdateFreindship(int index)
     {
-        if (ALLCharacters[index].friendshipEXP >= friendshipEXPMAXs[ALLCharacters[index].friendshipLevelNum] && friendshipEXPMAXs[ALLCharacters[index].friendshipLevelNum]<10)
+        if (ALLCharacters[index].friendshipEXP >= friendshipEXPMAXs[ALLCharacters[index].friendshipLevelNum] && ALLCharacters[index].friendshipLevelNum < 10)
         {
-            Debug.Log("friendshipEXPMAXs[ALLCharacters[index].friendshipLevelNum]"+ friendshipEXPMAXs[ALLCharacters[index].friendshipLevelNum]);
-            ALLCharacters[index].friendshipLevelNum++;
+            Debug.Log("植物"+index+"好感度等级=" +(ALLCharacters[index].friendshipLevelNum+1));
             ALLCharacters[index].friendshipEXP -= friendshipEXPMAXs[ALLCharacters[index].friendshipLevelNum];
+            ALLCharacters[index].friendshipLevelNum++; 
+
         }
     }
 }

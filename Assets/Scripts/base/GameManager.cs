@@ -4,10 +4,14 @@ using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.IO;
+using JetBrains.Annotations;
+using System.Security.Cryptography.X509Certificates;
 
 public class GameManager : MonoBehaviour
 {
+    public GameManagerr gamemanagerr = new GameManagerr();
+
     public static GameManager instance;
     public List<Sprite> Maps= new List<Sprite>();
     public List<Sprite> rewardImages = new List<Sprite>();//预制体override
@@ -47,9 +51,18 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Debug.Log("GM awake");
+        if(!File.Exists(Application.streamingAssetsPath + "/GameManagerr.json"))
+        {
+            string json = JsonUtility.ToJson(gamemanagerr, true);
+            File.WriteAllText(Application.streamingAssetsPath + "/GameManagerr.json", json);
+        }else
+        {
+            string json = File.ReadAllText(Application.streamingAssetsPath + "/GameManagerr.json");
+            gamemanagerr = JsonUtility.FromJson<GameManagerr>(json);
+        }
         instance = this;
         gameStart = false;
-        gameEnd=false;
+        gameEnd = false;
         initialize = true;
     }
     void Start()
@@ -63,7 +76,6 @@ public class GameManager : MonoBehaviour
         {
             GameStart();
         }
-
         if(initialize)//关卡开始后的初始化
         {
             Debug.Log("GM initialize");

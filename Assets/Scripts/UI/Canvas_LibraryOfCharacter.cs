@@ -109,6 +109,10 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
         friendshipLevelRewardTitle.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipLevelRewardTitle;
         friendshipLevelReward.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipLevelReward;
         slider_FriendshipProgress.GetComponent<Slider>().value = (float)LibraryOfCharacter.ALLCharacters[index].friendshipEXP/ (float)LibraryOfCharacter.friendshipEXPMAXs[LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum];
+        if(LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum==9)
+        {
+            slider_FriendshipProgress.GetComponent<Slider>().value = 1;
+        }
         attainedCards[lastChosenIndex].GetComponent<Button>().interactable = true;
         lastChosenIndex = index;
         attainedCards[lastChosenIndex].GetComponent<Button>().interactable = false;//被选中的不能再选

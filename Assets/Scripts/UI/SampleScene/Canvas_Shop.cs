@@ -134,7 +134,9 @@ public class Canvas_Shop : MonoBehaviour
         if (int.Parse(text_TotalPrice.GetComponent<Text>().text) > DataManager.instance.coin.num)
         {
             button_Purchase.GetComponent<Button>().interactable = false;
-        }else
+            button_plus.GetComponent<Button>().interactable = false;
+        }
+        else
         {
             button_Purchase.GetComponent<Button>().interactable = true;
         }
