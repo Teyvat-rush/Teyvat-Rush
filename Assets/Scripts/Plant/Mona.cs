@@ -7,6 +7,7 @@ public class Mona : Plant
   public GameObject SunPrefab;
     public float ReadyTime;
   private float timer;
+  public GameObject Monaa;
     protected override void Start()
     {
     base.Start();
@@ -29,7 +30,7 @@ public class Mona : Plant
     {
       timer =0;
       GameObject ProducedSun =  Instantiate(SunPrefab);
-      ProducedSun.transform.parent = transform.parent;
+      ProducedSun.transform.parent = Monaa.transform;
       ProducedSun.transform.localPosition = new Vector3(-0.7f,-0.4f,0);
     }
   }
