@@ -70,6 +70,7 @@ MonoBehaviour:
   PlantAwake: 0
   SunPrefab: {fileID: 1001220303305346936, guid: 91144f423ec69a9438e65491f33b48cb, type: 3}
   ReadyTime: 3
+  Monaa: {fileID: 4773579219006792026}
 --- !u!95 &7156235213586014000
 Animator:
   serializedVersion: 3
@@ -120,8 +121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4773579219006792027}
   - component: {fileID: 4773579219006791968}
-  - component: {fileID: 4773579219006791975}
-  - component: {fileID: 4773579219006791974}
   - component: {fileID: 4773579219006791972}
   m_Layer: 6
   m_Name: Mona
@@ -196,43 +195,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &4773579219006791975
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4773579219006792026}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.13, y: -0.061899185}
-  m_Size: {x: 0.6833129, y: 1.3723202}
-  m_Direction: 0
---- !u!50 &4773579219006791974
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4773579219006792026}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &4773579219006791972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +213,7 @@ MonoBehaviour:
   PlantAwake: 0
   SunPrefab: {fileID: 1001220303305346936, guid: 91144f423ec69a9438e65491f33b48cb, type: 3}
   ReadyTime: 3
+  Monaa: {fileID: 0}
 --- !u!1 &4773579219578459472
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2e3c03237a22946b4ad71b24dd1820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 0
   g: -6
   vy0: 3
   v_Inflation: 0.8
