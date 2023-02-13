@@ -23,7 +23,7 @@ public class Slime : Enemy
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("史莱姆anim" + anim.GetBool("Attack"));
+        //Debug.Log("史莱姆anim" + anim.GetBool("Attack"));
         isAttack = false;
     if(isAttack)
     {
