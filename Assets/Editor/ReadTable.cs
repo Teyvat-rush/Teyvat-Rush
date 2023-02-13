@@ -40,7 +40,7 @@ public class Startup
                     //遍历每一列
                     for (int j = worksheet.Dimension.Start.Column; j <= 12/*worksheet.Dimension.End.Column*/; j++)
                     {
-                        Debug.Log("读取第" + i + "行" + "第" + j + "列");
+                        //Debug.Log("读取第" + i + "行" + "第" + j + "列");
                         //Debug.Log("worksheet.Dimension.End.Column = "+worksheet.Dimension.End.Column); 
                         //读取i行j列的内容，打印调试
                         //Debug.Log("数据内容:" + worksheet.GetValue(i, j).ToString());

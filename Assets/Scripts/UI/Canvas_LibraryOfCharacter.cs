@@ -33,7 +33,6 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
     void Awake()
     {
         initialize = true;
-        Debug.Log("Canvas_LibraryOfCharacter:Awake");
         attainedNumPerLevel.Clear();
         attainedNumPerLevel.Add(1);
         attainedNumPerLevel.Add(2);
@@ -45,7 +44,6 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
     {
         if (initialize)
         {
-            Debug.Log("Canvas_LibraryOfCharacter:initialize");
             button_Close_FriendshipLevelReward.GetComponent<Button>().onClick.RemoveAllListeners();
             button_Close_FriendshipLevelReward.GetComponent<Button>().onClick.AddListener(CloseFriendshipLevelReward);
             button_FriendshipLevelReward.GetComponent<Button>().onClick.RemoveAllListeners();

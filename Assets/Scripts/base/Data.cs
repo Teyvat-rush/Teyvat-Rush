@@ -61,22 +61,34 @@ public class Shop
     }
 }
 [System.Serializable]
-class Achievement
+public class Achievement
 {
-  int ALLCount;//成就总个数
-  int achievedNum;//已完成并领取个数
-  bool isRemainingReward;//是否有成就未领取
-  List<Achievementt> l;//成就列表
-  [System.Serializable]
-  class Achievementt
-  {
-    int index1;//成就序号
-    int index2;//未完成成就在列表中的位置，(暂留
-    int index3;//成就种类，(暂留
-    int progress;//进度
-    int target;//任务目标
-    bool achievedState;//是否领取
-  }
+    public int ALLCount;//成就总个数
+    public int achievedNum;//已完成并领取个数
+    public List<Achievementt> l=new List<Achievementt>();//成就列表
+    [System.Serializable]
+    public class Achievementt
+    {
+    public int index1;//成就序号
+    public int index2;//未完成成就在列表中的位置，(暂留
+    public int index3;//成就种类，(暂留
+    public string name;//成就名
+    public string description;//详情
+    public int progress;//进度
+    public int target;//任务目标
+    public int rewardNum;//奖励摩拉数
+    public bool achievedState;//是否领取
+
+        public Achievementt(string name, string description, int index2, int index3, int target, int rewardNum)
+        {
+            this.index2 = index2;
+            this.index3 = index3;
+            this.name = name;
+            this.description = description;
+            this.target = target;
+            this.rewardNum = rewardNum;
+        }
+    }
 }
 [System.Serializable]
 class Character

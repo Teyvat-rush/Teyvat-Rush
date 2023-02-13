@@ -11,6 +11,8 @@ using System.Security.Cryptography.X509Certificates;
 public class GameManager : MonoBehaviour
 {
     public static GameManagerr gamemanagerr = new GameManagerr();
+    public static Shop shop = new Shop();
+    public static Achievement achievement= new Achievement();
 
     public static GameManager instance;
     public List<Sprite> Maps= new List<Sprite>();
@@ -50,17 +52,16 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("GM awake");
         if(!File.Exists(Application.streamingAssetsPath + "/GameManagerr.json"))
         {
-            gamemanagerr.maxCardsNum = 6;
+            gamemanagerr.maxCardsNum = 6;//////////////↓手动修改↓
             string json = JsonUtility.ToJson(gamemanagerr, true);
             File.WriteAllText(Application.streamingAssetsPath + "/GameManagerr.json", json);
             /////////////各种json变量的初始化
             /////////////各种json变量的初始化
             /////////////各种json变量的初始化
             /////////////各种json变量的初始化
-        }
+        }/////////////////////////////////////↑手动修改↑
         else
         {
             string json = File.ReadAllText(Application.streamingAssetsPath + "/GameManagerr.json");
@@ -72,6 +73,70 @@ public class GameManager : MonoBehaviour
             /////////////各种c#变量的赋值
             /////////////各种c#变量的赋值
         }
+/*_________________________________________________________________________________________________________________*/
+        if (!File.Exists(Application.streamingAssetsPath + "/Shop.json"))
+        {
+            shop.itemsTotalCount = 2;//////////////↓手动修改↓
+            shop.unlockedPerLevel = new List<int>
+            {
+                1,
+                2,
+                2
+            };/////////////////////////////////////↑手动修改↑
+            shop.items.Add(new Shop.Item("木桩", "置于蒙德地图防线的最后，敌人接触时艾琳登场清除一行内所有敌人。", 1100, 1));
+            shop.items.Add(new Shop.Item("扩充编队·1", "使队伍可携带的人数上限+1。", 440, 4));
+            for (int i = 0; i < shop.itemsTotalCount; i++)
+            {
+                shop.items[i].index = i;
+                shop.items[i].remainingNum = shop.items[i].maxNum;
+                shop.items[i].purchasedState = false;
+            }
+            string json = JsonUtility.ToJson(shop, true);
+            File.WriteAllText(Application.streamingAssetsPath + "/Shop.json", json);
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+        }
+        else
+        {
+            string json = File.ReadAllText(Application.streamingAssetsPath + "/Shop.json");
+            shop = JsonUtility.FromJson<Shop>(json);
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+        }
+/*_________________________________________________________________________________________________________________*/
+        if (!File.Exists(Application.streamingAssetsPath + "/Achievement.json"))
+        {
+            achievement.ALLCount = 2;//////////////↓手动修改↓
+            /////////////////////////////////////↑手动修改↑
+            achievement.achievedNum= 0;
+            achievement.l.Add(new Achievement.Achievementt("16 - 9 = ？(测试中,达成目标是2)", "累计拾取100个派摩拉。", 0,0,2,200));
+            achievement.l.Add(new Achievement.Achievementt("买了个寂寞", "在商店确认购买0件物品。", 0, 0, 1, 200));
+            for (int i = 0; i < achievement.ALLCount; i++)
+            {
+                achievement.l[i].index1 = i;
+                achievement.l[i].achievedState = false;
+            }
+            string json = JsonUtility.ToJson(achievement, true);
+            File.WriteAllText(Application.streamingAssetsPath + "/Achievement.json", json);
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+        }
+        else
+        {
+            string json = File.ReadAllText(Application.streamingAssetsPath + "/Achievement.json");
+            achievement = JsonUtility.FromJson<Achievement>(json);
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+        }
+
         instance = this;
         gameStart = false;
         gameEnd = false;
@@ -93,7 +158,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("GM initialize");
             if (Canvas_LibraryOfEnemy.checkMode == 2)
             {
-                if (Canvas_Shop.shop.items[0].purchasedState)
+                if (shop.items[0].purchasedState)
                 {
                     Debug.Log("买了木桩");
                     for (int i = 0; i < 5; i++)//仅5路地图，待更新
@@ -118,14 +183,11 @@ public class GameManager : MonoBehaviour
                 }
             }
             
-
-            
-            
             LevelNames.Clear();
             LevelNames.Add("蒙德夜晚 - 1");
             LevelNames.Add("蒙德夜晚 - 2");
             LevelNames.Add("蒙德夜晚 - 3");
-            Debug.Log("GameManager:initialize 当前关卡ID"+curLevelID);
+            Debug.Log("GameManager:initialize 当前关卡名：" + LevelNames[curLevelID]);
             MAINTIMER = 0;
             curProgressID = 0;
             waveCreatedNum= 0;
