@@ -32,12 +32,18 @@ public class Mora : MonoBehaviour
     else if (this.name== "Big_Mora(Clone)")
     {
       GameManager.gamemanagerr.mora += 80;
-    }
-    else if (this.name == "Big_PaiMora(Clone)")
-    {
-      GameManager.gamemanagerr.mora -= 9;
+      GameManager.achievement.l[0].progress += 1;////////////成就序号0
+      string json1 = JsonUtility.ToJson(GameManager.achievement, true);
+      File.WriteAllText(Application.streamingAssetsPath + "/Achievement.json", json1);
     }
     else if (this.name == "Small_PaiMora(Clone)")
+    {
+      GameManager.gamemanagerr.mora -= 9;
+      GameManager.achievement.l[0].progress += 1;////////////成就序号0
+      string json1 = JsonUtility.ToJson(GameManager.achievement, true);
+      File.WriteAllText(Application.streamingAssetsPath + "/Achievement.json", json1);
+    }
+    else if (this.name == "Big_PaiMora(Clone)")
     {
       GameManager.gamemanagerr.mora -= 45;
     }
