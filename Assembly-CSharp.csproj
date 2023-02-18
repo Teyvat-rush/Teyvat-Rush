@@ -78,7 +78,6 @@
     <Compile Include="Assets\Unity Save Load Utility\Non-Mono Classes\SaveGame.cs" />
     <Compile Include="Assets\Scripts\UI\Panel_Failed.cs" />
     <Compile Include="Assets\Scripts\Plant\Nuoaier.cs" />
-    <Compile Include="Assets\Scripts\UI\Mora.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Unity Save Load Utility\Surrogates\Color32Surrogate.cs" />
     <Compile Include="Assets\Scripts\base\Lines.cs" />
@@ -127,7 +126,7 @@
     <Compile Include="Assets\Scripts\UI\Panel_Succeed.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\UI\Level\Level 1-X\Failed\Blur.shader" />
+    <None Include="Assets\UI\Level\Level 0-X\Failed\Blur.shader" />
     <None Include="Assets\Resources\Audios\Paimon\0-2\0-2.txt" />
     <None Include="Assets\Resources\images\Enemies\qqRen\Die\Dissipate.shader" />
     <None Include="Assets\Resources\Audios\Paimon\0-3\0-3.txt" />
