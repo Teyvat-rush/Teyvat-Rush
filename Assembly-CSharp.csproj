@@ -70,6 +70,7 @@
     <Compile Include="Assets\Unity Save Load Utility\Non-Mono Classes\SceneObject.cs" />
     <Compile Include="Assets\Scripts\UI\SampleScene\Canvas_SelectLevel\Mondstadt\Button_0_1.cs" />
     <Compile Include="Assets\Scripts\UI\SpeedUp.cs" />
+    <Compile Include="Assets\Scripts\base\KeyboardManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime.cs" />
     <Compile Include="Assets\Scripts\UI\Canvas_LibraryOfEnemy.cs" />
     <Compile Include="Assets\Scripts\UI\Canvas_LibraryOfCharacter.cs" />
@@ -123,12 +124,12 @@
     <Compile Include="Assets\Scripts\base\DataManager.cs" />
     <Compile Include="Assets\Scripts\Plant\WoodPile.cs" />
     <Compile Include="Assets\Scripts\UI\Panel_Succeed.cs" />
-    <Compile Include="Assets\Scripts\base\KeyboardManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy\HydroAbyssMage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\Level\Level 0-X\Failed\Blur.shader" />
     <None Include="Assets\Resources\Audios\Paimon\0-2\0-2.txt" />
-    <None Include="Assets\Resources\images\Enemies\qqRen\Die\Dissipate.shader" />
+    <None Include="Assets\Resources\images\Enemies\Level 0-x\qqRen\Die\Dissipate.shader" />
     <None Include="Assets\Resources\Audios\Paimon\0-3\0-3.txt" />
     <None Include="Assets\Materials\Shader_Blur.shader" />
     <None Include="Assets\Resources\Audios\Paimon\0-1\0-1.txt" />
