@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public List<Sprite> Maps= new List<Sprite>();
     public List<Sprite> rewardImages = new List<Sprite>();//预制体override
+    public GameObject button_Pause;//暂停按钮
     public GameObject button_Reward;//战斗结束奖励按钮
     public List<GameObject> enemies= new List<GameObject>();//预制体override
     // Start is called before the first frame update
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
     //[HideInInspector]
     //public LevelData levelData;
     public static bool gameStart = false;//true:已开始作战，无论是否暂停
-    public bool gameEnd = false;//true:最后一只怪倒下，无论是否暂停
+    public static bool gameEnd = false;//true:最后一只怪倒下，无论是否暂停
     //public bool isBattling = false;//true:在关卡内）
     //public int circulateTimes = 1;//当前周目（现在没用到）
     public static int curLevelID = 0;//当前关卡，从0开始数,0-1是第0关
@@ -395,6 +396,7 @@ public class GameManager : MonoBehaviour
                 rewardHere.GetComponent<Animator>().SetBool("IsOK", true);
                 gameStart = false;
                 gameEnd = true;
+                button_Pause.SetActive(false);
                 //initialize = true;
                 Canvas_LibraryOfEnemy.checkMode = 1;
             }

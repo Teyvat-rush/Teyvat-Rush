@@ -34,7 +34,6 @@ public class CardSlot : MonoBehaviour
     public int filledNum = 0;//已选择角色数
     public static int maxCardNumHere=6;//最大卡槽数
     public static bool initialize = true;
-    public bool isInLibrary=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -147,6 +146,7 @@ public class CardSlot : MonoBehaviour
         {
             SoundManager.instance.PlaySound(Globals.StartLevel);
 
+            Menu.isInBattle = true;
             GameManager.initialize = true;
             GameManager.gameStart = true;
             ProgressBar.initialize = true;
@@ -164,10 +164,11 @@ public class CardSlot : MonoBehaviour
             }
         }
     }
+    
     public void OpenLibraryEnemy_Review()
     {
-        isInLibrary = true;
         SoundManager.instance.PlaySound(Globals.Open0);
+        Menu.isInBattle = false;
         Canvas_LibraryOfEnemy.checkMode = 2;
         Canvas_LibraryOfEnemy.initialize= true;
         canvas_LibraryOfEnemy.SetActive(true);
@@ -175,6 +176,7 @@ public class CardSlot : MonoBehaviour
     public void OpenLibraryC()
     {
         SoundManager.instance.PlaySound(Globals.Open1);
+        Menu.isInBattle = false;
         Canvas_LibraryOfCharacter.initialize = true;
         canvas_LibraryOfEnemy.SetActive(false);
         canvas_LibraryOfCharacter.SetActive(true);
@@ -182,19 +184,21 @@ public class CardSlot : MonoBehaviour
     public void OpenLibraryE()
     {
         SoundManager.instance.PlaySound(Globals.Open1);
+        Menu.isInBattle = false;
         canvas_LibraryOfEnemy.SetActive(true);
         canvas_LibraryOfCharacter.SetActive(false);
     }
     public void ReturnToLevel()
     {
         SoundManager.instance.PlaySound(Globals.Return0);
-        isInLibrary = false;
+        Menu.isInBattle = true;
         canvas_LibraryOfEnemy.SetActive(false);
         canvas_LibraryOfCharacter.SetActive(false);
     }
 
     public void ReturnToMenu()
     {
+        Menu.isInBattle = false;
         Canvas_LibraryOfEnemy.checkMode = 1;
         SceneManager.LoadScene(0);
     }
