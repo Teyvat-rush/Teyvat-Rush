@@ -19,7 +19,7 @@ public class LibraryOfCharacter : MonoBehaviour
     public List<Sprite> ALLImages = new List<Sprite>();
     public static List<LibraryOfCharacter> ALLCharacters = new List<LibraryOfCharacter>();
     
-    public static List<int> friendshipEXPMAXs = new List<int>(){ 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,0};
+    public static List<int> friendshipEXPMAXs = new List<int>(){ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,0};
     public static bool isFirst=true;
     public LibraryOfCharacter(string characterName, string description, Sprite image, string hPLevel, string aTKLevel, string aTKorSkillInterval, string reloadTimeLevel, int friendshipEXP, int friendshipEXPMAX, int friendshipLevelNum, string friendshipLevelRewardTitle, string text_FriendshipLevelReward)
     {

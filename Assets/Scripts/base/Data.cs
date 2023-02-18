@@ -100,6 +100,7 @@ class Character
   class Characterr
   {
     string name;//角色名
+        string description;//角色介绍
     int index;//序号
     int EXP;//当前等级好感度的累计经验
     int level;//当前好感度等级

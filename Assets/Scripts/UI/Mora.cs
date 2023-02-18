@@ -22,31 +22,29 @@ public class Mora : MonoBehaviour
   
   private void OnMouseDown()
   {
-    animator.SetBool("Fly", true);
-    int i = Random.Range(1, 3);
-    SoundManager.instance.PlaySound(Globals.PickMora + i);
-    if (this.name == "Small_Mora(Clone)")
-    {
+        animator.SetBool("Fly", true);
+        int i = Random.Range(1, 3);
+        SoundManager.instance.PlaySound(Globals.PickMora + i);
+        if (this.name == "Small_Mora(Clone)")
+        {
             GameManager.gamemanagerr.mora += 16;
-    }
-    else if (this.name== "Big_Mora(Clone)")
-    {
-      GameManager.gamemanagerr.mora += 80;
-      GameManager.achievement.l[0].progress += 1;////////////成就序号0
-      string json1 = JsonUtility.ToJson(GameManager.achievement, true);
-      File.WriteAllText(Application.streamingAssetsPath + "/Achievement.json", json1);
-    }
-    else if (this.name == "Small_PaiMora(Clone)")
-    {
-      GameManager.gamemanagerr.mora -= 9;
-      GameManager.achievement.l[0].progress += 1;////////////成就序号0
-      string json1 = JsonUtility.ToJson(GameManager.achievement, true);
-      File.WriteAllText(Application.streamingAssetsPath + "/Achievement.json", json1);
-    }
-    else if (this.name == "Big_PaiMora(Clone)")
-    {
-      GameManager.gamemanagerr.mora -= 45;
-    }
+        }
+        else if (this.name== "Big_Mora(Clone)")
+        {
+            GameManager.gamemanagerr.mora += 80;
+        }
+        else if (this.name == "Small_PaiMora(Clone)")
+        {
+             GameManager.gamemanagerr.mora -= 9;
+             GameManager.achievement.l[0].progress += 1;////////////成就序号0
+        }
+        else if (this.name == "Big_PaiMora(Clone)")
+        {
+            GameManager.achievement.l[0].progress += 1;////////////成就序号0
+            GameManager.gamemanagerr.mora -= 45;
+        }
+        string json1 = JsonUtility.ToJson(GameManager.achievement, true);
+        File.WriteAllText(Application.streamingAssetsPath + "/Achievement.json", json1);
         string json = JsonUtility.ToJson(GameManager.gamemanagerr, true);
         File.WriteAllText(Application.streamingAssetsPath + "/GameManagerr.json", json);
         //string json_Mora = JsonUtility.ToJson(DataManager.instance.coin);

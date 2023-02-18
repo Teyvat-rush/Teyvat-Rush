@@ -115,7 +115,7 @@ public class CardSlot : MonoBehaviour
             selectedCardsButtons[filledNum].onClick.AddListener(delegate { RemovingMove(temp_1, temp_2); });
             //Debug.Log("图鉴序号" + temp_1 + " 卡槽序号" + temp_2 + "（+移除动作监听）");
             filledNum++;
-            LibraryOfCharacter.ALLCharacters[temp_1].friendshipEXP += 1;///////测试用，每选中一次卡EXP+1
+            //LibraryOfCharacter.ALLCharacters[temp_1].friendshipEXP += 1;///////测试用，每选中一次卡EXP+1
             LibraryOfCharacter.UpdateFreindship(temp_1);
         }
         

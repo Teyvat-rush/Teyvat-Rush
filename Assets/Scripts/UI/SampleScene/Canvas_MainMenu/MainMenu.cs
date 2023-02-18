@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 public class MainMenu : MonoBehaviour
 {
     //int level = 1;
@@ -114,7 +115,16 @@ public class MainMenu : MonoBehaviour
         Mainmenu.SetActive(false);
         Shop.SetActive(true);
     }
-
+    public void Remake()
+    {
+        File.Delete(Application.streamingAssetsPath + "/GameManagerr.json");
+        File.Delete(Application.streamingAssetsPath + "/GameManagerr.json.meta");
+        File.Delete(Application.streamingAssetsPath + "/Shop.json");
+        File.Delete(Application.streamingAssetsPath + "/Shop.json.meta");
+        File.Delete(Application.streamingAssetsPath + "/Achievement.json");
+        File.Delete(Application.streamingAssetsPath + "/Achievement.json.meta");
+        //SceneManager.LoadScene(0);
+    }
     void Update()
     {
         startLevelName.text = GameManager.LevelNames[GameManager.curLevelID];

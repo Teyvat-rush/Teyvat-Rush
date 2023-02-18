@@ -21,13 +21,25 @@ public class Canvas_Achievement : MonoBehaviour
     //public static List<bool> AchieveState = new List<bool>();//各成就达成状态
     //public static int ALLAchievedNum;
     //public static int achievedNum;
-    //public static bool isFirst=true;
+    public static bool isFirst=true;//进游戏(无论是否第一次开游戏)后是否第一次打开此面板
     public bool isRemainingReward;//true:有奖励没领取
     public static bool initialize = true;
     // Start is called before the first frame update
     public void Awake()
     {
         initialize = true;
+        notAchieved.Clear();
+        button_Attain.Clear();
+        for (int i = 0; i < GameManager.achievement.ALLCount; i++)
+        {
+            notAchieved.Add(panel_Achievements.transform.GetChild(i));
+            button_Attain.Add(notAchieved[i].GetChild(4).GetComponent<Button>());
+            int temp_1 = i;//图鉴中的位置
+            int temp_2 = i;//成就序号
+            button_Attain[i].onClick.RemoveAllListeners();
+            button_Attain[i].onClick.AddListener(delegate { AttainedMove(temp_1, temp_2); });
+        }
+       
     }
     // Update is called once per frame
     void Update()
@@ -38,12 +50,7 @@ public class Canvas_Achievement : MonoBehaviour
             isRemainingReward = false;
             for (int i = 0; i < GameManager.achievement.ALLCount; i++)
             {
-                notAchieved.Add(panel_Achievements.transform.GetChild(i));
-                button_Attain.Add(notAchieved[i].GetChild(4).GetComponent<Button>());
-                int temp_1 = i;//图鉴中的位置
-                int temp_2 = i;//成就序号
-                button_Attain[i].onClick.RemoveAllListeners();
-                button_Attain[i].onClick.AddListener(delegate { AttainedMove(temp_1, temp_2); });
+                
                 if (button_Attain[i] != null)
                 {
                     button_Attain[i].gameObject.transform.parent.GetChild(0).gameObject.GetComponent<Text>().text = GameManager.achievement.l[i].name;

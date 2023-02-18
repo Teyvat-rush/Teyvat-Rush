@@ -28,6 +28,7 @@ public class Menu : MonoBehaviour
   }
   public void Open_Characters_Library()
   {
+        Canvas_LibraryOfCharacter.initialize = true;
     Characters_Library.SetActive(true);
     Enemies_Library.SetActive(false);
   }

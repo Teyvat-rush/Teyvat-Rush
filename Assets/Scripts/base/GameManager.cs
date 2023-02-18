@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
             achievement.ALLCount = 2;//////////////↓手动修改↓
             /////////////////////////////////////↑手动修改↑
             achievement.achievedNum= 0;
-            achievement.l.Add(new Achievement.Achievementt("16 - 9 = ？(测试中,达成目标是2)", "累计拾取100个派摩拉。", 0,0,2,200));
+            achievement.l.Add(new Achievement.Achievementt("16 - 9 = ？(测试中,达成目标是3)", "累计拾取100个派摩拉。", 0,0,3,200));
             achievement.l.Add(new Achievement.Achievementt("买了个寂寞", "在商店确认购买0件物品。", 0, 0, 1, 200));
             for (int i = 0; i < achievement.ALLCount; i++)
             {
