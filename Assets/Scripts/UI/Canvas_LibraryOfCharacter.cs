@@ -26,17 +26,13 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
     public GameObject friendshipLevelReward;
     public GameObject slider_FriendshipProgress;
     //public static int checkMode = 1;//1：主菜单图鉴；2：选卡或关卡内打开图鉴
-    public static List<int> attainedNumPerLevel=new List<int>();//每关拥有的角色卡数
+    //public static List<int> attainedNumPerLevel=new List<int>();//每关拥有的角色卡数
     public static bool initialize = false;
     public int lastChosenIndex = 0;//默认选第一个
     // Start is called before the first frame update
     void Awake()
     {
         initialize = true;
-        attainedNumPerLevel.Clear();
-        attainedNumPerLevel.Add(1);
-        attainedNumPerLevel.Add(2);
-        attainedNumPerLevel.Add(3);
     }
 
     // Update is called once per frame
@@ -50,7 +46,10 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
             button_FriendshipLevelReward.GetComponent<Button>().onClick.AddListener(OpenFriendshipLevelReward);
             attainedCards.Clear();
             attainedCardsButtons.Clear();
-            for (int i= 0;i<GameManager.cardsMaxCharacter;i++)//获取所有角色卡
+
+            
+
+            for (int i= 0;i<GameManager.character.ALLCount;i++)//获取所有角色卡
             {
                 //Debug.Log("Canvas_LibraryOfCharacter:加入第"+i+"张卡");
                 
@@ -64,14 +63,14 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
                 attainedCardsButtons[i].onClick.AddListener(delegate { OpenPanelDetail(temp_1); });//每一个按钮增加监听事件，并传递参数，temp_1图鉴序号（太nice了！！！）
                 attainedCards[i].SetActive(false);
             }
-            for (int i = 0; i < attainedNumPerLevel[GameManager.curLevelID]; i++)//只显示获得的角色卡
+            for (int i = 0; i <  GameManager.character.unlockedPerLevel[GameManager.curLevelID] ; i++)//只显示获得的角色卡
             {
                 attainedCards[i].SetActive(true);
             }
             lastChosenIndex = 0;
             attainedCards[lastChosenIndex].GetComponent<Button>().interactable = false;
             OpenPanelDetail(lastChosenIndex);
-            for(int i=1;i< attainedNumPerLevel[GameManager.curLevelID]; i++)
+            for(int i=1;i< GameManager.character.unlockedPerLevel[GameManager.curLevelID]; i++)
             {
                 attainedCards[i].GetComponent<Button>().interactable = true;
             }
@@ -101,12 +100,12 @@ public class Canvas_LibraryOfCharacter : MonoBehaviour
         ATKorSkillInterval.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].ATKorSkillInterval;
         reloadTimeLevel.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].reloadTimeLevel;
         //Debug.Log("更新第"+index+"角色好感度");
-        friendshipEXP.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipEXP.ToString();
-        friendshipEXPMAX.GetComponent<Text>().text = LibraryOfCharacter.friendshipEXPMAXs[LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum].ToString();
-        friendshipLevelNum.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum.ToString();
+        friendshipEXP.GetComponent<Text>().text =  GameManager.character.c[index].EXP.ToString();
+        friendshipEXPMAX.GetComponent<Text>().text = LibraryOfCharacter.friendshipEXPMAXs[GameManager.character.c[index].level].ToString();
+        friendshipLevelNum.GetComponent<Text>().text = GameManager.character.c[index].level.ToString();
         friendshipLevelRewardTitle.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipLevelRewardTitle;
         friendshipLevelReward.GetComponent<Text>().text = LibraryOfCharacter.ALLCharacters[index].friendshipLevelReward;
-        slider_FriendshipProgress.GetComponent<Slider>().value = (float)LibraryOfCharacter.ALLCharacters[index].friendshipEXP/ (float)LibraryOfCharacter.friendshipEXPMAXs[LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum];
+        slider_FriendshipProgress.GetComponent<Slider>().value = (float)GameManager.character.c[index].EXP/ (float)LibraryOfCharacter.friendshipEXPMAXs[GameManager.character.c[index].level];
         if(LibraryOfCharacter.ALLCharacters[index].friendshipLevelNum==9)//满级存储为9，显示为10级
         {
             slider_FriendshipProgress.GetComponent<Slider>().value = 1;

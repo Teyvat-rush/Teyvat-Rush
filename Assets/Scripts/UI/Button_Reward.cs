@@ -21,6 +21,7 @@ public class Button_Reward : MonoBehaviour
     }
     public void CreateDisappearParticle()
     {
+        Canvas_LibraryOfEnemy.checkMode = 1;
         GameManager.curLevelID++;///////////主线进度+1
         GameManager.gamemanagerr.curLevelID++;
         string json = JsonUtility.ToJson(GameManager.gamemanagerr, true);

@@ -74,7 +74,7 @@ public class CardSlot : MonoBehaviour
             {
                 slots[i].gameObject.transform.parent.gameObject.SetActive(false);//将剩下的按钮的父物体禁用
             }
-            for (int i = 0; i < GameManager.cardsMaxCharacter; i++)
+            for (int i = 0; i < GameManager.character.ALLCount; i++)
             {
                 attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
                 attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());//找到每一个按钮的Button组件并加入这个List
@@ -86,7 +86,7 @@ public class CardSlot : MonoBehaviour
             }
             canvas_LibraryOfCharacter.SetActive(true);
             canvas_LibraryOfCharacter.SetActive(false);
-            for (int i = 0; i < Canvas_LibraryOfCharacter.attainedNumPerLevel[GameManager.curLevelID]; i++)
+            for (int i = 0; i < GameManager.character.unlockedPerLevel[GameManager.curLevelID]; i++)
             {
                 attainedCards[i].SetActive(true);
             }
@@ -114,7 +114,8 @@ public class CardSlot : MonoBehaviour
             selectedCardsButtons[filledNum].onClick.AddListener(delegate { RemovingMove(temp_1, temp_2); });
             //Debug.Log("图鉴序号" + temp_1 + " 卡槽序号" + temp_2 + "（+移除动作监听）");
             filledNum++;
-            //LibraryOfCharacter.ALLCharacters[temp_1].friendshipEXP += 1;///////测试用，每选中一次卡EXP+1
+            GameManager.character.c[temp_1].EXP += 1;///////测试用，每选中一次卡EXP+1
+            //LibraryOfCharacter.ALLCharacters[temp_1].friendshipEXP += 1;
             LibraryOfCharacter.UpdateFreindship(temp_1);
         }
         

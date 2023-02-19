@@ -91,20 +91,24 @@ public class Achievement
     }
 }
 [System.Serializable]
-class Character
+public class Character
 {
-  int ALLCount;//角色总个数
-  List<Characterr> c;//角色列表
-  List<int> unlockedPerLevel;//随关卡解锁进度
-  [System.Serializable]
-  class Characterr
-  {
-    string name;//角色名
-        string description;//角色介绍
-    int index;//序号
-    int EXP;//当前等级好感度的累计经验
-    int level;//当前好感度等级
-  }
+    public int ALLCount;//角色总个数
+    public List<Characterr> c;//角色列表
+    public List<int> unlockedPerLevel;//随关卡解锁进度
+    [System.Serializable]
+    public class Characterr
+    {
+        public string name;//角色名
+        public int index;//序号
+        public int EXP;//当前等级好感度的累计经验
+        public int level;//当前好感度等级
+
+        public Characterr(string name)
+        {
+            this.name = name;
+        }
+    }
 }
 [System.Serializable]
 public class Enemyy

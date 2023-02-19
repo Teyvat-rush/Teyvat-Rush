@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public static GameManagerr gamemanagerr = new GameManagerr();
     public static Shop shop = new Shop();
     public static Achievement achievement= new Achievement();
+    public static Character character =new Character();
+    public static Enemyy enemyy=new Enemyy();
 
     public static GameManager instance;
     public List<Sprite> Maps= new List<Sprite>();
@@ -27,10 +29,10 @@ public class GameManager : MonoBehaviour
     public GameObject map;
     public GameObject canvas;
 
-    public float creatEnemyInterval;//生成敌人的间隔时间
+    //public float creatEnemyInterval;//生成敌人的间隔时间
     //public static int maxCardsNum=6;////////最大卡槽数
-    public static int cardsMaxCharacter = 5;/////////////////手动改变
-    public static int cardsMaxEnemy = 6;/////////////////手动改变
+    //public static int cardsMaxCharacter = 5;/////////////////手动改变
+    //public static int cardsMaxEnemy = 6;/////////////////手动改变
     public int starNum;
     private float BornSuntimer;
     public float BornSunInterval;
@@ -137,6 +139,83 @@ public class GameManager : MonoBehaviour
             /////////////各种c#变量的赋值
             /////////////各种c#变量的赋值
         }
+/*_________________________________________________________________________________________________________________*/
+        if (!File.Exists(Application.streamingAssetsPath + "/Character.json"))
+        {
+            character.ALLCount = 5;//////////////↓手动修改↓
+            character.unlockedPerLevel = new List<int>
+            {
+                1,
+                2,
+                3,
+                4,
+                5
+            };
+            /////////////////////////////////////↑手动修改↑
+            character.c = new List<Character.Characterr>
+            {
+                new Character.Characterr("温迪"),
+                new Character.Characterr("莫娜"),
+                new Character.Characterr("诺艾尔"),
+                new Character.Characterr("阿贝多"),
+                new Character.Characterr("安柏"),
+            };
+            for(int i = 0;i< character.ALLCount;i++)
+            {
+                character.c[i].index= i;
+                character.c[i].EXP = character.c[i].level = 0;
+            }
+            string json = JsonUtility.ToJson(character, true);
+            File.WriteAllText(Application.streamingAssetsPath + "/Character.json", json);
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+        }
+        else
+        {
+            string json = File.ReadAllText(Application.streamingAssetsPath + "/Character.json");
+            character = JsonUtility.FromJson<Character>(json);
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+        }
+/*_________________________________________________________________________________________________________________*/
+        if (!File.Exists(Application.streamingAssetsPath + "/Enemyy.json"))
+        {
+            enemyy.ALLCount = 6;//////////////↓手动修改↓
+            enemyy.unlockedPerLevel = new List<int>
+            {
+                1,
+                2,
+                3,
+                5,
+                6,
+                7
+            };
+            /////////////////////////////////////↑手动修改↑
+            string json = JsonUtility.ToJson(enemyy, true);
+            File.WriteAllText(Application.streamingAssetsPath + "/Enemyy.json", json);
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+            /////////////各种json变量的初始化
+        }
+        else
+        {
+            string json = File.ReadAllText(Application.streamingAssetsPath + "/Enemyy.json");
+            enemyy = JsonUtility.FromJson<Enemyy>(json);
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+            /////////////各种c#变量的赋值
+        }
+
+        LevelNames.Clear();
+        LevelNames.Add("蒙德夜晚 - 1");
+        LevelNames.Add("蒙德夜晚 - 2");
+        LevelNames.Add("蒙德夜晚 - 3");
 
         instance = this;
         gameStart = false;
@@ -178,22 +257,19 @@ public class GameManager : MonoBehaviour
                 if (curLevelID <= 2)
                 {
                     map.GetComponent<SpriteRenderer>().sprite = Maps[curLevelID];
-                }else if (curLevelID <= 4)
+                }else if (curLevelID <= 4)///////////////手动更新
                 {
                     map.GetComponent<SpriteRenderer>().sprite = Maps[2];
                 }
             }
             
-            LevelNames.Clear();
-            LevelNames.Add("蒙德夜晚 - 1");
-            LevelNames.Add("蒙德夜晚 - 2");
-            LevelNames.Add("蒙德夜晚 - 3");
+            
             Debug.Log("GameManager:initialize 当前关卡名：" + LevelNames[curLevelID]);
             MAINTIMER = 0;
             curProgressID = 0;
             waveCreatedNum= 0;
             waveDestroyedNum = 0;
-            waveCreatedNum= 0;
+            totalDestroyedNum = 0;
             totalCreatedNum= 0;
             initialize= false;
         }
@@ -398,7 +474,7 @@ public class GameManager : MonoBehaviour
                 gameEnd = true;
                 button_Pause.SetActive(false);
                 //initialize = true;
-                Canvas_LibraryOfEnemy.checkMode = 1;
+                //Canvas_LibraryOfEnemy.checkMode = 1;
             }
         }
     }

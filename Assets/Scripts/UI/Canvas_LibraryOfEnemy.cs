@@ -27,7 +27,7 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
     public GameObject ATKIntervalLevel;
     public GameObject MoveVelocityLevel;
     public static int checkMode;//1：主菜单或关卡结束图鉴；2：选卡或关卡未结束内打开图鉴
-    public static List<int> attainedNumPerLevel = new List<int>();//每关拥有的敌人卡数
+    //public static List<int> attainedNumPerLevel = new List<int>();//每关拥有的敌人卡数
     public static bool initialize = false;
     public int lastChosenIndex=0;//默认选第一个
     // Start is called before the first frame update
@@ -35,10 +35,6 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
     {
         initialize = true;
         Debug.Log("Canvas_LibraryOfEnemy:Awake");
-        attainedNumPerLevel.Clear();
-        attainedNumPerLevel.Add(6);
-        attainedNumPerLevel.Add(6);
-        attainedNumPerLevel.Add(6);
     }
 
     // Update is called once per frame
@@ -46,7 +42,7 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
     {
         if(initialize)//只调用一次
         {
-            Debug.Log(checkMode);
+            Debug.Log("checkmode="+checkMode);
             Debug.Log("Canvas_LibraryOfEnemy:initialize");
             if (checkMode==1)//不在关卡中
             {
@@ -56,7 +52,7 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
                 text_SelectCard.GetComponent<Text>().text = "点击查看遇到过的敌人！";
                 attainedCards.Clear();
                 attainedCardsButtons.Clear();
-                for (int i = 0; i < GameManager.cardsMaxEnemy; i++)
+                for (int i = 0; i < GameManager.enemyy.unlockedPerLevel[GameManager.curLevelID]; i++)
                 {
                     attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
                     attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());
@@ -75,7 +71,7 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
                 text_SelectCard.GetComponent<Text>().text = "点击查看本关出现的敌人！";
                 attainedCards.Clear();
                 attainedCardsButtons.Clear();
-                for (int i = 0; i < GameManager.cardsMaxEnemy; i++)
+                for (int i = 0; i < GameManager.enemyy.ALLCount; i++)
                 {
                     attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
                     attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());

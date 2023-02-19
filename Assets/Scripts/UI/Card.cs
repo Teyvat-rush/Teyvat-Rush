@@ -88,32 +88,32 @@ public class Card : MonoBehaviour
         {
           int i = Random.Range(1, 4);
           SoundManager.instance.PlaySound(Globals.WendiPlanted+i.ToString());
-          LibraryOfCharacter.ALLCharacters[0].friendshipEXP += 1;
+                    GameManager.character.c[0].EXP += 1;
           LibraryOfCharacter.UpdateFreindship(0);
         }
         else if (objectPrefab.name == "Point_Mona")
         {
           int i = Random.Range(1, 4);
           SoundManager.instance.PlaySound(Globals.MonaPlanted + i.ToString());
-          LibraryOfCharacter.ALLCharacters[1].friendshipEXP += 1;
-          LibraryOfCharacter.UpdateFreindship(1);
+                    GameManager.character.c[1].EXP += 1;
+                    LibraryOfCharacter.UpdateFreindship(1);
         }
         else if (objectPrefab.name == "Point_Nuoaier")
         {
           int i = Random.Range(1, 4);
           SoundManager.instance.PlaySound(Globals.NuoaierPlanted + i.ToString());
-          LibraryOfCharacter.ALLCharacters[2].friendshipEXP += 1;
+                    GameManager.character.c[2].EXP += 1;
           LibraryOfCharacter.UpdateFreindship(2);
         }
         else if(objectPrefab.name== "Point_Anbo")
         {
           SoundManager.instance.PlaySound(Globals.AnboBoom);
-          LibraryOfCharacter.ALLCharacters[3].friendshipEXP += 1;
+          GameManager.character.c[3].EXP += 1;
           LibraryOfCharacter.UpdateFreindship(3);
         }
         else if(objectPrefab.name == "Point_Abeiduo")
         {
-          LibraryOfCharacter.ALLCharacters[4].friendshipEXP += 1;
+          GameManager.character.c[4].EXP += 1;
           LibraryOfCharacter.UpdateFreindship(4);
         }
         //重置

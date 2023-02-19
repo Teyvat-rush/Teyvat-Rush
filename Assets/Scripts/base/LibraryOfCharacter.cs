@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class LibraryOfCharacter : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class LibraryOfCharacter : MonoBehaviour
     public List<Sprite> ALLImages = new List<Sprite>();
     public static List<LibraryOfCharacter> ALLCharacters = new List<LibraryOfCharacter>();
     
-    public static List<int> friendshipEXPMAXs = new List<int>(){ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,0};
+    public static List<int> friendshipEXPMAXs = new List<int>(){ 4, 5, 6, 4, 5, 6, 4, 5, 6, 21,0};
     public static bool isFirst=true;
     public LibraryOfCharacter(string characterName, string description, Sprite image, string hPLevel, string aTKLevel, string aTKorSkillInterval, string reloadTimeLevel, int friendshipEXP, int friendshipEXPMAX, int friendshipLevelNum, string friendshipLevelRewardTitle, string text_FriendshipLevelReward)
     {
@@ -64,12 +65,14 @@ public class LibraryOfCharacter : MonoBehaviour
 
     public static void UpdateFreindship(int index)
     {
-        if (ALLCharacters[index].friendshipEXP >= friendshipEXPMAXs[ALLCharacters[index].friendshipLevelNum] && ALLCharacters[index].friendshipLevelNum < 10)
+        while (GameManager.character.c[index].EXP >= friendshipEXPMAXs[GameManager.character.c[index].level] && GameManager.character.c[index].level < 10)
         {
-            Debug.Log("植物"+index+"好感度等级=" +(ALLCharacters[index].friendshipLevelNum+1));
-            ALLCharacters[index].friendshipEXP -= friendshipEXPMAXs[ALLCharacters[index].friendshipLevelNum];
-            ALLCharacters[index].friendshipLevelNum++; 
+            Debug.Log("植物"+index+"好感度等级=" +(GameManager.character.c[index].level + 1));
+            GameManager.character.c[index].EXP -= friendshipEXPMAXs[GameManager.character.c[index].level];
+            GameManager.character.c[index].level ++;
 
         }
+        string json = JsonUtility.ToJson(GameManager.character, true);
+        File.WriteAllText(Application.streamingAssetsPath + "/Character.json", json);
     }
 }

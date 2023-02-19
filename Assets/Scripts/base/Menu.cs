@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
     public static bool isInBattle;//在地图界面，防止在看图鉴等情况时按到了Esc
   public bool isPause;
   public GameObject PauseMenu;
+    public GameObject panel_ConfirmExit_Extended;
   public Text SpeedText;
   public GameObject Achievements;
   public GameObject Characters_Library;
@@ -51,6 +52,7 @@ public class Menu : MonoBehaviour
     }
     public void Open_Enemies_Library()
     {
+        SoundManager.instance.PlaySound(Globals.Open1);
         isInBattle = false;
         Characters_Library.SetActive(false);
         Enemies_Library.SetActive(true);
@@ -77,10 +79,18 @@ public class Menu : MonoBehaviour
     }
     public void ReturntoMenu()
     {
-        isInBattle = false;
-        SoundManager.instance.PlaySound(Globals.Return1);
-        Canvas_LibraryOfEnemy.checkMode = 1;
-        SceneManager.LoadScene(0);
+        if(Canvas_LibraryOfEnemy.checkMode == 2)
+        {
+            panel_ConfirmExit_Extended.SetActive(true);
+        }
+        else
+        {
+            isInBattle = false;
+            SoundManager.instance.PlaySound(Globals.Return1);
+            Canvas_LibraryOfEnemy.checkMode = 1;
+            SceneManager.LoadScene(0);
+        }
+        
     }
     public void Restart()
     {
@@ -98,5 +108,17 @@ public class Menu : MonoBehaviour
     public void SetMusicEffectVolume(float value)
     {
         audioMixer_MusicEffect.SetFloat("MusicEffectVolume", value);
+    }
+
+    public void ConfirmExit()
+    {
+        isInBattle = false;
+        SoundManager.instance.PlaySound(Globals.Return1);
+        Canvas_LibraryOfEnemy.checkMode = 1;
+        SceneManager.LoadScene(0);
+    }
+    public void CancelExit()
+    {
+        panel_ConfirmExit_Extended.SetActive(false);
     }
 }
