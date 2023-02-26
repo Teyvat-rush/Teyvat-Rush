@@ -1,0 +1,30 @@
+{
+    "itemsTotalCount": 2,
+    "unlockedPerLevel": [
+        1,
+        2,
+        2,
+        2,
+        2
+    ],
+    "items": [
+        {
+            "name": "木桩",
+            "description": "置于蒙德地图防线的最后，敌人接触时艾琳登场清除一行内所有敌人。",
+            "index": 0,
+            "price": 1100,
+            "maxNum": 1,
+            "remainingNum": 1,
+            "purchasedState": false
+        },
+        {
+            "name": "扩充编队·1",
+            "description": "使队伍可携带的人数上限+1。",
+            "index": 1,
+            "price": 440,
+            "maxNum": 4,
+            "remainingNum": 4,
+            "purchasedState": false
+        }
+    ]
+}
