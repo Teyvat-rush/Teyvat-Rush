@@ -22,7 +22,7 @@ public class Startup
         string path = Application.dataPath + "/Editor/关卡波次.xlsx";
         FileInfo fileInfo = new FileInfo(path);
         LevelData.Levels.Clear();
-        for (int m=0;m<3;m++)///////关卡总数
+        for (int m=0;m<5;m++)///////关卡总数
         {
             
             LevelData.Levels.Add(new List<LevelItem>());
@@ -40,7 +40,8 @@ public class Startup
                     //遍历每一列
                     for (int j = worksheet.Dimension.Start.Column; j <= 12/*worksheet.Dimension.End.Column*/; j++)
                     {
-                        //Debug.Log("读取第" + i + "行" + "第" + j + "列");
+                        Debug.Log("读取第" + i + "行" + "第" + j + "列");
+                        Debug.Log("m= "+m+"FirstLine = " + firstLine + " LastLine = " + lastLine); 
                         //Debug.Log("worksheet.Dimension.End.Column = "+worksheet.Dimension.End.Column); 
                         //读取i行j列的内容，打印调试
                         //Debug.Log("数据内容:" + worksheet.GetValue(i, j).ToString());

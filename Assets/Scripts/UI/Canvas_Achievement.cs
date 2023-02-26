@@ -117,4 +117,9 @@ public class Canvas_Achievement : MonoBehaviour
         //    streamWriter.Dispose();
         //}
     }
+
+    public void Close_Canvas_Achievement()
+    {
+        gameObject.SetActive(false);
+    }
 }

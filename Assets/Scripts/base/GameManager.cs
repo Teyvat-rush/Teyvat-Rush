@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public GameObject SunPrefab;//飘落阳光的预制件
     public GameObject map;
     public GameObject canvas;
+    public GameObject panel_Dialog;
 
     //public float creatEnemyInterval;//生成敌人的间隔时间
     //public static int maxCardsNum=6;////////最大卡槽数
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
     {
         if(!File.Exists(Application.streamingAssetsPath + "/GameManagerr.json"))
         {
-            gamemanagerr.maxCardsNum = 6;//////////////↓手动修改↓
+            gamemanagerr.maxCardsNum = 3;//////////////↓手动修改↓
             string json = JsonUtility.ToJson(gamemanagerr, true);
             File.WriteAllText(Application.streamingAssetsPath + "/GameManagerr.json", json);
             /////////////各种json变量的初始化
@@ -84,7 +85,9 @@ public class GameManager : MonoBehaviour
             {
                 1,
                 2,
-                2
+                2,
+                2,
+                2,
             };/////////////////////////////////////↑手动修改↑
             shop.items.Add(new Shop.Item("木桩", "置于蒙德地图防线的最后，敌人接触时艾琳登场清除一行内所有敌人。", 1100, 1));
             shop.items.Add(new Shop.Item("扩充编队·1", "使队伍可携带的人数上限+1。", 440, 4));
@@ -116,8 +119,8 @@ public class GameManager : MonoBehaviour
             achievement.ALLCount = 2;//////////////↓手动修改↓
             /////////////////////////////////////↑手动修改↑
             achievement.achievedNum= 0;
-            achievement.l.Add(new Achievement.Achievementt("16 - 9 = ？(测试中,达成目标是3)", "累计拾取100个派摩拉。", 0,0,3,200));
-            achievement.l.Add(new Achievement.Achievementt("买了个寂寞", "在商店确认购买0件物品。", 0, 0, 1, 200));
+            achievement.l.Add(new Achievement.Achievementt("16 - 9 = ？(测试中,达成目标是3)", "累计拾取100个派摩拉。", 0,0,3,2333));
+            achievement.l.Add(new Achievement.Achievementt("买了个寂寞", "在商店确认购买0件物品。", 0, 0, 1, 2333));
             for (int i = 0; i < achievement.ALLCount; i++)
             {
                 achievement.l[i].index1 = i;
@@ -216,7 +219,8 @@ public class GameManager : MonoBehaviour
         LevelNames.Add("蒙德夜晚 - 1");
         LevelNames.Add("蒙德夜晚 - 2");
         LevelNames.Add("蒙德夜晚 - 3");
-
+        LevelNames.Add("蒙德夜晚 - 4");
+        LevelNames.Add("蒙德夜晚 - 5");
         instance = this;
         gameStart = false;
         gameEnd = false;
@@ -260,6 +264,7 @@ public class GameManager : MonoBehaviour
                 }else if (curLevelID <= 4)///////////////手动更新
                 {
                     map.GetComponent<SpriteRenderer>().sprite = Maps[2];
+                    
                 }
             }
             

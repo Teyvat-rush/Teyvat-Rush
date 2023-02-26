@@ -52,7 +52,7 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
                 text_SelectCard.GetComponent<Text>().text = "点击查看遇到过的敌人！";
                 attainedCards.Clear();
                 attainedCardsButtons.Clear();
-                for (int i = 0; i < GameManager.enemyy.unlockedPerLevel[GameManager.curLevelID]; i++)
+                for (int i = 0; i < GameManager.enemyy.ALLCount; i++)
                 {
                     attainedCards.Add(panel_Cards.transform.GetChild(i).gameObject);
                     attainedCardsButtons.Add(attainedCards[i].GetComponent<Button>());
@@ -60,6 +60,10 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
                     int temp_1 = i;
                     attainedCardsButtons[i].onClick.RemoveAllListeners();
                     attainedCardsButtons[i].onClick.AddListener(delegate { OpenPanelDetail(temp_1); });//每一个按钮增加监听事件，并传递参数，temp_1图鉴序号（太nice了！！！）
+                    attainedCards[i].SetActive(false);
+                }
+                for(int i= 0;i< GameManager.enemyy.unlockedPerLevel[GameManager.curLevelID];i++)
+                {
                     attainedCards[i].SetActive(true);
                 }
                 attainedCards[lastChosenIndex].GetComponent<Button>().interactable = false;
@@ -80,7 +84,6 @@ public class Canvas_LibraryOfEnemy : MonoBehaviour
                     attainedCardsButtons[i].onClick.RemoveAllListeners();
                     attainedCardsButtons[i].onClick.AddListener(delegate { OpenPanelDetail(temp_1); });//每一个按钮增加监听事件，并传递参数，temp_1图鉴序号（太nice了！！！）
                     attainedCards[i].SetActive(false);
-                    
                 }
                 for(int i=0;i< LevelData.totalNums[GameManager.curLevelID];i++)//对于这关出现的每一个敌人
                 {

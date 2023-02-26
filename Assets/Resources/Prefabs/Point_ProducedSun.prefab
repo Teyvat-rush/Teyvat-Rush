@@ -49,9 +49,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 10
+  timer: 0
   g: -6
   vy0: 3
-  v_Inflation: 0.8
+  v_Inflation: 0.5
 --- !u!58 &6204483928749986057
 CircleCollider2D:
   m_ObjectHideFlags: 0

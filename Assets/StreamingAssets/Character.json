@@ -4,14 +4,14 @@
         {
             "name": "温迪",
             "index": 0,
-            "EXP": 0,
-            "level": 2
+            "EXP": 1,
+            "level": 1
         },
         {
             "name": "莫娜",
             "index": 1,
             "EXP": 0,
-            "level": 1
+            "level": 0
         },
         {
             "name": "诺艾尔",

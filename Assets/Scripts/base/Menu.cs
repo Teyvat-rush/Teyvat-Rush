@@ -24,17 +24,35 @@ public class Menu : MonoBehaviour
      }
     void Update()
     {
-        if(GameManager.gameStart&& isInBattle&& Input.GetKeyDown(KeyCode.Escape))
+        if (GameManager.gameStart && isInBattle)
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (!isPause)
+                {
+                    pauseGame();
+                }
+                else
+                {
+                    resumeGame();
+                }
+            }
             if(!isPause)
             {
-                pauseGame();
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    SpeedText.text = "x1";
+                    Time.timeScale = 1f;
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    SpeedText.text = "x2";
+                    Time.timeScale = 2f;
+                }
             }
-            else
-            {
-                resumeGame();
-            }
-        }    
+            
+        }
+
     }
     public void pauseGame()
     {
@@ -56,6 +74,13 @@ public class Menu : MonoBehaviour
         isInBattle = false;
         Characters_Library.SetActive(false);
         Enemies_Library.SetActive(true);
+    }
+    public void Open_Achievements()
+    {
+        SoundManager.instance.PlaySound(Globals.Open1);
+        isInBattle = false;
+        Achievements.SetActive(true);
+        Canvas_Achievement.initialize= true;
     }
     public void Close_Library()
     {

@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShootAwake: 0
-  health: 100
+  health: 1000
   currentHealth: 1000
   PlantAwake: 0
   pic:

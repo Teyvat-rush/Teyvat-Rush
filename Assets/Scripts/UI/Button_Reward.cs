@@ -23,7 +23,14 @@ public class Button_Reward : MonoBehaviour
     {
         Canvas_LibraryOfEnemy.checkMode = 1;
         GameManager.curLevelID++;///////////主线进度+1
-        GameManager.gamemanagerr.curLevelID++;
+        if(GameManager.gamemanagerr.curLevelID==4)
+        {
+
+        }else
+        {
+            GameManager.gamemanagerr.curLevelID++;
+        }
+        
         string json = JsonUtility.ToJson(GameManager.gamemanagerr, true);
         File.WriteAllText(Application.streamingAssetsPath + "/GameManagerr.json", json);
         Instantiate(disappearParticle,transform.position,transform.rotation);

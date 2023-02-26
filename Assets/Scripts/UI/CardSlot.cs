@@ -32,7 +32,7 @@ public class CardSlot : MonoBehaviour
     public List<Button> selectedCardsButtons = new List<Button>();
     //public int attainedCardsNum;/////////////////已在GameManager中存储
     public int filledNum = 0;//已选择角色数
-    public static int maxCardNumHere=6;//最大卡槽数
+    public static int maxCardNumHere=4;//最大卡槽数
     public static bool initialize = true;
     // Start is called before the first frame update
     void Start()
@@ -61,6 +61,7 @@ public class CardSlot : MonoBehaviour
 
         if(initialize)
         {
+            maxCardNumHere = GameManager.gamemanagerr.maxCardsNum;
             Canvas_LibraryOfEnemy.checkMode = 2;
             startLevelName.text = GameManager.LevelNames[GameManager.curLevelID];
             attainedCards.Clear();
@@ -112,7 +113,7 @@ public class CardSlot : MonoBehaviour
             int temp_2 = filledNum;                                             //卡槽中的顺序
             selectedCardsIndex_2.Add(temp_1);                                   //卡槽中卡的图鉴的顺序存入List
             selectedCardsButtons[filledNum].onClick.AddListener(delegate { RemovingMove(temp_1, temp_2); });
-            //Debug.Log("图鉴序号" + temp_1 + " 卡槽序号" + temp_2 + "（+移除动作监听）");
+            Debug.Log("图鉴序号" + temp_1 + " 卡槽序号" + temp_2 + "（+移除动作的监听）");
             filledNum++;
             GameManager.character.c[temp_1].EXP += 1;///////测试用，每选中一次卡EXP+1
             //LibraryOfCharacter.ALLCharacters[temp_1].friendshipEXP += 1;
@@ -128,7 +129,7 @@ public class CardSlot : MonoBehaviour
         Destroy(selectedCards[index_2]);
         for(int i=index_2+1;i<=selectedCards.Count-1;i++)
         {
-            //Debug.Log("当前卡槽序号"+i+" 被删除的卡的卡槽序号"+index_2);
+            Debug.Log("当前卡槽序号"+i+" 被删除的卡的卡槽序号"+index_2);
             int temp_0 = selectedCardsIndex_2[i];
             int temp_2 = i;
             selectedCards[i].transform.position = slots[i-1].position;

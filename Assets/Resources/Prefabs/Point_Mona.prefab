@@ -69,7 +69,7 @@ MonoBehaviour:
   currentHealth: 100
   PlantAwake: 0
   SunPrefab: {fileID: 1001220303305346936, guid: 91144f423ec69a9438e65491f33b48cb, type: 3}
-  ReadyTime: 3
+  ReadyTime: 20
   Monaa: {fileID: 4773579219006792026}
 --- !u!95 &7156235213586014000
 Animator:
@@ -121,7 +121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4773579219006792027}
   - component: {fileID: 4773579219006791968}
-  - component: {fileID: 4773579219006791972}
   m_Layer: 6
   m_Name: Mona
   m_TagString: Plant
@@ -195,25 +194,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4773579219006791972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4773579219006792026}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73c528486ee98bf4a90f878345589172, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShootAwake: 0
-  health: 100
-  currentHealth: 100
-  PlantAwake: 0
-  SunPrefab: {fileID: 1001220303305346936, guid: 91144f423ec69a9438e65491f33b48cb, type: 3}
-  ReadyTime: 3
-  Monaa: {fileID: 0}
 --- !u!1 &4773579219578459472
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0
+  timer: 0
   g: -6
   vy0: 3
   v_Inflation: 0.8

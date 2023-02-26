@@ -7,7 +7,7 @@ public class ProducedSun : MonoBehaviour
 {
   private GameObject Menu;
   public float duration;
-  private float timer;
+  public float timer;
     public float g = -4;//重力加速度，正方向为y轴正方向
     public float vy0 = 2;//竖直方向初速度，正方向为y轴正方向
     public float v_Inflation = 0.5f; //膨胀速度
@@ -16,11 +16,12 @@ public class ProducedSun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    Menu = GameObject.Find("Canvas");
-    timer = 0;
+        Menu = GameObject.Find("Canvas");
+        timer = 0;
         rb= GetComponent<Rigidbody2D>();
         am= GetComponent<Animator>();
-        rb.velocity = new Vector2(Random.Range(-0.4f, 1.6f), vy0);
+        rb.velocity = new Vector3(Random.Range(-0.4f, 1.6f), vy0, 0);
+        transform.localScale = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
@@ -29,16 +30,16 @@ public class ProducedSun : MonoBehaviour
         
         if(rb.transform.localPosition.y<-0.45)
         {
-            rb.velocity = new Vector2(0,0);
-      SwitchAnim();
+            rb.velocity = new Vector3(0,0,0);
+            SwitchAnim();
         }else
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + g * Time.deltaTime);
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y + g * Time.deltaTime,0);
         }
 
-        if(transform.localScale.x<1)
+        if(transform.localScale.x<0.5)
         {
-            transform.localScale = new Vector3(transform.localScale.x + Time.deltaTime *v_Inflation, transform.localScale.y + Time.deltaTime *v_Inflation);
+            transform.localScale = new Vector3(transform.localScale.x + Time.deltaTime *v_Inflation, transform.localScale.y + Time.deltaTime *v_Inflation,0);
         }
         am.SetFloat("vx",rb.velocity.x);
         am.SetFloat("vy",rb.velocity.y);

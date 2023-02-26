@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Dialog : MonoBehaviour
 {
+    public static Dialog instance;
+
     [Header("UI组件")]
     public Text textLabel;  //对话框的内容text
     //public GameObject SkipButton; //跳过按钮
@@ -33,50 +35,62 @@ public class Dialog : MonoBehaviour
 
     public List<string> textList = new List<string>(); //将txt文件的对话内容导入列表内
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
+        instance = this;
         textStarted = false;
-        GetTextFromFile(textfile[GameManager.curLevelID]);
+        if(GameManager.curLevelID<=2)
+        {
+            GetTextFromFile(textfile[GameManager.curLevelID]);
+        }else
+        {
+            EndDialogue();
+        }
+        
         index= 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(textFinished)
+        if (GameManager.curLevelID <= 2)
         {
-            Image_Next.SetActive(true);
-        }
-        else
-        {
-            Image_Next.SetActive(false);
-        }
-        textSpeed = 0.05f;
-        if (Input.GetKeyDown(KeyCode.Mouse0) && index == textList.Count)
-        {
-            
-            
-            EndDialogue();//如果按下鼠标左键并且播放到了最后一句的话就启动结束对话的函数
-            
-        }
+            if (textFinished)
+            {
+                Image_Next.SetActive(true);
+            }
+            else
+            {
+                Image_Next.SetActive(false);
+            }
+            textSpeed = 0.05f;
+            if (Input.GetKeyDown(KeyCode.Mouse0) && index == textList.Count)
+            {
 
-        if(index==0 &&!textStarted)
-        {
-            //Debug.Log("index = " + index);
-            textStarted =true;
-            PlayPaimon();
-            StartCoroutine(SetTextUI());//如果按下鼠标左键的同时一句话已经放完了，就继续启动下一句的播放
-        }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && textFinished && gameObject.activeSelf)
-        {
-            //Debug.Log("index = " + index);
-            SoundManager.instance.PlaySound(Globals.Return0);
-            PlayPaimon();
+                EndDialogue();//如果按下鼠标左键并且播放到了最后一句的话就启动结束对话的函数
 
-            StartCoroutine(SetTextUI());//如果按下鼠标左键的同时一句话已经放完了，就继续启动下一句的播放
-            Image_Next.SetActive(false);
+            }
+
+            if (index == 0 && !textStarted)
+            {
+                //Debug.Log("index = " + index);
+                textStarted = true;
+                PlayPaimon();
+                StartCoroutine(SetTextUI());//如果按下鼠标左键的同时一句话已经放完了，就继续启动下一句的播放
+            }
+
+            if (Input.GetKeyDown(KeyCode.Mouse0) && textFinished && gameObject.activeSelf)
+            {
+                //Debug.Log("index = " + index);
+                SoundManager.instance.PlaySound(Globals.Return0);
+                PlayPaimon();
+
+                StartCoroutine(SetTextUI());//如果按下鼠标左键的同时一句话已经放完了，就继续启动下一句的播放
+                Image_Next.SetActive(false);
+            }
         }
+        
     }
     void GetTextFromFile(TextAsset file)
     {

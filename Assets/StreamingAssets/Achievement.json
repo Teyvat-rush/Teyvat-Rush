@@ -1,6 +1,6 @@
 {
     "ALLCount": 2,
-    "achievedNum": 0,
+    "achievedNum": 1,
     "l": [
         {
             "index1": 0,
@@ -10,7 +10,7 @@
             "description": "累计拾取100个派摩拉。",
             "progress": 0,
             "target": 3,
-            "rewardNum": 200,
+            "rewardNum": 2333,
             "achievedState": false
         },
         {
@@ -19,10 +19,10 @@
             "index3": 0,
             "name": "买了个寂寞",
             "description": "在商店确认购买0件物品。",
-            "progress": 0,
+            "progress": 1,
             "target": 1,
-            "rewardNum": 200,
-            "achievedState": false
+            "rewardNum": 2333,
+            "achievedState": true
         }
     ]
 }
