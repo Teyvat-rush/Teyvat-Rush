@@ -1,0 +1,42 @@
+{
+    "ALLCount": 5,
+    "c": [
+        {
+            "name": "温迪",
+            "index": 0,
+            "EXP": 4,
+            "level": 7
+        },
+        {
+            "name": "莫娜",
+            "index": 1,
+            "EXP": 1,
+            "level": 7
+        },
+        {
+            "name": "诺艾尔",
+            "index": 2,
+            "EXP": 3,
+            "level": 0
+        },
+        {
+            "name": "阿贝多",
+            "index": 3,
+            "EXP": 1,
+            "level": 0
+        },
+        {
+            "name": "安柏",
+            "index": 4,
+            "EXP": 2,
+            "level": 0
+        }
+    ],
+    "unlockedPerLevel": [
+        1,
+        2,
+        3,
+        4,
+        5
+    ]
+}
